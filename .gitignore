@@ -1,0 +1,14 @@
+old_scripts/
+dataset/images/
+dataset/masks/
+dataset/labels/
+dataset/labels_lanes/
+dataset/labels_objects/
+yolo11n-seg.pt
+yolov8s.pt
+scripts/runs/
+scripts/yolo11n.pt
+scripts/yolov8n-seg.pt
+runs/
+model_results/
+verify/
