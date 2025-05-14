@@ -1,0 +1,33 @@
+name: Generate Documentation
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  generate-docs:
+    name: Generate Documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+          
+      - name: Create docs directory if it does not exist
+        run: mkdir -p docs
+
+      - name: Generate Documentation
+        run: doxygen Doxyfile
+
+      - name: Deploy Documentation to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }}
+          publish_dir: .
+          force_orphan: true
