@@ -5,7 +5,7 @@ from ultralytics import YOLO
 import shutil
 
 # Set paths
-model_path = "../runs/train/yolo-seg-lane1-unfrozen/weights/last.pt"  
+model_path = "../models/yolo-lane-unfroze/weights/last.pt"  
 images_dir = "../dataset/images/val"  # Folder with images to run inference on
 
 shutil.rmtree('/home/seame/ObjectDetectionAvoidance/dataset/results', ignore_errors=True)

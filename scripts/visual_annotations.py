@@ -6,7 +6,7 @@ import random
 import argparse
 import shutil
 
-def load_annotations(label_path, img_width, img_height, content_height=360, top_padding=140):
+def load_annotations(label_path, img_width, img_height, content_height=180, top_padding=70):
     annotations = []
     if not os.path.exists(label_path):
         return annotations
@@ -21,7 +21,7 @@ def load_annotations(label_path, img_width, img_height, content_height=360, top_
                 polygon = []
                 for i in range(num_points):
                     x = float(parts[1 + i * 2]) * img_width
-                    y = float(parts[2 + i * 2]) * content_height + top_padding 
+                    y = float(parts[2 + i * 2]) * img_height
                     polygon.append([x, y])
                 x_center = float(parts[1 + num_points * 2]) * img_width
                 y_center = float(parts[2 + num_points * 2]) * img_height
@@ -128,12 +128,12 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
 
 def main():
     parser = argparse.ArgumentParser(description="Verify YOLO dataset annotations.")
-    shutil.rmtree('/home/seame/ObjectDetectionAvoidance/dataset/verify')
+    shutil.rmtree('/home/seame/ObjectDetectionAvoidance/verify')
     parser.add_argument('--image_dir', default='/home/seame/ObjectDetectionAvoidance/dataset/images/train',
                         help='Directory with images')
     parser.add_argument('--label_dir', default='/home/seame/ObjectDetectionAvoidance/dataset/labels/train',
                         help='Directory with YOLO annotations')
-    parser.add_argument('--output_dir', default='/home/seame/ObjectDetectionAvoidance/dataset/verify',
+    parser.add_argument('--output_dir', default='/home/seame/ObjectDetectionAvoidance/verify',
                         help='Directory to save visualized images')
     parser.add_argument('--num_samples', type=int, default=30,
                         help='Number of images to visualize')
