@@ -1,6 +1,6 @@
 from ultralytics import YOLO
 
-model = YOLO("../yolov8n-seg.pt")
+model = YOLO("../pretrained_yolo/yolov8n-seg.pt")
 results = model.train(
     data="/home/seame/ObjectDetectionAvoidance/dataset/data.yaml",
     epochs=30,

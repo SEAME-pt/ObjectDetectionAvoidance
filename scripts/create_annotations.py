@@ -22,7 +22,7 @@ def generate_synthetic_object_annotations(model_path, img_dir, output_dir, split
         h, w = img.shape[:2]
         
         # Run YOLO detection
-        results = model(img_path, conf=0.6, imgsz=640, verbose=False)
+        results = model(img_path, conf=0.6, imgsz=320, verbose=False)
         labels = []
         for result in results:
             for box in result.boxes:
@@ -63,7 +63,7 @@ def convert_lane_masks_to_polygons(output_dir, split, mask_dir):
         if mask is None:
             print(f"Failed to load {mask_path}")
             continue
-        h, w = mask.shape  # 640x640
+        h, w = mask.shape  # 320x320
         
         # Find contours
         contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -81,7 +81,7 @@ def convert_lane_masks_to_polygons(output_dir, split, mask_dir):
             for x, y in polygon:
                 # polygon_norm.extend([x / w, y / h])
                 x_norm = x / w
-                y_norm = (y - 140) / 360  # Adjust for letterboxing (640x360 content, 140px top padding)
+                y_norm = y / h # Adjust for letterboxing (320x360 content, 140px top padding)
                 # Clamp to [0, 1]
                 x_norm = max(0, min(1, x_norm))
                 y_norm = max(0, min(1, y_norm))
@@ -143,13 +143,16 @@ mask_dir_val = '/home/seame/ObjectDetectionAvoidance/dataset/masks/val'
 
 shutil.rmtree(os.path.join(output_dir, 'labels'), ignore_errors=True)
 # shutil.rmtree(os.path.join(output_dir, 'labels_objects'), ignore_errors=True)
-shutil.rmtree(os.path.join(output_dir, 'labels_lanes'), ignore_errors=True)
+# shutil.rmtree(os.path.join(output_dir, 'labels_lanes'), ignore_errors=True)
 
-# generate_synthetic_object_annotations('../yolo11n.pt', img_dir, output_dir, 'train')
+generate_synthetic_object_annotations('../pretrained_yolo/yolo11n.pt', img_dir, output_dir, 'train')
 convert_lane_masks_to_polygons(output_dir, 'train', mask_dir_train)
 
-# generate_synthetic_object_annotations('../yolo11n.pt', img_dir, output_dir, 'val')
+generate_synthetic_object_annotations('../pretrained_yolo/yolo11n.pt', img_dir, output_dir, 'val')
 convert_lane_masks_to_polygons(output_dir, 'val', mask_dir_val)
 
 merge_annotations(output_dir, 'train')
 merge_annotations(output_dir, 'val')
+
+shutil.rmtree(os.path.join(output_dir, 'labels_objects'), ignore_errors=True)
+shutil.rmtree(os.path.join(output_dir, 'labels_lanes'), ignore_errors=True)
