@@ -1,5 +1,7 @@
 # Object Detection and Avoidance
 
+![Project Structure](ADR/Fluxograma.jpg)
+
 Training a Yolo Object detection model, with Lane detection (segmentation) as well.
 In the scripts directory file *create_annotations.py* we create the **annotation labels** for lane and object detection. Therefore we pass our images through a trained Yolo11 model, to get the object annotations, and then through our binary lane masks, we add the lane annotations to the label files.
 
