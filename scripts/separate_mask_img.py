@@ -30,7 +30,6 @@ def split_dataset(image_dir, val_ratio=0.1):
     random.shuffle(combined)
     image_paths[:], mask_paths[:] = zip(*combined)
 
-    # Calculate the number of validation images
     total_images = len(image_paths)
     val_count = int(total_images * val_ratio)
 
@@ -40,13 +39,11 @@ def split_dataset(image_dir, val_ratio=0.1):
     train_images = image_paths[val_count:]
     train_masks = mask_paths[val_count:]
 
-    # Define destination directories
     dest_img_train = 'dataset/images/train/'
     dest_mask_train = 'dataset/masks/train/'
     dest_img_val = 'dataset/images/val/'
     dest_mask_val = 'dataset/masks/val/'
 
-    # Create destination directories if they don't exist
     os.makedirs(dest_img_train, exist_ok=True)
     os.makedirs(dest_mask_train, exist_ok=True)
     os.makedirs(dest_img_val, exist_ok=True)

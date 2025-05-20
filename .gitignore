@@ -1,8 +1,7 @@
 dataset/images/
 dataset/masks/
 dataset/labels/
-pretrained_yolo/yolo11n-seg.pt
-pretrained_yolo/yolov8s.pt
+pretrained_yolo/
 runs/
 model_results/
 verify/
