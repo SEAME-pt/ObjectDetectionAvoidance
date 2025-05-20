@@ -6,7 +6,7 @@ import random
 import argparse
 import shutil
 
-def load_annotations(label_path, img_width, img_height, content_height=180, top_padding=70):
+def load_annotations(label_path, img_width, img_height):
     annotations = []
     if not os.path.exists(label_path):
         return annotations
@@ -35,7 +35,7 @@ def load_annotations(label_path, img_width, img_height, content_height=180, top_
             annotations.append({'class_id': class_id, 'box': box, 'polygon': polygon})
     return annotations
 
-def visualize_annotations(image, annotations):
+def visualize_annotations(image, annotations, img_width=320, img_height=320):
     vis_img = image.copy()
     
     # Draw annotations
@@ -50,16 +50,26 @@ def visualize_annotations(image, annotations):
             color = (255, 0, 0) 
         
         # Draw bounding box
-        if class_id != 80:
-            x_left, y_top, x_right, y_bottom = map(int, box)
-            cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
-            cv2.putText(vis_img, class_name, (x_left, y_top - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+        # if box:
+        #     x_left, y_top, x_right, y_bottom = map(int, box)
+        #     cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
+        #     cv2.putText(vis_img, class_name, (x_left, y_top - 10),
+        #                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
         
-        # Draw polygon
-        if class_id == 80 and polygon:
+        if polygon:
             points = np.array(polygon, dtype=np.int32).reshape((-1, 1, 2))
             cv2.polylines(vis_img, [points], isClosed=True, color=color, thickness=2)
+        # if polygon:
+        #     # Convert normalized coordinates to pixel coordinates
+        #     points = np.array(polygon, dtype=np.float32).reshape(-1, 2)  # [x1, y1, x2, y2, ...] -> [[x1, y1], ...]
+        #     points *= np.array([img_width, img_height])  # Scale to pixel space
+        #     points = points.astype(np.int32).reshape(-1, 1, 2)  # Reshape for cv2.polylines
+        #     cv2.polylines(vis_img, [points], isClosed=True, color=color, thickness=2)
+        #     # Optional: Label the polygon with class name at the first point
+        #     if len(points) > 0:
+        #         x, y = points[0, 0]
+        #         cv2.putText(vis_img, class_name, (x, y - 10),
+        #                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
     
     return vis_img
 
@@ -101,10 +111,10 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
             polygon = ann['polygon']
             
             # Validate box coordinates
-            x_left, y_top, x_right, y_bottom = box
-            if not (0 <= x_left < x_right <= width and 0 <= y_top < y_bottom <= height):
-                print(f"Invalid box coordinates in {label_path}: {box}")
-                invalid_annotations += 1
+            # x_left, y_top, x_right, y_bottom = box
+            # if not (0 <= x_left < x_right <= width and 0 <= y_top < y_bottom <= height):
+            #     print(f"Invalid box coordinates in {label_path}: {box}")
+            #     invalid_annotations += 1
             
             # Validate polygon
             if polygon:
