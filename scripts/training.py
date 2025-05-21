@@ -1,4 +1,27 @@
 from ultralytics import YOLO
+import shutil
+import os
+import albumentations as A
+from albumentations.pytorch import ToTensorV2
+
+def copy_files(source_dir, dest_dir):
+    os.makedirs(dest_dir, exist_ok=True)
+    # Iterate through all files in source directory
+    for item in os.listdir(source_dir):
+        source_path = os.path.join(source_dir, item)
+        dest_path = os.path.join(dest_dir, item)
+        shutil.copytree(source_path, dest_path, dirs_exist_ok=True)
+    shutil.rmtree(source_dir, ignore_errors=True)
+    os.makedirs(source_dir, exist_ok=True)
+
+source_directory = "../models/"
+destination_directory = "../old_models/"
+copy_files(source_directory, destination_directory)
+
+# transform = A.Compose([
+#     A.GaussNoise(var_limit=(5.0, 20.0), p=0.3),  # Low-intensity noise, applied to 30% of images
+#     A.GaussianBlur(blur_limit=(3, 5), p=0.3),    # Subtle blur, applied to 30% of images
+# ], additional_targets={'mask': 'mask'}) # Ensure masks are preserved
 
 model = YOLO("../pretrained_yolo/yolov8n-seg.pt")
 results = model.train(
@@ -13,24 +36,21 @@ results = model.train(
     fliplr=0.0,       # Disable horizontal flip
     mosaic=0.0,       # Disable mosaic
     erasing=0.0,      # Disable random erasing
+    # augment=transform,
     auto_augment=None,  # Disable auto-augmentation
-    # motion_blur=0.3,  # Motion blur with 20% probability
-    # motion_blur_kernel=[3, 7],  # Kernel size range
-    # gaussian_blur=0.3,  # Gaussian blur with 20% probability
-    # gaussian_blur_sigma=[0.1, 2.0],
-    # batch=8,
+    batch=8,
     device=0,
     workers=4,
     project="../models",
-    name="yolo-lane-aug2",
+    name="yolo-lane",
     exist_ok=True,
     freeze=10,  # Freeze backbone
-    lr0=0.0005,  # Lower learning rate
+    lr0=0.0009,  # Lower learning rate
     patience=10  # Early stopping
 )
 
 
-model = YOLO("../models/yolo-lane-aug2/weights/best.pt")
+model = YOLO("../models/yolo-lane/weights/best.pt")
 results = model.train(
     data="/home/seame/ObjectDetectionAvoidance/dataset/data.yaml",
     epochs=10,
@@ -51,6 +71,6 @@ results = model.train(
     name="yolo-lane-unfroze",
     exist_ok=True,
     freeze=0,  # Unfreeze all layers
-    lr0=0.0001,  # Very low learning rate
+    lr0=0.0005,  # Very low learning rate
     patience=5  # Early stopping
 )

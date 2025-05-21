@@ -1,9 +1,9 @@
 name: Generate Documentation
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - training_lanes
 
 jobs:
   generate-docs:
@@ -20,10 +20,14 @@ jobs:
           sudo apt-get install -y doxygen graphviz
           
       - name: Create docs directory if it does not exist
-        run: mkdir -p docs
+        run: |
+          cd doxyfiles 
+          mkdir -p docs
 
       - name: Generate Documentation
-        run: doxygen Doxyfile
+        run: |
+            cd doxyfiles
+            doxygen Doxyfile
 
       - name: Deploy Documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
