@@ -1,7 +1,9 @@
 dataset/images/
 dataset/masks/
+dataset/coco/
 dataset/labels/
 pretrained_yolo/
 runs/
 model_results/
 verify/
+dataset/
