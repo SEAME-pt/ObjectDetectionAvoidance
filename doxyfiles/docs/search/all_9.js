@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['object_20detection_20and_20avoidance_20',['Object Detection and Avoidance',['../md__home_seame_ObjectDetectionAvoidance_README.html',1,'']]],
+  ['output_5fdir_21',['output_dir',['../namespacetesting.html#a4530c4701cdf23fe1753451c3f764e0b',1,'testing']]],
+  ['output_5fdirectory_22',['output_directory',['../namespaceresize.html#afab18fbe4d0caca05607ff5200333f8c',1,'resize']]]
+];

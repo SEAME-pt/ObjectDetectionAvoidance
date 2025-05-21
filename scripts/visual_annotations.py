@@ -59,17 +59,6 @@ def visualize_annotations(image, annotations, img_width=320, img_height=320):
         if polygon:
             points = np.array(polygon, dtype=np.int32).reshape((-1, 1, 2))
             cv2.polylines(vis_img, [points], isClosed=True, color=color, thickness=2)
-        # if polygon:
-        #     # Convert normalized coordinates to pixel coordinates
-        #     points = np.array(polygon, dtype=np.float32).reshape(-1, 2)  # [x1, y1, x2, y2, ...] -> [[x1, y1], ...]
-        #     points *= np.array([img_width, img_height])  # Scale to pixel space
-        #     points = points.astype(np.int32).reshape(-1, 1, 2)  # Reshape for cv2.polylines
-        #     cv2.polylines(vis_img, [points], isClosed=True, color=color, thickness=2)
-        #     # Optional: Label the polygon with class name at the first point
-        #     if len(points) > 0:
-        #         x, y = points[0, 0]
-        #         cv2.putText(vis_img, class_name, (x, y - 10),
-        #                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
     
     return vis_img
 
@@ -138,10 +127,10 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
 
 def main():
     parser = argparse.ArgumentParser(description="Verify YOLO dataset annotations.")
-    shutil.rmtree('/home/seame/ObjectDetectionAvoidance/verify')
-    parser.add_argument('--image_dir', default='/home/seame/ObjectDetectionAvoidance/dataset/images/train',
+    shutil.rmtree('/home/seame/ObjectDetectionAvoidance/verify', ignore_errors=True)
+    parser.add_argument('--image_dir', default='/home/seame/ObjectDetectionAvoidance/scripts/img_resize',
                         help='Directory with images')
-    parser.add_argument('--label_dir', default='/home/seame/ObjectDetectionAvoidance/dataset/labels/train',
+    parser.add_argument('--label_dir', default='/home/seame/ObjectDetectionAvoidance/scripts/labels_lanes',
                         help='Directory with YOLO annotations')
     parser.add_argument('--output_dir', default='/home/seame/ObjectDetectionAvoidance/verify',
                         help='Directory to save visualized images')

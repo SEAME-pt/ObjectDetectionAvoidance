@@ -1,54 +1,40 @@
-
 ## Project Architecture
 
-We implemented **Tensor Regulators** so that the servo motors of our **JetRacer** and our **Raspberry Pi** have the neccesary Voltage to function properly.
+Training a Yolo Object detection model, with **Lane detection (segmentation)** as well.
 
-\image html ADR/structure.png "Project Structure" width=50%
+\image html ADR/Fluxograma.jpg "Project Structure" width=70%
 
-## Communication Structure
+## Inference Result
 
-The Jetson communicates with the Raspberry via **mqtt**, with a **Cloud Broker** (HiveMQ) and a local Broker. We chose mqtt since its latency is pretty small, and it seems to get the job done well. The Raspberry is the one to display the information in the **LCD**, with informations of Jetson's temperature and battery, and  also information of the speed directly from the speed sensor, with arduino via CAN.
+\image html scripts/runs/segment/predict/0010.jpg "Results" width=40%
 
-\image html ADR/mqtt.png "Communication Structure" width=50%
+This image is a result of running *testing.py*, so running predict() of our model. The **lane points** (polygons, mask) are in blue.
 
-## CAN Communication: Raspberry Pi and Arduino
-This project demonstrates how to establish a **CAN (Controller Area Network)** communication between an **Arduino** and a **Raspberry Pi**. The Arduino reads speed data from a sensor, calculates the speed, and sends it to the Raspberry Pi over a CAN bus using an **MCP2515 CAN module**. The Raspberry Pi processes and displays the received data using Python.
+## Creating Annotations
 
-## Overview
-Controller Area Network (CAN) is a robust communication protocol commonly used in automotive and industrial applications. This project involves:
-  Using an Arduino to send speed data via a CAN bus.
-  Configuring a Raspberry Pi to receive and process the data using Python.
+In the scripts directory file *create_annotations.py* we create the **annotation labels** for lane and object detection. How do we do this? We pass our images through a pre-trained **Yolo11-seg model**, to get the object polygons. Then, we use **supervision** tools to convert the lane **binary masks** to valid Yolo **polygons**. Finaly, we **merge** the object and lane annotations and get the label files.
 
-## Hardware Requirements
-- **Arduino Uno/Nano/Mega** or similar.
-- **Raspberry Pi** (any version with SPI support, e.g., Raspberry Pi 4).
-- **MCP2515 CAN Module** (two units: one for the Arduino and one for the Raspberry Pi).
-- Speed sensor (connected to Arduino).
----
+Be attentive towards the size of the images and masks, we decided to keep the images square, (training and testing), for compatibility. In the scripts directory, file *resize.py* you can resize images with **letterboxing** (keeping **aspect ratio**), or not.
 
-### Raspberry Pi to MCP2515 CAN Module Connection
-| MCP2515 Pin   | Raspberry Pi GPIO Pin |
-|---------------|------------------------|
-| **VCC**       | 3.3V or 5V            |
-| **GND**       | GND                   |
-| **CS**        | GPIO 8 (SPI0_CS0)     |
-| **SCK**       | GPIO 11 (SPI0_SCLK)   |
-| **MOSI**      | GPIO 10 (SPI0_MOSI)   |
-| **MISO**      | GPIO 9 (SPI0_MISO)    |
-| **INT**       | GPIO 25 (optional)    |
+In these scripts, you might need to change some function **parameters**, the original size of the images, and the **paths** to the images, so that it correctly links to your dataset and original size of your images.
 
----
+For debugging, you can **visualize the annotations** in *scripts/visual_annotations.py*.
 
-### Arduino Setup
-1. Install the **MCP_CAN** library in the Arduino IDE:
-   - Go to **Sketch > Include Library > Manage Libraries**.
-   - Search for `MCP_CAN`, CAN-BUS Shield and install it.
+## Datasets
 
-2. Upload the Arduino code (provided in our arduino directory).
+The datasets we used to train/validate are from: [Link to dataset](https://onedrive.live.com/?id=4EF9629CA3CB4B5E%213022&cid=4EF9629CA3CB4B5E&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBbDVMeTZPY1l2bE9sMDQxNHNSb3BGVkgyOTVXP2U9Q2pjbDYy).
+We used dataset8 and also some images we took of our lab.
 
-3. Connect the speed sensor to the Arduino and verify it calculates speed correctly.
+Since we noticed a decay in classifying objects outside those of my dataset. We added some COCO segmentation images, you can see this in *scripts/coco.py*.
 
----
+## Training and Testing
 
-### Raspberry Pi Setup
-(https://forums.raspberrypi.com/viewtopic.php?t=353451)
+In *training.py* (scripts directory) where we are retraining our model, we set the augmentations to None since it disrupts our images, and add other augmentations that dont disrupt them, such as brightness, saturation and hue.
+
+For testing, (in *scripts/testing.py*), we call our trained model and set it to **predict**, to test the prediction of a given validation image.
+
+## Jetson Nano
+
+In Jetson, we have an ultralytics Yolo **container**, specific for compatibility with Jetson Nano. This container only runs a yolo model above or equal to version 8. In here we will run our Yolo with lane detection.
+
+We have a self-hosted jetson runner, so that everytime I push the code to github, it will deploy my models to jetson, this code is in *.github/deploy_jetson.yml*.

@@ -7,3 +7,4 @@ runs/
 model_results/
 verify/
 dataset/
+coco/
