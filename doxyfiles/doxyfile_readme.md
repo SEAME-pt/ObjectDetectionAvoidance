@@ -6,7 +6,7 @@ Training a Yolo Object detection model, with **Lane detection (segmentation)** a
 
 ## Inference Result
 
-\image html scripts/runs/segment/predict/0010.jpg "Results" width=40%
+\image html scripts/runs/segment/predict/0010.jpg "Results" width=30%
 
 This image is a result of running *testing.py*, so running predict() of our model. The **lane points** (polygons, mask) are in blue.
 
