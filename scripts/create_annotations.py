@@ -85,7 +85,7 @@ def process_mask(mask_path, orig_width=320, orig_height=320, padded_size=320):
         return []
     _, binary_mask = cv2.threshold(mask, 0, 255, cv2.THRESH_BINARY)
     binary_mask = binary_mask // 255  # Convert to 0/1 for supervision
-    # binary_mask = (mask == 255).astype(np.uint8)
+    binary_mask = (mask == 255).astype(np.uint8)
     binary_mask = thin_mask(binary_mask)
     binary_mask = smooth_mask(binary_mask)
     polygon = mask_to_polygons(binary_mask)
@@ -173,8 +173,8 @@ def merge_annotations(output_dir, split):
 
 def main():
     output_dir = '/home/seame/ObjectDetectionAvoidance/scripts/labels_lanes'
-    img_dir = '/home/seame/ObjectDetectionAvoidance/scripts/img_resize'
-    mask_dir = '/home/seame/ObjectDetectionAvoidance/scripts/masks_resized'
+    img_dir = '/home/seame/new_dataset/train'
+    mask_dir = '/home/seame/new_dataset/mask'
     # mask_dir_val = '/home/seame/ObjectDetectionAvoidance/masks'
     # shutil.rmtree(os.path.join(output_dir, 'labels_objects'), ignore_errors=True)
     # shutil.rmtree(os.path.join(output_dir, 'labels'), ignore_errors=True)

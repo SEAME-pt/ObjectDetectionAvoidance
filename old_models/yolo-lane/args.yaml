@@ -28,7 +28,7 @@ resume: false
 amp: true
 fraction: 1.0
 profile: false
-freeze: 10
+freeze: null
 multi_scale: false
 overlap_mask: true
 mask_ratio: 4
@@ -69,7 +69,7 @@ simplify: true
 opset: null
 workspace: null
 nms: false
-lr0: 0.0009
+lr0: 0.001
 lrf: 0.01
 momentum: 0.937
 weight_decay: 0.0005

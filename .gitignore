@@ -8,3 +8,4 @@ model_results/
 verify/
 dataset/
 coco/
+scripts/labels_lanes

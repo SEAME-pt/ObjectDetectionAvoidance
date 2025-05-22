@@ -67,7 +67,8 @@ if __name__ == "__main__":
     # input_directory = "../dataset/images/train"  # Path to 640x640 images
     # output_directory = "../dataset/images/train_resized"  # Path for 320x320 images
     # resize_images(input_directory, output_directory)
-    input_directory = "./best"  # Path to 640x640 images
+    shutil.rmtree("./img_resize", ignore_errors=True)
+    input_directory = "/home/seame/seame_img_mask"  # Path to 640x640 images
     output_directory = "./img_resize"  # Path for 320x320 images
     resize_images(input_directory, output_directory)
     # input_directory = "../dataset/masks/train"  # Path to 640x640 images

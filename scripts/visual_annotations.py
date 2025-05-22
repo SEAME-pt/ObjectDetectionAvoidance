@@ -15,7 +15,7 @@ def load_annotations(label_path, img_width, img_height):
             parts = line.strip().split()
             if not parts:
                 continue
-            class_id = int(parts[0])
+            class_id = parts[0]
             if len(parts) > 5:  # Polygon + box
                 num_points = (len(parts) - 5) // 2
                 polygon = []
@@ -117,7 +117,7 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
         
         # Visualize
         vis_img = visualize_annotations(img, annotations)
-        output_path = os.path.join(output_dir, f"vis_{img_name}")
+        output_path = os.path.join(output_dir, f"{img_name}")
         cv2.imwrite(output_path, vis_img)
 
     print(f"Total bounding boxes: {total_boxes}")
@@ -128,13 +128,13 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
 def main():
     parser = argparse.ArgumentParser(description="Verify YOLO dataset annotations.")
     shutil.rmtree('/home/seame/ObjectDetectionAvoidance/verify', ignore_errors=True)
-    parser.add_argument('--image_dir', default='/home/seame/ObjectDetectionAvoidance/scripts/img_resize',
+    parser.add_argument('--image_dir', default='/home/seame/new_dataset/train/',
                         help='Directory with images')
-    parser.add_argument('--label_dir', default='/home/seame/ObjectDetectionAvoidance/scripts/labels_lanes',
+    parser.add_argument('--label_dir', default='./labels_lanes',
                         help='Directory with YOLO annotations')
     parser.add_argument('--output_dir', default='/home/seame/ObjectDetectionAvoidance/verify',
                         help='Directory to save visualized images')
-    parser.add_argument('--num_samples', type=int, default=30,
+    parser.add_argument('--num_samples', type=int, default=200,
                         help='Number of images to visualize')
     args = parser.parse_args()
 
