@@ -6,7 +6,7 @@ import random
 import argparse
 import shutil
 
-def load_annotations(label_path, img_width, img_height, content_height=360, top_padding=140):
+def load_annotations(label_path, img_width, img_height):
     annotations = []
     if not os.path.exists(label_path):
         return annotations
@@ -15,13 +15,13 @@ def load_annotations(label_path, img_width, img_height, content_height=360, top_
             parts = line.strip().split()
             if not parts:
                 continue
-            class_id = int(parts[0])
+            class_id = parts[0]
             if len(parts) > 5:  # Polygon + box
                 num_points = (len(parts) - 5) // 2
                 polygon = []
                 for i in range(num_points):
                     x = float(parts[1 + i * 2]) * img_width
-                    y = float(parts[2 + i * 2]) * content_height + top_padding 
+                    y = float(parts[2 + i * 2]) * img_height
                     polygon.append([x, y])
                 x_center = float(parts[1 + num_points * 2]) * img_width
                 y_center = float(parts[2 + num_points * 2]) * img_height
@@ -35,7 +35,7 @@ def load_annotations(label_path, img_width, img_height, content_height=360, top_
             annotations.append({'class_id': class_id, 'box': box, 'polygon': polygon})
     return annotations
 
-def visualize_annotations(image, annotations):
+def visualize_annotations(image, annotations, img_width=320, img_height=320):
     vis_img = image.copy()
     
     # Draw annotations
@@ -50,14 +50,13 @@ def visualize_annotations(image, annotations):
             color = (255, 0, 0) 
         
         # Draw bounding box
-        if class_id != 80:
-            x_left, y_top, x_right, y_bottom = map(int, box)
-            cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
-            cv2.putText(vis_img, class_name, (x_left, y_top - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+        # if box:
+        #     x_left, y_top, x_right, y_bottom = map(int, box)
+        #     cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
+        #     cv2.putText(vis_img, class_name, (x_left, y_top - 10),
+        #                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
         
-        # Draw polygon
-        if class_id == 80 and polygon:
+        if polygon:
             points = np.array(polygon, dtype=np.int32).reshape((-1, 1, 2))
             cv2.polylines(vis_img, [points], isClosed=True, color=color, thickness=2)
     
@@ -101,10 +100,10 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
             polygon = ann['polygon']
             
             # Validate box coordinates
-            x_left, y_top, x_right, y_bottom = box
-            if not (0 <= x_left < x_right <= width and 0 <= y_top < y_bottom <= height):
-                print(f"Invalid box coordinates in {label_path}: {box}")
-                invalid_annotations += 1
+            # x_left, y_top, x_right, y_bottom = box
+            # if not (0 <= x_left < x_right <= width and 0 <= y_top < y_bottom <= height):
+            #     print(f"Invalid box coordinates in {label_path}: {box}")
+            #     invalid_annotations += 1
             
             # Validate polygon
             if polygon:
@@ -118,7 +117,7 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
         
         # Visualize
         vis_img = visualize_annotations(img, annotations)
-        output_path = os.path.join(output_dir, f"vis_{img_name}")
+        output_path = os.path.join(output_dir, f"{img_name}")
         cv2.imwrite(output_path, vis_img)
 
     print(f"Total bounding boxes: {total_boxes}")
@@ -128,18 +127,24 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
 
 def main():
     parser = argparse.ArgumentParser(description="Verify YOLO dataset annotations.")
-    shutil.rmtree('/home/seame/ObjectDetectionAvoidance/dataset/verify')
-    parser.add_argument('--image_dir', default='/home/seame/ObjectDetectionAvoidance/dataset/images/train',
+    shutil.rmtree('/home/seame/ObjectDetectionAvoidance/verify', ignore_errors=True)
+    parser.add_argument('--image_dir', default='/home/seame/new_dataset/train/',
                         help='Directory with images')
-    parser.add_argument('--label_dir', default='/home/seame/ObjectDetectionAvoidance/dataset/labels/train',
+    parser.add_argument('--label_dir', default='./labels_lanes',
                         help='Directory with YOLO annotations')
-    parser.add_argument('--output_dir', default='/home/seame/ObjectDetectionAvoidance/dataset/verify',
+    parser.add_argument('--output_dir', default='/home/seame/ObjectDetectionAvoidance/verify',
                         help='Directory to save visualized images')
-    parser.add_argument('--num_samples', type=int, default=30,
+    parser.add_argument('--num_samples', type=int, default=50,
                         help='Number of images to visualize')
     args = parser.parse_args()
 
     verify_dataset(args.image_dir, args.label_dir, args.output_dir, args.num_samples)
+
+    image_dir = '../dataset/images/train'
+    label_dir = '../dataset/labels/train'
+    output_dir = '/home/seame/ObjectDetectionAvoidance/verify'
+    num_samples = 50
+    verify_dataset(image_dir, label_dir, output_dir, num_samples)
 
 if __name__ == '__main__':
     main()
