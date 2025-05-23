@@ -55,8 +55,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-        with:
-          ref: training_lanes
 
       - name: Install Doxygen
         run: |
@@ -71,20 +69,19 @@ jobs:
 
       - name: Prepare Documentation
         run: |
+          # Add .nojekyll to bypass Jekyll processing
           touch doxyfiles/docs/.nojekyll
+          # Remove any Jekyll config or SCSS files to prevent errors
           rm -f doxyfiles/docs/_config.yml
           find doxyfiles/docs -name "*.scss" -delete
 
-      - name: Deploy to gh-pages
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git checkout gh-pages
-          rm -rf ./*
-          cp -r doxyfiles/docs/* .
-          git add .
-          git commit -m "Deploy documentation to gh-pages" || echo "No changes to commit"
-          git push origin gh-pages
+      - name: Deploy Documentation to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Use GITHUB_TOKEN for same-repo deployment
+          publish_dir: doxyfiles/docs
+          publish_branch: gh-pages
+          force_orphan: true
 # name: Generate Documentation
 
 # on:
