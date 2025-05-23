@@ -50,3 +50,7 @@ For testing, (in *scripts/testing.py*), we call our trained model and set it to 
 In Jetson, we have an ultralytics Yolo **container**, specific for compatibility with Jetson Nano. This container only runs a yolo model above or equal to version 8. In here we will run our Yolo with lane detection.
 
 We have a self-hosted jetson runner, so that everytime I push the code to github, it will deploy my models to jetson, this code is in *.github/deploy_jetson.yml*.
+
+## Documentation
+
+For more documentation click here: [Doxygen](https://seame-pt.github.io/ObjectDetectionAvoidance/html/index.html).

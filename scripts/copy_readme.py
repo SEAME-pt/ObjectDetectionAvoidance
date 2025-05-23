@@ -14,9 +14,8 @@ def copy_markdown_lines(source_file, target_file, start_line=16):
         with open(target_file, 'r', encoding='utf-8') as dst:
             dest_lines = dst.readlines()
 
-        # Get content from start_line onward (0-based index)
-        # content_to_copy = lines[start_line - 1:]
-        content_to_copy = dest_lines[:16] + source_lines[15:]
+
+        content_to_copy = dest_lines[:16] + source_lines[15:-4]
 
         # Write to target file
         with open(target_file, 'w', encoding='utf-8') as tgt:

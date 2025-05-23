@@ -1,25 +1,25 @@
-name: Deploy Models to Jetson
+# name: Deploy Models to Jetson
 
-on:
-  push:
-    branches:
-      - training_lanes  
+# on:
+#   pull_request:
+#     branches:
+#       - dev
 
-jobs:
-  deploy:
-    runs-on: self-hosted  #Jetson runner
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+# jobs:
+#   deploy:
+#     runs-on: self-hosted  #Jetson runner
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v4
 
-      - name: Deploy Model to Jetson
-        run: |
-          cp -r /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models/* /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models/old_models/
-          find /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models/ -type f -delete
+#       - name: Deploy Model to Jetson
+#         run: |
+#           cp -r /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models/* /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models/old_models/
+#           find /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models/ -type f -delete
 
-          cp ./models/yolo-lane/weights/best.pt /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models/best_froze.pt
-          cp ./models/yolo-lane-unfroze/weights/best.pt /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models/best_unfroze.pt
+#           cp ./models/yolo-lane/weights/best.pt /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models/best_froze.pt
+#           cp ./models/yolo-lane-unfroze/weights/best.pt /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models/best_unfroze.pt
       
-      - name: Verify Deployment
-        run: |
-          ls -lh /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models
+#       - name: Verify Deployment
+#         run: |
+#           ls -lh /home/okdot5/Documents/joe-codes-v02/Autonomous-Lane-Detection/yolo_lane_models
