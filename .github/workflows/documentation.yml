@@ -75,13 +75,17 @@ jobs:
           rm -f doxyfiles/docs/_config.yml
           find doxyfiles/docs -name "*.scss" -delete
 
-      - name: Deploy Documentation to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
         with:
-          github_token: ${{ secrets.PAT_TOKEN }} # Use GITHUB_TOKEN for same-repo deployment
-          publish_dir: doxyfiles/docs
-          publish_branch: gh-pages
-          force_orphan: true
+          token: ${{ secrets.PAT_TOKEN }}
+          commit-message: "Deploy Doxygen documentation to gh-pages"
+          branch: gh-pages-update
+          base: gh-pages
+          title: "Update GitHub Pages documentation"
+          body: "Automated update of Doxygen documentation"
+          delete-branch: true
+          path: doxyfiles/docs
           
 # name: Generate Documentation
 
