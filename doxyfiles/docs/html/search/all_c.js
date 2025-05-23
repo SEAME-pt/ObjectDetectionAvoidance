@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['save_40',['save',['../namespacetesting.html#aea023b22c63d1f3442f3e3171ceaedca',1,'testing']]],
-  ['separate_5fmask_5fimg_41',['separate_mask_img',['../namespaceseparate__mask__img.html',1,'']]],
-  ['separate_5fmask_5fimg_2epy_42',['separate_mask_img.py',['../separate__mask__img_8py.html',1,'']]],
-  ['smooth_5fmask_43',['smooth_mask',['../namespacecreate__annotations.html#aecddf6572d8dbe2f64762206e036f083',1,'create_annotations']]],
-  ['split_5fdataset_44',['split_dataset',['../namespaceseparate__mask__img.html#a6d4bd12d9902c733291e3a845e1c65b6',1,'separate_mask_img']]]
+  ['generate_5ffilled_5fmasks_5760',['generate_filled_masks',['../namespacecoco__txt.html#a5b9160f2f9ca377a7ef9979010e5b63e',1,'coco_txt']]],
+  ['generate_5fsynthetic_5fobject_5fannotations_5761',['generate_synthetic_object_annotations',['../namespacecreate__annotations.html#aab74e34b57374fecd77dcc8bf89eb02e',1,'create_annotations']]],
+  ['get_5funique_5ffilename_5762',['get_unique_filename',['../namespaceseparate__mask__img.html#a915365cd54cb8aa7f3a068debf5c6b7c',1,'separate_mask_img']]]
 ];
