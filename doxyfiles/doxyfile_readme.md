@@ -2,7 +2,7 @@
 
 Training a Yolo Object detection model, with **Lane detection (segmentation)** as well.
 
-\image html ADR/Fluxograma.jpg "Project Structure" width=70%
+\image html ADR/Fluxograma.jpg "Project Structure" width=60%
 
 ## Inference Result
 
@@ -46,4 +46,8 @@ In *training.py* (scripts directory) where we are retraining our model, we set t
 
 For testing, (in *scripts/testing.py*), we call our trained model and set it to **predict**, to test the prediction of a given validation image.
 
+## Jetson Nano
 
+In Jetson, we have an ultralytics Yolo **container**, specific for compatibility with Jetson Nano. This container only runs a yolo model above or equal to version 8. In here we will run our Yolo with lane detection.
+
+We have a self-hosted jetson runner, so that everytime I push the code to github, it will deploy my models to jetson, this code is in *.github/deploy_jetson.yml*.
