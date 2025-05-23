@@ -51,10 +51,10 @@ jobs:
   generate-docs:
     name: Generate Documentation
     runs-on: ubuntu-latest
-    # permissions:
-    #   contents: write
-    #   pages: write
-    #   id-token: write
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout Code
@@ -72,7 +72,7 @@ jobs:
           doxygen Doxyfile
 
       - name: Deploy Documentation to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/deploy-pages@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # Use GITHUB_TOKEN for same-repo deployment
           publish_dir: doxyfiles/docs
