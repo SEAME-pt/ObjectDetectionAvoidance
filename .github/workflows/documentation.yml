@@ -40,7 +40,46 @@
 #           publish_branch: gh-pages
 #           force_orphan: true
 
-name: Generate Documentation
+# name: Generate Documentation
+
+# on:
+#   push:
+#     branches:
+#       - training_lanes
+
+# jobs:
+#   generate-docs:
+#     name: Generate Documentation
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: write
+#       pages: write
+#       id-token: write
+
+#     steps:
+#       - name: Checkout Code
+#         uses: actions/checkout@v3
+
+#       - name: Install Doxygen
+#         run: |
+#           sudo apt-get update
+#           sudo apt-get install -y doxygen graphviz
+
+#       - name: Generate Documentation
+#         run: |
+#           python3 ./scripts/copy_readme.py
+#           cd doxyfiles
+#           doxygen Doxyfile
+
+#       - name: Deploy Documentation to GitHub Pages
+#         uses: actions/deploy-pages@v2
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }} # Use GITHUB_TOKEN for same-repo deployment
+#           publish_dir: doxyfiles/docs
+#           # force_orphan: true
+#           keep_files: false
+
+name: Generate and Deploy Documentation
 
 on:
   push:
@@ -48,36 +87,46 @@ on:
       - training_lanes
 
 jobs:
-  generate-docs:
-    name: Generate Documentation
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pages: write
       id-token: write
-
+    
     steps:
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        
       - name: Install Doxygen
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen graphviz
 
-      - name: Generate Documentation
+      - name: Generate Docs
         run: |
           python3 ./scripts/copy_readme.py
           cd doxyfiles
           doxygen Doxyfile
 
-      - name: Deploy Documentation to GitHub Pages
-        uses: actions/deploy-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Use GITHUB_TOKEN for same-repo deployment
-          publish_dir: doxyfiles/docs
-          # force_orphan: true
-          keep_files: false
+          path: 'doxyfiles/docs'  # Your generated docs path
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
 
           
 # name: Generate Documentation
