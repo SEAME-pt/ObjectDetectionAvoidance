@@ -1,18 +1,22 @@
 import sys
 
-def copy_markdown_lines(source_file, target_file, start_line=10):
+def copy_markdown_lines(source_file, target_file, start_line=16):
     try:
         # Read source file
         with open(source_file, 'r', encoding='utf-8') as src:
-            lines = src.readlines()
+            source_lines = src.readlines()
 
         # Check if source file has enough lines
-        if len(lines) < start_line:
+        if len(source_lines) < start_line:
             print(f"Error: Source file '{source_file}' has fewer than {start_line} lines.")
             sys.exit(1)
 
+        with open(target_file, 'r', encoding='utf-8') as dst:
+            dest_lines = dst.readlines()
+
         # Get content from start_line onward (0-based index)
-        content_to_copy = lines[start_line - 1:]
+        # content_to_copy = lines[start_line - 1:]
+        content_to_copy = dest_lines[:16] + source_lines[15:]
 
         # Write to target file
         with open(target_file, 'w', encoding='utf-8') as tgt:
