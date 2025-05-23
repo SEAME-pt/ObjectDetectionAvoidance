@@ -79,53 +79,54 @@
 #           # force_orphan: true
 #           keep_files: false
 
-name: Generate and Deploy Documentation
+name: Deploy Documentation to GitHub Pages
 
 on:
   push:
     branches:
       - training_lanes
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
-    
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
-        
+
       - name: Install Doxygen
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen graphviz
 
-      - name: Generate Docs
+      - name: Generate Documentation
         run: |
           python3 ./scripts/copy_readme.py
           cd doxyfiles
           doxygen Doxyfile
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3  # Changed to v1
+        uses: actions/upload-pages-artifact@v2
         with:
           path: 'doxyfiles/docs'
+          retention-days: 1
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v3
 
           
