@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['true_110',['True',['../namespacetesting.html#a058614a5d36b5a9f7aaef7a7161d3f68',1,'testing']]]
+  ['val_5fratio_11653',['val_ratio',['../namespaceseparate__mask__img.html#ae313e3221dbec5b78d6ecfd77efbdfc9',1,'separate_mask_img']]]
 ];

@@ -71,10 +71,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a9ccdd7df0faec3043290ad3e817b3d69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetraining.html#a9ccdd7df0faec3043290ad3e817b3d69">model</a> = YOLO(&quot;../pretrained_yolo/yolov8n-seg.pt&quot;)</td></tr>
+<tr class="memitem:a9ccdd7df0faec3043290ad3e817b3d69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetraining.html#a9ccdd7df0faec3043290ad3e817b3d69">model</a> = YOLO(&quot;../models/yolo-lane_seame/weights/best.pt&quot;)</td></tr>
 <tr class="separator:a9ccdd7df0faec3043290ad3e817b3d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a425cdfbad6c9fcd610a50e51e35b9e29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetraining.html#a425cdfbad6c9fcd610a50e51e35b9e29">results</a></td></tr>
-<tr class="separator:a425cdfbad6c9fcd610a50e51e35b9e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a9ccdd7df0faec3043290ad3e817b3d69"></a>
@@ -84,52 +82,11 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">training.model = YOLO(&quot;../pretrained_yolo/yolov8n-seg.pt&quot;)</td>
+          <td class="memname">training.model = YOLO(&quot;../models/yolo-lane_seame/weights/best.pt&quot;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a425cdfbad6c9fcd610a50e51e35b9e29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a425cdfbad6c9fcd610a50e51e35b9e29">&#9670;&nbsp;</a></span>results</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">training.results</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  model.train(</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    data=<span class="stringliteral">&quot;/home/seame/ObjectDetectionAvoidance/dataset/data.yaml&quot;</span>,</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    epochs=30,</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    imgsz=320,</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    hsv_h=0.015,        <span class="comment"># hue</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    hsv_s=0.3,        <span class="comment"># saturation</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    hsv_v=0.3,        <span class="comment"># Brightness/contrast </span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    translate=0.0,    <span class="comment"># Disable translation</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    scale=0.0,        <span class="comment"># Disable scaling</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    fliplr=0.0,       <span class="comment"># Disable horizontal flip</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    mosaic=0.0,       <span class="comment"># Disable mosaic</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    erasing=0.0,      <span class="comment"># Disable random erasing</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    auto_augment=<span class="keywordtype">None</span>,  <span class="comment"># Disable auto-augmentation</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment"># motion_blur=0.3,  # Motion blur with 20% probability</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment"># motion_blur_kernel=[3, 7],  # Kernel size range</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment"># gaussian_blur=0.3,  # Gaussian blur with 20% probability</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment"># gaussian_blur_sigma=[0.1, 2.0],</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment"># batch=8,</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    device=0,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    workers=4,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    project=<span class="stringliteral">&quot;../models&quot;</span>,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    name=<span class="stringliteral">&quot;yolo-lane&quot;</span>,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    exist_ok=<span class="keyword">True</span>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    freeze=10,  <span class="comment"># Freeze backbone</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    lr0=0.0005,  <span class="comment"># Lower learning rate</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    patience=10  <span class="comment"># Early stopping</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;)</div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
