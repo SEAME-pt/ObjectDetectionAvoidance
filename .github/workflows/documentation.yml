@@ -51,6 +51,10 @@ jobs:
   generate-docs:
     name: Generate Documentation
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout Code
