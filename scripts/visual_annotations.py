@@ -134,11 +134,17 @@ def main():
                         help='Directory with YOLO annotations')
     parser.add_argument('--output_dir', default='/home/seame/ObjectDetectionAvoidance/verify',
                         help='Directory to save visualized images')
-    parser.add_argument('--num_samples', type=int, default=200,
+    parser.add_argument('--num_samples', type=int, default=50,
                         help='Number of images to visualize')
     args = parser.parse_args()
 
     verify_dataset(args.image_dir, args.label_dir, args.output_dir, args.num_samples)
+
+    image_dir = '../dataset/images/train'
+    label_dir = '../dataset/labels/train'
+    output_dir = '/home/seame/ObjectDetectionAvoidance/verify'
+    num_samples = 50
+    verify_dataset(image_dir, label_dir, output_dir, num_samples)
 
 if __name__ == '__main__':
     main()
