@@ -51,10 +51,10 @@ jobs:
   generate-docs:
     name: Generate Documentation
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
+    # permissions:
+    #   contents: write
+    #   pages: write
+    #   id-token: write
 
     steps:
       - name: Checkout Code
@@ -74,9 +74,10 @@ jobs:
       - name: Deploy Documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PAT_TOKEN2 }} # Use GITHUB_TOKEN for same-repo deployment
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Use GITHUB_TOKEN for same-repo deployment
           publish_dir: doxyfiles/docs
           force_orphan: true
+          keep_files: false
 
           
 # name: Generate Documentation
