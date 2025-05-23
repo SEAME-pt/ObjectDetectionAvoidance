@@ -70,10 +70,10 @@ jobs:
       - name: Deploy Documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PAT_TOKEN }} # Use GITHUB_TOKEN for same-repo deployment
+          github_token: ${{ secrets.PAT_TOKEN2 }} # Use GITHUB_TOKEN for same-repo deployment
           publish_dir: doxyfiles/docs
           force_orphan: true
-          
+
           
 # name: Generate Documentation
 
