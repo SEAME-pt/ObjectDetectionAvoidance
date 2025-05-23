@@ -86,20 +86,17 @@ on:
     branches:
       - training_lanes
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Install Doxygen
         run: |
@@ -112,22 +109,17 @@ jobs:
           cd doxyfiles
           doxygen Doxyfile
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'doxyfiles/docs'
-          retention-days: 1
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: doxyfiles/docs
+          token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+          clean: true
+          clean-exclude: |
+            .git
+            .gitignore
 
           
 # name: Generate Documentation
