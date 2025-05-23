@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['write_5fyolo_5fannotations_96',['write_yolo_annotations',['../namespacecreate__annotations.html#ae054a602e67ddb85a0e54e256e5827c8',1,'create_annotations']]]
+  ['verify_5fdataset_11632',['verify_dataset',['../namespacevisual__annotations.html#aec62d10c998a6abdacb6ed3f20469016',1,'visual_annotations']]],
+  ['visualize_5fannotations_11633',['visualize_annotations',['../namespacevisual__annotations.html#a4139f0e9c2ce68abb4911ddadc68d310',1,'visual_annotations']]]
 ];

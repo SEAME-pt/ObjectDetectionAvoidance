@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['process_5fdirectory_85',['process_directory',['../namespacecreate__annotations.html#aedef083af696ff5cbc321f4dfccdc517',1,'create_annotations']]],
-  ['process_5fimage_86',['process_image',['../namespacecreate__annotations.html#a3d8aa5521a997a292e448eb0fbe9f28f',1,'create_annotations']]],
-  ['process_5fmask_87',['process_mask',['../namespacecreate__annotations.html#a85f627dab1b85f8fb44a04750c696891',1,'create_annotations']]]
+  ['main_11621',['main',['../namespacecreate__annotations.html#a0132b8093bd12938b685ecd634e088d4',1,'create_annotations.main()'],['../namespacevisual__annotations.html#a9c65df2913b4e86ad32f022404016f0c',1,'visual_annotations.main()']]],
+  ['merge_5fannotations_11622',['merge_annotations',['../namespacecreate__annotations.html#a05db3a363a0eab024f9ba32c3ada6f51',1,'create_annotations']]]
 ];
