@@ -56,20 +56,32 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y doxygen graphviz python3
 
-      - name: Create docs directory if it does not exist
+      - name: Create docs directory
         run: |
           mkdir -p doxyfiles/docs
+          mkdir -p docs
 
-      - name: Generate Documentation
+      - name: Run copy_readme.py
         run: |
-          python3 scripts/copy_readme.py
+          python3 scripts/copy_readme.py || echo "copy_readme.py failed, continuing..."
+          ls -l doxyfiles/docs
+
+      - name: Generate Doxygen Documentation
+        run: |
           cd doxyfiles
           doxygen Doxyfile
+          ls -l docs
 
-      - name: Move Doxygen Output to Root Docs
+      - name: Copy Doxygen Output to Root Docs
         run: |
-          mkdir -p docs
-          cp -r doxyfiles/docs/* docs/
+          cp -r doxyfiles/docs/* docs/ || echo "No files to copy from doxyfiles/docs"
+          ls -l docs
+
+      - name: Ensure style.scss
+        run: |
+          mkdir -p docs/assets/css
+          echo "/* Minimal style.scss for Jekyll */" > docs/assets/css/style.scss
+          ls -l docs/assets/css
 
       - name: Deploy Documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
