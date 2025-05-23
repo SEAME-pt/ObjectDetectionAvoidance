@@ -50,13 +50,15 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Full history for accurate commits
 
       - name: Install Doxygen
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen graphviz python3
 
-      - name: Create docs directory
+      - name: Create Directories
         run: |
           mkdir -p doxyfiles/docs
           mkdir -p docs
@@ -77,11 +79,21 @@ jobs:
           cp -r doxyfiles/docs/* docs/ || echo "No files to copy from doxyfiles/docs"
           ls -l docs
 
-      - name: Ensure style.scss
+      - name: Create .nojekyll and Minimal Files
         run: |
+          touch docs/.nojekyll
           mkdir -p docs/assets/css
           echo "/* Minimal style.scss for Jekyll */" > docs/assets/css/style.scss
+          ls -l docs
           ls -l docs/assets/css
+
+      - name: Commit Changes to training_lanes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add docs
+          git commit -m "Update docs folder with Doxygen output" || echo "No changes to commit"
+          git push origin training_lanes
 
       - name: Deploy Documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
