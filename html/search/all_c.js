@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../README_8md.html',1,'']]],
-  ['resize_1',['resize',['../namespaceresize.html',1,'']]],
-  ['resize_2epy_2',['resize.py',['../resize_8py.html',1,'']]],
-  ['resize_5fimage_5fwith_5fletterbox_3',['resize_image_with_letterbox',['../namespaceresize.html#aa4bd014025a12191e1102efe4640cb16',1,'resize']]],
-  ['resize_5fimages_4',['resize_images',['../namespaceresize.html#a7d5e6d8e0544d4628cbcbc33c4ea3da7',1,'resize']]],
-  ['resize_5fimages_5fin_5fdirectory_5',['resize_images_in_directory',['../namespaceresize.html#a8887784c970206a959ef60a78508ebeb',1,'resize']]],
-  ['result_6',['result',['../index.html#autotoc_md1',1,'Inference Result'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html#autotoc_md8',1,'Inference Result']]],
-  ['results_7',['results',['../namespacetraining.html#a425cdfbad6c9fcd610a50e51e35b9e29',1,'training']]],
-  ['roboflow_8',['roboflow',['../index.html#autotoc_md3',1,'Roboflow'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html#autotoc_md10',1,'Roboflow']]]
+  ['process_5fdirectory_0',['process_directory',['../namespacecreate__annotations.html#a2e91a5e78489ec15c6eafc0abfdb78f1',1,'create_annotations']]],
+  ['process_5fimage_1',['process_image',['../namespacecreate__annotations.html#a974627ab481f339f8d67e645ad926827',1,'create_annotations']]],
+  ['process_5fmask_2',['process_mask',['../namespacecreate__annotations.html#afc8b04bccab91c08f75f7ad5b5938095',1,'create_annotations']]],
+  ['project_20architecture_3',['Project Architecture',['../index.html',1,'']]]
 ];

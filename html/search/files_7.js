@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['visual_5fannotations_2epy_79',['visual_annotations.py',['../visual__annotations_8py.html',1,'']]]
+  ['separate_5fmask_5fimg_2epy_0',['separate_mask_img.py',['../separate__mask__img_8py.html',1,'']]]
 ];

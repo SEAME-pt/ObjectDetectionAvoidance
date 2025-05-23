@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['ignore_5ferrors_0',['ignore_errors',['../namespaceresize.html#a0a3df846981f5af8e3cf87ef288939f8',1,'resize']]],
-  ['image_5fdir_1',['image_dir',['../namespacecoco__txt.html#a65d68c6b1c9ae9fe507601e35ea6123b',1,'coco_txt.image_dir'],['../namespaceseparate__mask__img.html#aedb474ee64e59f0c0770b90c007bae3a',1,'separate_mask_img.image_dir']]],
-  ['imgsz_2',['imgsz',['../namespacetesting.html#ad20faf01f93bedefeacd301df3a74be5',1,'testing']]],
-  ['inference_20result_3',['inference result',['../index.html#autotoc_md1',1,'Inference Result'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html#autotoc_md8',1,'Inference Result']]],
-  ['input_5fdirectory_4',['input_directory',['../namespaceresize.html#a2c8f07ec17ab3d96e0a348eb306bcc4a',1,'resize']]]
+  ['generate_5ffilled_5fmasks_0',['generate_filled_masks',['../namespacecoco__txt.html#a8aeb0f2618da95d5fb3904e2ac765a51',1,'coco_txt']]],
+  ['generate_5fsynthetic_5fobject_5fannotations_1',['generate_synthetic_object_annotations',['../namespacecreate__annotations.html#ac57134342ceedaed526b5d3b802d6669',1,'create_annotations']]],
+  ['get_5funique_5ffilename_2',['get_unique_filename',['../namespaceseparate__mask__img.html#a5e485b23e246d1c35d44f687e7f4ad6d',1,'separate_mask_img']]]
 ];

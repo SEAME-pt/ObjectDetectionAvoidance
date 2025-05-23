@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['process_5fdirectory_0',['process_directory',['../namespacecreate__annotations.html#a2e91a5e78489ec15c6eafc0abfdb78f1',1,'create_annotations']]],
-  ['process_5fimage_1',['process_image',['../namespacecreate__annotations.html#a974627ab481f339f8d67e645ad926827',1,'create_annotations']]],
-  ['process_5fmask_2',['process_mask',['../namespacecreate__annotations.html#afc8b04bccab91c08f75f7ad5b5938095',1,'create_annotations']]],
-  ['project_20architecture_3',['Project Architecture',['../index.html',1,'']]]
+  ['object_20detection_20and_20avoidance_0',['Object Detection and Avoidance',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html',1,'']]],
+  ['output_5fdirectory_1',['output_directory',['../namespaceresize.html#a34115d707c42e04c2a3789bd0bb8590a',1,'resize']]],
+  ['output_5flabel_5fdir_2',['output_label_dir',['../namespacecoco__txt.html#a74dff8ec8b789a0777484d56e4c50b60',1,'coco_txt']]],
+  ['output_5fmask_5fdir_3',['output_mask_dir',['../namespacecoco__txt.html#aa756faf1889d117747f473ab6903a76f',1,'coco_txt']]]
 ];
