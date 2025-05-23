@@ -24,9 +24,13 @@ jobs:
             python3 ./scripts/copy_readme.py
             cd doxyfiles
             doxygen Doxyfile
+
+      - name: Prepare Documentation
+        run: |
+          touch doxyfiles/docs/.nojekyll
+          rm -f doxyfiles/docs/_config.yml
+          find doxyfiles/docs -name "*.scss" -delete
       
-      - name: Add .nojekyll
-        run: touch doxyfiles/docs/.nojekyll
 
       - name: Deploy Documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
