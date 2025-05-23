@@ -4,7 +4,8 @@ dataset/coco/
 dataset/labels/
 pretrained_yolo/
 runs/
-model_results/
+models/yolo-lane_seame_second/
+models/yolo-lane_first_seame/
 verify/
 dataset/
 coco/
