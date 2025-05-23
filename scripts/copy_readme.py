@@ -33,6 +33,6 @@ def copy_markdown_lines(source_file, target_file, start_line=16):
 
 if __name__ == "__main__":
 
-    source_file = "../README.md"  # Path to the source file
-    target_file = "../doxyfiles/doxyfile_readme.md"  # Path to the target file
+    source_file = "./README.md"  # Path to the source file
+    target_file = "./doxyfiles/doxyfile_readme.md"  # Path to the target file
     copy_markdown_lines(source_file, target_file)
