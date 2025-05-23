@@ -113,7 +113,7 @@ jobs:
           doxygen Doxyfile
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1  # Changed to v1
+        uses: actions/upload-pages-artifact@v3  # Changed to v1
         with:
           path: 'doxyfiles/docs'
 
@@ -126,7 +126,7 @@ jobs:
     
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
 
           
 # name: Generate Documentation
