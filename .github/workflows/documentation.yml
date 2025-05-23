@@ -113,9 +113,9 @@ jobs:
           doxygen Doxyfile
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v1  # Changed to v1
         with:
-          path: 'doxyfiles/docs'  # Your generated docs path
+          path: 'doxyfiles/docs'
 
   deploy:
     needs: build
