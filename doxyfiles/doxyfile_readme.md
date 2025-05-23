@@ -1,3 +1,19 @@
+## Project Architecture
+
+Training a Yolo Object detection model, with **Lane detection (segmentation)** as well.
+
+\image html ADR/Fluxograma.jpg "Project Structure" width=70%
+
+## Inference Result
+
+Carla dataset, Yolo predicting validation images
+
+\image html models/yolo-lane-seame-unfroze/val_batch2_pred.jpg "Results" width=50%
+
+Yolo model predicting validation seame lab images
+
+\image html models/yolo-lane-seame-unfroze/val_batch0_pred.jpg "Results" width=50%
+
 
 This image is a result of running *testing.py*, so running predict() of our model. The **lane points** (polygons, mask) are in blue.
 
@@ -29,3 +45,5 @@ For debugging, you can **visualize the annotations** in *scripts/visual_annotati
 In *training.py* (scripts directory) where we are retraining our model, we set the augmentations to None since it disrupts our images, and add other augmentations that dont disrupt them, such as brightness, saturation and hue. After the first training where we freeze the backbone, you train again to unfreeze everything.
 
 For testing, (in *scripts/testing.py*), we call our trained model and set it to **predict**, to test the prediction of a given validation image.
+
+
