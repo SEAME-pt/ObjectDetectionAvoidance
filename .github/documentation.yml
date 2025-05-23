@@ -18,10 +18,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen graphviz
-          
-      - name: Create docs directory if it does not exist
-        run: |
-          mkdir -p docs
 
       - name: Generate Documentation
         run: |
@@ -33,9 +29,10 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PAT_TOKEN }}
-          publish_dir: .
+          publish_dir: doxyfiles/docs
+          publish_branch: gh-pages
           force_orphan: true
-          
+
 # name: Generate Documentation
 
 # on:
