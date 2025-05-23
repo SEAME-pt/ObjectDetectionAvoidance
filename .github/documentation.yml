@@ -24,6 +24,9 @@ jobs:
             python3 ./scripts/copy_readme.py
             cd doxyfiles
             doxygen Doxyfile
+      
+      - name: Add .nojekyll
+        run: touch doxyfiles/docs/.nojekyll
 
       - name: Deploy Documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
