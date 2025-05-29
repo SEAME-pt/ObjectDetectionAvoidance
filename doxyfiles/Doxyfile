@@ -1064,7 +1064,7 @@ EXAMPLE_RECURSIVE      = NO
 
 IMAGE_PATH             = ../ADR \
                         ../scripts/ \
-                        ../models/yolo-lane_seame/ \
+                        ../models/yolo-object-lane-unfroze/ \
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program

@@ -1,12 +1,14 @@
 ## Project Architecture
 
+You can find our **best models** in dev branch, *models/yolo-object-lane-unfroze/weights/*.
+
 Training a Yolo Object detection model, with **Lane detection (segmentation)** as well.
 
 \image html ADR/Fluxograma.jpg "Project Structure" width=60%
 
 ## Inference Result
 
-\image html models/yolo-object-lane/val_batch1_pred.jpg "Results" width=50%
+\image html models/yolo-object-lane-unfroze/val_batch1_pred.jpg "Results" width=50%
 
 This image is a result of running *testing.py*, so running predict() of our model. The **lane points** (polygons, mask) are in blue.
 
