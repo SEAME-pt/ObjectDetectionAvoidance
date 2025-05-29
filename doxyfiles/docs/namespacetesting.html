@@ -71,18 +71,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a9fd4a98fde0bd9c00dd9df94ac964569"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a9fd4a98fde0bd9c00dd9df94ac964569">model_path</a> = &quot;../models/yolo-lane-unfroze/weights/best.pt&quot;</td></tr>
+<tr class="memitem:a9fd4a98fde0bd9c00dd9df94ac964569"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a9fd4a98fde0bd9c00dd9df94ac964569">model_path</a> = &quot;../models/yolo-object-lane-unfroze/weights/last.pt&quot;</td></tr>
 <tr class="separator:a9fd4a98fde0bd9c00dd9df94ac964569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af12a05604e66b3dbb507089b3b3b829c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#af12a05604e66b3dbb507089b3b3b829c">images_dir</a> = &quot;../dataset/images/val&quot;</td></tr>
-<tr class="separator:af12a05604e66b3dbb507089b3b3b829c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c7a40b81e0e7450ab029717ccd087cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a7c7a40b81e0e7450ab029717ccd087cb">ignore_errors</a></td></tr>
-<tr class="separator:a7c7a40b81e0e7450ab029717ccd087cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4530c4701cdf23fe1753451c3f764e0b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a4530c4701cdf23fe1753451c3f764e0b">output_dir</a> = &quot;/home/seame/ObjectDetectionAvoidance/model_results&quot;</td></tr>
-<tr class="separator:a4530c4701cdf23fe1753451c3f764e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ea2cec6720b93a05ab4ac5c0d55c032"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a4ea2cec6720b93a05ab4ac5c0d55c032">exist_ok</a></td></tr>
-<tr class="separator:a4ea2cec6720b93a05ab4ac5c0d55c032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81baff8fb201cb466c511ea9298e7be7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a81baff8fb201cb466c511ea9298e7be7">model</a> = YOLO(<a class="el" href="namespacetesting.html#a9fd4a98fde0bd9c00dd9df94ac964569">model_path</a>)</td></tr>
 <tr class="separator:a81baff8fb201cb466c511ea9298e7be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05b64a9cba173d394688604994bab370"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a05b64a9cba173d394688604994bab370">folder_path</a> = &quot;../dataset/images/val&quot;</td></tr>
+<tr class="separator:a05b64a9cba173d394688604994bab370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64c21ccfbf281d47fc8e15c4c2d88e21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a64c21ccfbf281d47fc8e15c4c2d88e21">file_path</a> = os.path.join(<a class="el" href="namespacetesting.html#a05b64a9cba173d394688604994bab370">folder_path</a>, file_name)</td></tr>
+<tr class="separator:a64c21ccfbf281d47fc8e15c4c2d88e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea023b22c63d1f3442f3e3171ceaedca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#aea023b22c63d1f3442f3e3171ceaedca">save</a></td></tr>
 <tr class="separator:aea023b22c63d1f3442f3e3171ceaedca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a058614a5d36b5a9f7aaef7a7161d3f68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a058614a5d36b5a9f7aaef7a7161d3f68">True</a></td></tr>
@@ -107,42 +103,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a4ea2cec6720b93a05ab4ac5c0d55c032"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ea2cec6720b93a05ab4ac5c0d55c032">&#9670;&nbsp;</a></span>exist_ok</h2>
+<a id="a64c21ccfbf281d47fc8e15c4c2d88e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64c21ccfbf281d47fc8e15c4c2d88e21">&#9670;&nbsp;</a></span>file_path</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">testing.exist_ok</td>
+          <td class="memname">testing.file_path = os.path.join(<a class="el" href="namespacetesting.html#a05b64a9cba173d394688604994bab370">folder_path</a>, file_name)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a7c7a40b81e0e7450ab029717ccd087cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c7a40b81e0e7450ab029717ccd087cb">&#9670;&nbsp;</a></span>ignore_errors</h2>
+<a id="a05b64a9cba173d394688604994bab370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b64a9cba173d394688604994bab370">&#9670;&nbsp;</a></span>folder_path</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">testing.ignore_errors</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af12a05604e66b3dbb507089b3b3b829c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af12a05604e66b3dbb507089b3b3b829c">&#9670;&nbsp;</a></span>images_dir</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string testing.images_dir = &quot;../dataset/images/val&quot;</td>
+          <td class="memname">string testing.folder_path = &quot;../dataset/images/val&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -184,21 +166,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string testing.model_path = &quot;../models/yolo-lane-unfroze/weights/best.pt&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4530c4701cdf23fe1753451c3f764e0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4530c4701cdf23fe1753451c3f764e0b">&#9670;&nbsp;</a></span>output_dir</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">testing.output_dir = &quot;/home/seame/ObjectDetectionAvoidance/model_results&quot;</td>
+          <td class="memname">string testing.model_path = &quot;../models/yolo-object-lane-unfroze/weights/last.pt&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">

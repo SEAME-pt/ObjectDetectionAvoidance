@@ -72,63 +72,29 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4a8edbb8009548a25cd5892079e3bc75"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceresize.html#a4a8edbb8009548a25cd5892079e3bc75">resize_image_with_letterbox</a> (img_path, output_path, target_size=(320, 320))</td></tr>
-<tr class="separator:a4a8edbb8009548a25cd5892079e3bc75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a614a166e5cf360911fb28a8cd3f8c01a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceresize.html#a614a166e5cf360911fb28a8cd3f8c01a">resize_images_in_directory</a> (input_dir, output_dir, target_size=(320, 320))</td></tr>
-<tr class="separator:a614a166e5cf360911fb28a8cd3f8c01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa433846b2521434e60bb66f0e8a6da3f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceresize.html#aa433846b2521434e60bb66f0e8a6da3f">resize_images</a> (input_dir, output_dir, target_size=320)</td></tr>
-<tr class="separator:aa433846b2521434e60bb66f0e8a6da3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd55e483e0f3f0d833d7cc6c2edca38"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceresize.html#aadd55e483e0f3f0d833d7cc6c2edca38">resize_letterbox</a> (img_path, output_path, target_size=(320, 320))</td></tr>
+<tr class="separator:aadd55e483e0f3f0d833d7cc6c2edca38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a306c63cf4f81d307ec0081a57519a648"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceresize.html#a306c63cf4f81d307ec0081a57519a648">resize_images_letterbox</a> (input_dir, output_dir, target_size=(320, 320))</td></tr>
+<tr class="separator:a306c63cf4f81d307ec0081a57519a648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1bd5ca369fefb795b9955d90ecc60fb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceresize.html#aa1bd5ca369fefb795b9955d90ecc60fb">normal_resize_images</a> (input_dir, output_dir, target_size=320)</td></tr>
+<tr class="separator:aa1bd5ca369fefb795b9955d90ecc60fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aea06fada31eb5346f9a782913afb5c49"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceresize.html#aea06fada31eb5346f9a782913afb5c49">input_directory</a> = &quot;../dataset/images/val&quot;</td></tr>
+<tr class="memitem:aea06fada31eb5346f9a782913afb5c49"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceresize.html#aea06fada31eb5346f9a782913afb5c49">input_directory</a> = &quot;../bdd/images/train/img&quot;</td></tr>
 <tr class="separator:aea06fada31eb5346f9a782913afb5c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afab18fbe4d0caca05607ff5200333f8c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceresize.html#afab18fbe4d0caca05607ff5200333f8c">output_directory</a> = &quot;../dataset/images/val_resized&quot;</td></tr>
+<tr class="memitem:afab18fbe4d0caca05607ff5200333f8c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceresize.html#afab18fbe4d0caca05607ff5200333f8c">output_directory</a> = &quot;./img_resize/images&quot;</td></tr>
 <tr class="separator:afab18fbe4d0caca05607ff5200333f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a4a8edbb8009548a25cd5892079e3bc75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a8edbb8009548a25cd5892079e3bc75">&#9670;&nbsp;</a></span>resize_image_with_letterbox()</h2>
+<a id="aa1bd5ca369fefb795b9955d90ecc60fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1bd5ca369fefb795b9955d90ecc60fb">&#9670;&nbsp;</a></span>normal_resize_images()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def resize.resize_image_with_letterbox </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>img_path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>output_path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>target_size</em> = <code>(320,&#160;320)</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa433846b2521434e60bb66f0e8a6da3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa433846b2521434e60bb66f0e8a6da3f">&#9670;&nbsp;</a></span>resize_images()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def resize.resize_images </td>
+          <td class="memname">def resize.normal_resize_images </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>input_dir</em>, </td>
@@ -155,14 +121,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a614a166e5cf360911fb28a8cd3f8c01a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a614a166e5cf360911fb28a8cd3f8c01a">&#9670;&nbsp;</a></span>resize_images_in_directory()</h2>
+<a id="a306c63cf4f81d307ec0081a57519a648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a306c63cf4f81d307ec0081a57519a648">&#9670;&nbsp;</a></span>resize_images_letterbox()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def resize.resize_images_in_directory </td>
+          <td class="memname">def resize.resize_images_letterbox </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>input_dir</em>, </td>
@@ -189,6 +155,40 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aadd55e483e0f3f0d833d7cc6c2edca38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd55e483e0f3f0d833d7cc6c2edca38">&#9670;&nbsp;</a></span>resize_letterbox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def resize.resize_letterbox </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>img_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>output_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>target_size</em> = <code>(320,&#160;320)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="aea06fada31eb5346f9a782913afb5c49"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea06fada31eb5346f9a782913afb5c49">&#9670;&nbsp;</a></span>input_directory</h2>
@@ -197,7 +197,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string resize.input_directory = &quot;../dataset/images/val&quot;</td>
+          <td class="memname">string resize.input_directory = &quot;../bdd/images/train/img&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -211,7 +211,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string resize.output_directory = &quot;../dataset/images/val_resized&quot;</td>
+          <td class="memname">string resize.output_directory = &quot;./img_resize/images&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['output_5fdir_94',['output_dir',['../namespacetesting.html#a4530c4701cdf23fe1753451c3f764e0b',1,'testing']]],
-  ['output_5fdirectory_95',['output_directory',['../namespaceresize.html#afab18fbe4d0caca05607ff5200333f8c',1,'resize']]]
+  ['label_5fdirectory_11850',['label_directory',['../namespacebbox__seg.html#a118fd44307a18d1bf4d3ab68f914da32',1,'bbox_seg.label_directory()'],['../namespacecount__labels.html#a4793950b2b52179cb98939d0812aba96',1,'count_labels.label_directory()'],['../namespacedelete__images.html#af5fae933531d86b54c4bb1da6237d178',1,'delete_images.label_directory()']]]
 ];
