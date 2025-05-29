@@ -10,7 +10,7 @@ Training a Yolo Object detection model, with **Lane detection (segmentation)** a
 
 \image html models/yolo-object-lane-unfroze/val_batch1_pred.jpg "Results" width=50%
 
-This image is a result of running *testing.py*, so running predict() of our model. The **lane points** (polygons, mask) are in blue.
+<!-- This image is a result of running *testing.py*, so running predict() of our model. The **lane points** (polygons, mask) are in blue. -->
 
 ## Datasets
 
