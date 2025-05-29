@@ -35,7 +35,7 @@ def load_annotations(label_path, img_width, img_height):
             annotations.append({'class_id': class_id, 'box': box, 'polygon': polygon})
     return annotations
 
-def visualize_annotations(image, annotations, img_width=320, img_height=320):
+def visualize_annotations(image, annotations):
     vis_img = image.copy()
     
     # Draw annotations
@@ -50,11 +50,11 @@ def visualize_annotations(image, annotations, img_width=320, img_height=320):
             color = (255, 0, 0) 
         
         # Draw bounding box
-        # if box:
-        #     x_left, y_top, x_right, y_bottom = map(int, box)
-        #     cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
-        #     cv2.putText(vis_img, class_name, (x_left, y_top - 10),
-        #                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+        if box:
+            x_left, y_top, x_right, y_bottom = map(int, box)
+            cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
+            cv2.putText(vis_img, class_name, (x_left, y_top - 10),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
         
         if polygon:
             points = np.array(polygon, dtype=np.int32).reshape((-1, 1, 2))
@@ -126,24 +126,11 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
     print(f"Missing label files: {missing_labels}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Verify YOLO dataset annotations.")
     shutil.rmtree('/home/seame/ObjectDetectionAvoidance/verify', ignore_errors=True)
-    parser.add_argument('--image_dir', default='/home/seame/new_dataset/train/',
-                        help='Directory with images')
-    parser.add_argument('--label_dir', default='./labels_lanes',
-                        help='Directory with YOLO annotations')
-    parser.add_argument('--output_dir', default='/home/seame/ObjectDetectionAvoidance/verify',
-                        help='Directory to save visualized images')
-    parser.add_argument('--num_samples', type=int, default=50,
-                        help='Number of images to visualize')
-    args = parser.parse_args()
-
-    verify_dataset(args.image_dir, args.label_dir, args.output_dir, args.num_samples)
-
-    image_dir = '../dataset/images/train'
-    label_dir = '../dataset/labels/train'
+    image_dir = '../dataset/images/train'  # Adjust this path as needed
+    label_dir = '../dataset/labels/train/'
     output_dir = '/home/seame/ObjectDetectionAvoidance/verify'
-    num_samples = 50
+    num_samples = 10000
     verify_dataset(image_dir, label_dir, output_dir, num_samples)
 
 if __name__ == '__main__':

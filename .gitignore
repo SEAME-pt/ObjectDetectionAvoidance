@@ -1,6 +1,4 @@
 pretrained_yolo/
-runs/
-models/yolo-lane_seame_second/
-models/yolo-lane_first_seame/
 verify/
-dataset/
+dataset/images
+dataset/labels
