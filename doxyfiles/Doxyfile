@@ -946,7 +946,7 @@ WARN_LOGFILE           =
 INPUT = \
     ../ADR/ \
     ../scripts/ \
-    ../models/ \
+    ../models/yolo-lane_seame/ \
     doxyfile_readme.md \
     ../README.md \
 

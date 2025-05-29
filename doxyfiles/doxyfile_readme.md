@@ -6,14 +6,7 @@ Training a Yolo Object detection model, with **Lane detection (segmentation)** a
 
 ## Inference Result
 
-Carla dataset, Yolo predicting validation images
-
-\image html models/yolo-lane-seame-unfroze/val_batch2_pred.jpg "Results" width=50%
-
-Yolo model predicting validation seame lab images
-
-\image html models/yolo-lane-seame-unfroze/val_batch0_pred.jpg "Results" width=50%
-
+\image html models/yolo-object-lane/val_batch1_pred.jpg "Results" width=50%
 
 This image is a result of running *testing.py*, so running predict() of our model. The **lane points** (polygons, mask) are in blue.
 
