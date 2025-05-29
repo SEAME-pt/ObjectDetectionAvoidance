@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['readme_2emd_27',['README.md',['../README_8md.html',1,'']]],
-  ['resize_28',['resize',['../namespaceresize.html',1,'']]],
-  ['resize_2epy_29',['resize.py',['../resize_8py.html',1,'']]],
-  ['resize_5fimage_5fwith_5fletterbox_30',['resize_image_with_letterbox',['../namespaceresize.html#a4a8edbb8009548a25cd5892079e3bc75',1,'resize']]],
-  ['resize_5fimages_31',['resize_images',['../namespaceresize.html#aa433846b2521434e60bb66f0e8a6da3f',1,'resize']]],
-  ['resize_5fimages_5fin_5fdirectory_32',['resize_images_in_directory',['../namespaceresize.html#a614a166e5cf360911fb28a8cd3f8c01a',1,'resize']]],
-  ['results_33',['results',['../namespacetraining.html#a425cdfbad6c9fcd610a50e51e35b9e29',1,'training']]]
+  ['datasets_0',['datasets',['../index.html#autotoc_md2',1,'Datasets'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html#autotoc_md9',1,'Datasets']]],
+  ['delete_5fimages_1',['delete_images',['../namespacedelete__images.html',1,'']]],
+  ['delete_5fimages_2epy_2',['delete_images.py',['../delete__images_8py.html',1,'']]],
+  ['delete_5frandom_5fshort_5fbasename_5fimages_3',['delete_random_short_basename_images',['../namespacedelete__images.html#a734054f4244130fed23df8d89910ca53',1,'delete_images']]],
+  ['destination_5fdir_4',['destination_dir',['../namespacecopy__files.html#a945286254255fbaaae704d9c49f35ce8',1,'copy_files']]],
+  ['destination_5fdirectory_5',['destination_directory',['../namespacetraining.html#a03b5c670b50363e527d75cb24552b167',1,'training']]],
+  ['detection_20and_20avoidance_6',['Object Detection and Avoidance',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html',1,'']]],
+  ['dir_7',['dir',['../namespacecopy__files.html#ab4bcaf59f947f6516e81cdb44234e026',1,'copy_files']]],
+  ['documentation_8',['Documentation',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html#autotoc_md14',1,'']]],
+  ['doxyfile_5freadme_2emd_9',['doxyfile_readme.md',['../doxyfile__readme_8md.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['load_5fannotations_70',['load_annotations',['../namespacevisual__annotations.html#ac315a66c5f881115b772ed1347a4d2f5',1,'visual_annotations']]]
+  ['delete_5frandom_5fshort_5fbasename_5fimages_0',['delete_random_short_basename_images',['../namespacedelete__images.html#a734054f4244130fed23df8d89910ca53',1,'delete_images']]]
 ];

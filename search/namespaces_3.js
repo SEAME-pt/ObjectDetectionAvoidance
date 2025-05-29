@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['testing_54',['testing',['../namespacetesting.html',1,'']]],
-  ['training_55',['training',['../namespacetraining.html',1,'']]]
+  ['json_5ftxt_0',['json_txt',['../namespacejson__txt.html',1,'']]]
 ];
