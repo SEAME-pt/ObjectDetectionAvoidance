@@ -15,7 +15,7 @@ def copy_markdown_lines(source_file, target_file, start_line=12):
             dest_lines = dst.readlines()
 
 
-        content_to_copy = dest_lines[:16] + source_lines[15:-4]
+        content_to_copy = dest_lines[:start_line] + source_lines[start_line + 1:-4]
 
         # Write to target file
         with open(target_file, 'w', encoding='utf-8') as tgt:
