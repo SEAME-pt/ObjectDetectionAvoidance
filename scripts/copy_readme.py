@@ -1,6 +1,6 @@
 import sys
 
-def copy_markdown_lines(source_file, target_file, start_line=16):
+def copy_markdown_lines(source_file, target_file, start_line=10):
     try:
         # Read source file
         with open(source_file, 'r', encoding='utf-8') as src:
