@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_5fyolo_5fannotations_0',['write_yolo_annotations',['../namespacecreate__annotations.html#a9c5e108a72ccd281950d9b172fcf66e3',1,'create_annotations']]]
+  ['thin_5fmask_0',['thin_mask',['../namespacecreate__annotations.html#a2459f33d6e432e9065828d5734ba2d9e',1,'create_annotations']]]
 ];

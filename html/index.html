@@ -80,25 +80,20 @@ $(function() {
 Project Structure</div></div>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Inference Result</h1>
-<p>Carla dataset, Yolo predicting validation images</p>
 <div class="image">
-<img src="models/yolo-lane-seame-unfroze/val_batch2_pred.jpg" alt="" width="50%"/>
-<div class="caption">
-Results</div></div>
-<p>Yolo model predicting validation seame lab images</p>
-<div class="image">
-<img src="models/yolo-lane-seame-unfroze/val_batch0_pred.jpg" alt="" width="50%"/>
+<img src="models/yolo-object-lane/val_batch1_pred.jpg" alt="" width="50%"/>
 <div class="caption">
 Results</div></div>
 <p>This image is a result of running <em><a class="el" href="testing_8py.html">testing.py</a></em>, so running predict() of our model. The <b>lane points</b> (polygons, mask) are in blue.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Datasets</h1>
 <p>The datasets we used to train/validate are from: <a href="https://onedrive.live.com/?id=4EF9629CA3CB4B5E%213022&amp;cid=4EF9629CA3CB4B5E&amp;redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBbDVMeTZPY1l2bE9sMDQxNHNSb3BGVkgyOTVXP2U9Q2pjbDYy">Link to dataset</a>. We used dataset8 and also some images we took of our lab.</p>
-<p>I noticed a decay of object detection outside the objects of my dataset, despite the fact that i froze the backbone and lowered the learning rate. So you might need to add some object images to preserve more information if you have a big dataset and train with a lot of epochs.</p>
+<p>For lane and drivable area detection, we took some images of our lab and also used the bdd10k dataset. For the objects, we downloaded some datasets from Roboflow.</p>
+<p>I noticed a decay of object detection outside the objects of my dataset, despite the fact that i froze the backbone and lowered the learning rate. So you might need to add some object images to preserve more information.</p>
 <h2><a class="anchor" id="autotoc_md3"></a>
 Roboflow</h2>
-<p>To create the masks of our lab images, we used Roboflow to generate the annotations, then we added blur, noise and grayscale to the images and resized them, keeping the aspect ratio. After this, we downloaded to <b>COCO segmentation</b> format. This creates a Json file with all the annotations. So, in <em><a class="el" href="coco__txt_8py.html">scripts/coco_txt.py</a></em> we convert these annotations, that have the polygons of the lanes into binary masks, so we can then convert them back to normalized polygons and save them to a txt file. We tried to convert the COCO polygons directly to yolo-seg txt format but we noticed some weird values and loss of information. Therefore, converting first to binary masks helped preserve the lane shape.</p>
-<p>We also downloaded some Roboflow datasets of road objects, such as cross walks, street signs and so on, to add to our object detection Yolo model.</p>
+<p>To create the masks of our lab images, we used Roboflow to generate the annotations, then we added blur, noise and grayscale to the images and resized them to 320x320, keeping aspect ratio. After this, we downloaded to <b>COCO segmentation</b> format. This creates a Json file with all the annotations. So, in <em><a class="el" href="json__txt_8py.html">scripts/json_txt.py</a></em> we convert these annotations, that have the polygons of the lanes into binary masks, so we can then convert them back to normalized polygons and save them to a txt file. We tried to convert the COCO polygons directly to yolo-seg txt format but we noticed some weird values and loss of information. Therefore, converting first to binary masks helped preserve the lane shape.</p>
+<p>We downloaded a few Roboflow datasets of road objects, such as the <b>traffic lights, the stop, speed, danger and cross walk signs</b>. We then used <em><a class="el" href="remap__polygons_8py.html">scripts/remap_polygons.py</a></em> to reorder the labels to match our project and <em><a class="el" href="bbox__seg_8py.html">scripts/bbox_seg.py</a></em> to transform them into segmentation labels, since this is a segmentation model.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Creating Annotations</h1>
 <p>In the scripts directory file <em><a class="el" href="create__annotations_8py.html">create_annotations.py</a></em> we create the <b>annotation labels</b> for lane and object detection. How do we do this? We pass our images through a pre-trained <b>Yolo11-seg model</b>, to get the object polygons. Then, we use <b>supervision</b> tools to convert the lane <b>binary masks</b> to valid Yolo <b>polygons</b>. Finaly, we <b>merge</b> the object and lane annotations and get the label files.</p>
@@ -109,6 +104,7 @@ Creating Annotations</h1>
 Training and Testing</h1>
 <p>In <em><a class="el" href="training_8py.html">training.py</a></em> (scripts directory) where we are retraining our model, we set the augmentations to None since it disrupts our images, and add other augmentations that dont disrupt them, such as brightness, saturation and hue. After the first training where we freeze the backbone, you train again to unfreeze everything.</p>
 <p>For testing, (in <em><a class="el" href="testing_8py.html">scripts/testing.py</a></em>), we call our trained model and set it to <b>predict</b>, to test the prediction of a given validation image.</p>
+<p>For debugging we added <em><a class="el" href="count__labels_8py.html">scripts/count_labels.py</a></em> that outputs how many annotations we have for each class id.</p>
 <h1><a class="anchor" id="autotoc_md6"></a>
 Jetson Nano</h1>
 <p>In Jetson, we have an ultralytics Yolo <b>container</b>, specific for compatibility with Jetson Nano. This container only runs a yolo model above or equal to version 8. In here we will run our Yolo with lane detection.</p>

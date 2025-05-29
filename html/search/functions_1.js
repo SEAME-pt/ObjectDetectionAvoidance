@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['generate_5ffilled_5fmasks_0',['generate_filled_masks',['../namespacecoco__txt.html#a8aeb0f2618da95d5fb3904e2ac765a51',1,'coco_txt']]],
-  ['generate_5fsynthetic_5fobject_5fannotations_1',['generate_synthetic_object_annotations',['../namespacecreate__annotations.html#ac57134342ceedaed526b5d3b802d6669',1,'create_annotations']]],
-  ['get_5funique_5ffilename_2',['get_unique_filename',['../namespaceseparate__mask__img.html#a5e485b23e246d1c35d44f687e7f4ad6d',1,'separate_mask_img']]]
+  ['delete_5frandom_5fshort_5fbasename_5fimages_0',['delete_random_short_basename_images',['../namespacedelete__images.html#a734054f4244130fed23df8d89910ca53',1,'delete_images']]]
 ];

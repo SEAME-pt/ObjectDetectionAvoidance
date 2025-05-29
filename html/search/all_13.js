@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['save_5794',['save',['../namespacetesting.html#aea023b22c63d1f3442f3e3171ceaedca',1,'testing']]],
-  ['separate_5fmask_5fimg_5795',['separate_mask_img',['../namespaceseparate__mask__img.html',1,'']]],
-  ['separate_5fmask_5fimg_2epy_5796',['separate_mask_img.py',['../separate__mask__img_8py.html',1,'']]],
-  ['smooth_5fmask_5797',['smooth_mask',['../namespacecreate__annotations.html#aecddf6572d8dbe2f64762206e036f083',1,'create_annotations']]],
-  ['source_5ffile_5798',['source_file',['../namespacecopy__readme.html#a8b16578ef33fd04568b2bdc5f99d940d',1,'copy_readme']]],
-  ['split_5fdataset_5799',['split_dataset',['../namespaceseparate__mask__img.html#a6d4bd12d9902c733291e3a845e1c65b6',1,'separate_mask_img']]]
+  ['object_20detection_20and_20avoidance_0',['Object Detection and Avoidance',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html',1,'']]],
+  ['output_5fdirectory_1',['output_directory',['../namespacebbox__seg.html#af5789ff96deb1815a94c07bad742eda4',1,'bbox_seg.output_directory'],['../namespaceremap__polygons.html#a546ef718167ba6c0461acff1f31a3044',1,'remap_polygons.output_directory'],['../namespaceresize.html#ac84c29c090d775a2f5ba8444f0e2c7ae',1,'resize.output_directory']]],
+  ['output_5fmask_5fdir_2',['output_mask_dir',['../namespacejson__txt.html#a9f3a1874907de190e1303baf39573d83',1,'json_txt']]]
 ];

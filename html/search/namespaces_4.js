@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['visual_5fannotations_0',['visual_annotations',['../namespacevisual__annotations.html',1,'']]]
+  ['remap_5fpolygons_0',['remap_polygons',['../namespaceremap__polygons.html',1,'']]],
+  ['rename_5ffiles_1',['rename_files',['../namespacerename__files.html',1,'']]],
+  ['resize_2',['resize',['../namespaceresize.html',1,'']]]
 ];

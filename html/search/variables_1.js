@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['file_5fpath_0',['file_path',['../namespacetesting.html#a64c21ccfbf281d47fc8e15c4c2d88e21',1,'testing']]],
-  ['folder_5fpath_1',['folder_path',['../namespacetesting.html#a63a98fb2316f4d10459a75fcfdc24f80',1,'testing']]]
+  ['destination_5fdir_0',['destination_dir',['../namespacecopy__files.html#a945286254255fbaaae704d9c49f35ce8',1,'copy_files']]],
+  ['destination_5fdirectory_1',['destination_directory',['../namespacetraining.html#a03b5c670b50363e527d75cb24552b167',1,'training']]],
+  ['dir_2',['dir',['../namespacecopy__files.html#ab4bcaf59f947f6516e81cdb44234e026',1,'copy_files']]]
 ];

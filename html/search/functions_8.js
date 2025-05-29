@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['verify_5fdataset_0',['verify_dataset',['../namespacevisual__annotations.html#a56bbe44bd494e3c42ca0ac4fe991372a',1,'visual_annotations']]],
-  ['visualize_5fannotations_1',['visualize_annotations',['../namespacevisual__annotations.html#a8cb902a286450bdc60ed2ddfa5468411',1,'visual_annotations']]]
+  ['smooth_5fmask_0',['smooth_mask',['../namespacecreate__annotations.html#af3f26308ab1c77f339acb11e42971057',1,'create_annotations']]],
+  ['split_5fdataset_1',['split_dataset',['../namespaceseparate__mask__img.html#a8529daf39399d1f17b2a028ecf5663ef',1,'separate_mask_img']]]
 ];

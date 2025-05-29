@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['save_0',['save',['../namespacetesting.html#aea023b22c63d1f3442f3e3171ceaedca',1,'testing']]],
-  ['separate_5fmask_5fimg_1',['separate_mask_img',['../namespaceseparate__mask__img.html',1,'']]],
-  ['separate_5fmask_5fimg_2epy_2',['separate_mask_img.py',['../separate__mask__img_8py.html',1,'']]],
-  ['smooth_5fmask_3',['smooth_mask',['../namespacecreate__annotations.html#af3f26308ab1c77f339acb11e42971057',1,'create_annotations']]],
-  ['source_5ffile_4',['source_file',['../namespacecopy__readme.html#a06f3c431ccd4572dac8d4121885b196e',1,'copy_readme']]],
-  ['split_5fdataset_5',['split_dataset',['../namespaceseparate__mask__img.html#a8529daf39399d1f17b2a028ecf5663ef',1,'separate_mask_img']]]
+  ['ignore_5ferrors_0',['ignore_errors',['../namespacetraining.html#a4a334f7ae3c20c3372d291873ad6fb7e',1,'training']]],
+  ['image_5fdir_1',['image_dir',['../namespaceseparate__mask__img.html#aedb474ee64e59f0c0770b90c007bae3a',1,'separate_mask_img.image_dir'],['../namespacerename__files.html#a3628a21c385915068ca1a1f6ac26a822',1,'rename_files.image_dir'],['../namespacejson__txt.html#acdb915f24c699894bf2c9f2baed99c87',1,'json_txt.image_dir']]],
+  ['image_5fdirectory_2',['image_directory',['../namespacedelete__images.html#a74279987e661ae9d5bda4166cf3600e2',1,'delete_images']]],
+  ['images_2d44_2d_5fjpg_2erf_2e90f0ed3f3fe588572e90ecb4f5dcff77_2ejpg_3',['images-44-_jpg.rf.90f0ed3f3fe588572e90ecb4f5dcff77.jpg',['../predict31_2images-44-__jpg_8rf_890f0ed3f3fe588572e90ecb4f5dcff77_8jpg.html',1,'(Global Namespace)'],['../predict32_2images-44-__jpg_8rf_890f0ed3f3fe588572e90ecb4f5dcff77_8jpg.html',1,'(Global Namespace)'],['../predict33_2images-44-__jpg_8rf_890f0ed3f3fe588572e90ecb4f5dcff77_8jpg.html',1,'(Global Namespace)'],['../predict34_2images-44-__jpg_8rf_890f0ed3f3fe588572e90ecb4f5dcff77_8jpg.html',1,'(Global Namespace)'],['../predict30_2images-44-__jpg_8rf_890f0ed3f3fe588572e90ecb4f5dcff77_8jpg.html',1,'(Global Namespace)']]],
+  ['images_5fjpeg_2erf_2e0b34a73720f07556b1dfa44e107e0aeb_2ejpg_4',['images_jpeg.rf.0b34a73720f07556b1dfa44e107e0aeb.jpg',['../predict35_2images__jpeg_8rf_80b34a73720f07556b1dfa44e107e0aeb_8jpg.html',1,'(Global Namespace)'],['../predict36_2images__jpeg_8rf_80b34a73720f07556b1dfa44e107e0aeb_8jpg.html',1,'(Global Namespace)'],['../predict34_2images__jpeg_8rf_80b34a73720f07556b1dfa44e107e0aeb_8jpg.html',1,'(Global Namespace)'],['../predict33_2images__jpeg_8rf_80b34a73720f07556b1dfa44e107e0aeb_8jpg.html',1,'(Global Namespace)'],['../predict32_2images__jpeg_8rf_80b34a73720f07556b1dfa44e107e0aeb_8jpg.html',1,'(Global Namespace)'],['../predict31_2images__jpeg_8rf_80b34a73720f07556b1dfa44e107e0aeb_8jpg.html',1,'(Global Namespace)'],['../predict3_2images__jpeg_8rf_80b34a73720f07556b1dfa44e107e0aeb_8jpg.html',1,'(Global Namespace)'],['../predict2_2images__jpeg_8rf_80b34a73720f07556b1dfa44e107e0aeb_8jpg.html',1,'(Global Namespace)'],['../predict_2images__jpeg_8rf_80b34a73720f07556b1dfa44e107e0aeb_8jpg.html',1,'(Global Namespace)']]],
+  ['imgsz_5',['imgsz',['../namespacetesting.html#ad20faf01f93bedefeacd301df3a74be5',1,'testing']]],
+  ['include_5fsubdirs_6',['include_subdirs',['../namespacecopy__files.html#abcf40e1ec81d96ef93afece110960774',1,'copy_files']]],
+  ['inference_20result_7',['inference result',['../index.html#autotoc_md1',1,'Inference Result'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html#autotoc_md8',1,'Inference Result']]],
+  ['input_5fdirectory_8',['input_directory',['../namespaceresize.html#ad914bac470fbe5428e2100eb4b89c3cb',1,'resize']]]
 ];

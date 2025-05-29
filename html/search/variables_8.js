@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['val_5fratio_0',['val_ratio',['../namespaceseparate__mask__img.html#ae313e3221dbec5b78d6ecfd77efbdfc9',1,'separate_mask_img']]]
+  ['results_0',['results',['../namespacetraining.html#a425cdfbad6c9fcd610a50e51e35b9e29',1,'training']]]
 ];
