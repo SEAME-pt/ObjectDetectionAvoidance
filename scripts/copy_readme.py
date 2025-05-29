@@ -1,6 +1,6 @@
 import sys
 
-def copy_markdown_lines(source_file, target_file, start_line=16):
+def copy_markdown_lines(source_file, target_file, start_line=12):
     try:
         # Read source file
         with open(source_file, 'r', encoding='utf-8') as src:
@@ -15,7 +15,7 @@ def copy_markdown_lines(source_file, target_file, start_line=16):
             dest_lines = dst.readlines()
 
 
-        content_to_copy = dest_lines[:16] + source_lines[15:-4]
+        content_to_copy = dest_lines[:start_line] + source_lines[start_line + 1:-4]
 
         # Write to target file
         with open(target_file, 'w', encoding='utf-8') as tgt:
@@ -31,7 +31,6 @@ def copy_markdown_lines(source_file, target_file, start_line=16):
         sys.exit(1)
 
 if __name__ == "__main__":
-
     source_file = "./README.md"  # Path to the source file
     target_file = "./doxyfiles/doxyfile_readme.md"  # Path to the target file
     copy_markdown_lines(source_file, target_file)
