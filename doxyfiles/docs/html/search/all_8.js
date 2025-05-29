@@ -1,7 +1,0 @@
-var searchData=
-[
-  ['boxf1_5fcurve_2epng_5282',['BoxF1_curve.png',['../yolo-lane-seame-unfroze_2BoxF1__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__first__seame_2BoxF1__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__seame_2BoxF1__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__seame__second_2BoxF1__curve_8png.html',1,'(Global Namespace)']]],
-  ['boxp_5fcurve_2epng_5283',['BoxP_curve.png',['../yolo-lane-seame-unfroze_2BoxP__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__first__seame_2BoxP__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__seame_2BoxP__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__seame__second_2BoxP__curve_8png.html',1,'(Global Namespace)']]],
-  ['boxpr_5fcurve_2epng_5284',['BoxPR_curve.png',['../yolo-lane-seame-unfroze_2BoxPR__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__first__seame_2BoxPR__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__seame_2BoxPR__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__seame__second_2BoxPR__curve_8png.html',1,'(Global Namespace)']]],
-  ['boxr_5fcurve_2epng_5285',['BoxR_curve.png',['../yolo-lane-seame-unfroze_2BoxR__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__first__seame_2BoxR__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__seame_2BoxR__curve_8png.html',1,'(Global Namespace)'],['../yolo-lane__seame__second_2BoxR__curve_8png.html',1,'(Global Namespace)']]]
-];

@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['ignore_5ferrors_87',['ignore_errors',['../namespacetesting.html#a7c7a40b81e0e7450ab029717ccd087cb',1,'testing']]],
-  ['image_5fdir_88',['image_dir',['../namespaceseparate__mask__img.html#aedb474ee64e59f0c0770b90c007bae3a',1,'separate_mask_img']]],
-  ['images_5fdir_89',['images_dir',['../namespacetesting.html#af12a05604e66b3dbb507089b3b3b829c',1,'testing']]],
-  ['imgsz_90',['imgsz',['../namespacetesting.html#ad20faf01f93bedefeacd301df3a74be5',1,'testing']]],
-  ['input_5fdirectory_91',['input_directory',['../namespaceresize.html#aea06fada31eb5346f9a782913afb5c49',1,'resize']]]
+  ['file_5fpath_11842',['file_path',['../namespacetesting.html#a64c21ccfbf281d47fc8e15c4c2d88e21',1,'testing']]],
+  ['folder_5fpath_11843',['folder_path',['../namespacetesting.html#a05b64a9cba173d394688604994bab370',1,'testing']]]
 ];

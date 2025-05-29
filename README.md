@@ -1,5 +1,7 @@
 # Object Detection and Avoidance
 
+You can find our **best models** in dev branch, *models/yolo-object-lane-unfroze/weights/*.
+
 Training a Yolo Object detection model, with **Lane detection (segmentation)** as well.
 
 ![Project Structure](ADR/Fluxograma.jpg)
