@@ -48,6 +48,7 @@ def copy_directory_files(source_dir, dest_dir, include_subdirs=True):
 
 
 def copy_matching_files(dir1, dir2, dest_dir):
+    # Validate input directories
     if not os.path.exists(dir1):
         print(f"Directory 1 does not exist: {dir1}")
         return
@@ -57,61 +58,51 @@ def copy_matching_files(dir1, dir2, dest_dir):
     
     # Create destination directory if it doesn't exist
     os.makedirs(dest_dir, exist_ok=True)
+    print(f"Created/Verified destination directory: {dest_dir}")
     
-    # Get list of files in both directories
-    files_dir1 = set(os.listdir(dir1))
-    files_dir2 = set(os.listdir(dir2))
+    # Get list of files in both directories with base names
+    files_dir1 = {os.path.splitext(f)[0]: f for f in os.listdir(dir1) if os.path.isfile(os.path.join(dir1, f))}
+    files_dir2 = {os.path.splitext(f)[0]: f for f in os.listdir(dir2) if os.path.isfile(os.path.join(dir2, f))}
     
-    # Find matching files (same name and extension)
-    matching_files = files_dir1.intersection(files_dir2)
+    # Debug: List files
+    print(f"Files in {dir1}: {list(files_dir1.values())}")
+    print(f"Files in {dir2}: {list(files_dir2.values())}")
     
-    if not matching_files:
-        print("No matching files found between the two directories.")
-        return
+    # Find matching base filenames
+    matching_bases = set(files_dir1.keys()) & set(files_dir2.keys())
+    print(f"Found {len(matching_bases)} matching base filenames: {matching_bases}")
     
-    # Counter for copied files
-    copied_count = 0
-    
-    # Copy matching files from both directories
-    for file in matching_files:
-        src_path1 = os.path.join(dir1, file)
-        src_path2 = os.path.join(dir2, file)
-        dst_path = os.path.join(dest_dir, file)
+    # Copy matching files to dest_dir
+    copied_files = 0
+    for base in matching_bases:
+        file1 = files_dir1[base]
+        file2 = files_dir2[base]
         
-        # Copy from dir1
-        # if os.path.isfile(src_path1):
-        #     try:
-        #         shutil.copy2(src_path1, dst_path)
-        #         print(f"Copied from dir1: {file}")
-        #         copied_count += 1
-        #     except (shutil.Error, OSError) as e:
-        #         print(f"Error copying {file} from dir1: {e}")
+        src1 = os.path.join(dir1, file1)
+        src2 = os.path.join(dir2, file2)
+        dst1 = os.path.join(dest_dir, file1)
+        dst2 = os.path.join(dest_dir, file2)
         
-        # Copy from dir2 (if not already copied due to same name)
-        if os.path.isfile(src_path2) and not os.path.exists(dst_path):
-            try:
-                shutil.copy2(src_path2, dst_path)
-                print(f"Copied from dir2: {file}")
-                copied_count += 1
-            except (shutil.Error, OSError) as e:
-                print(f"Error copying {file} from dir2: {e}")
+        try:
+            # shutil.copy2(src1, dst1)  # Preserves metadata
+            shutil.copy2(src2, dst2)
+            print(f"Copied: {file1} -> {dst1}")
+            print(f"Copied: {file2} -> {dst2}")
+            copied_files += 1
+        except Exception as e:
+            print(f"Error copying {file1} or {file2}: {e}")
     
-    print(f"Total files copied: {copied_count}")
+    print(f"Total files copied: {copied_files}")
 
-# Example usage
+
 if __name__ == "__main__":
-    dir = "../cross/train/images"  
-    destination_dir = "../dataset/images/train"  
-    copy_directory_files(dir, destination_dir, include_subdirs=True)
-
-    dir = "../cross/train/labels_seg"  
-    destination_dir = "../dataset/labels/train"  
-    copy_directory_files(dir, destination_dir, include_subdirs=True)
-
-    # dir = "../dataset/datasets/speed/val/images" 
-    # destination_dir = "../dataset/images/val"
+    # dir = "../da_seame/train/"  
+    # destination_dir = "../dataset/images/train"  
     # copy_directory_files(dir, destination_dir, include_subdirs=True)
 
-    # dir = "../dataset/datasets/speed/val/labels_seg" 
-    # destination_dir = "../dataset/labels/val"
+    dir1 = "./chosen/"
+    dir2 = "/home/seame/frames/frames3"  
+    destination_dir = "./chosen/images"  
+    copy_matching_files(dir1, dir2, destination_dir)
     # copy_directory_files(dir, destination_dir, include_subdirs=True)
+

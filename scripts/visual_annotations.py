@@ -6,61 +6,151 @@ import random
 import argparse
 import shutil
 
-def load_annotations(label_path, img_width, img_height):
+
+def load_annotations(label_path, img_width=320, img_height=320):
     annotations = []
     if not os.path.exists(label_path):
+        print(f"Annotation file not found: {label_path}")
         return annotations
+    
     with open(label_path, 'r') as f:
         for line in f:
             parts = line.strip().split()
             if not parts:
                 continue
-            class_id = parts[0]
-            if len(parts) > 5:  # Polygon + box
-                num_points = (len(parts) - 5) // 2
-                polygon = []
-                for i in range(num_points):
-                    x = float(parts[1 + i * 2]) * img_width
-                    y = float(parts[2 + i * 2]) * img_height
-                    polygon.append([x, y])
-                x_center = float(parts[1 + num_points * 2]) * img_width
-                y_center = float(parts[2 + num_points * 2]) * img_height
-                width = float(parts[3 + num_points * 2]) * img_width
-                height = float(parts[4 + num_points * 2]) * img_height
-                box = [x_center - width / 2, y_center - height / 2,
-                       x_center + width / 2, y_center + height / 2]
-            else:
-                print(f"Invalid annotation format in {label_path}: {line.strip()}")
+            try:
+                class_id = int(parts[0])  # Convert to integer
+                if len(parts) > 5:  # Polygon + box
+                    num_points = (len(parts) - 5) // 2
+                    polygon = []
+                    for i in range(num_points):
+                        x = float(parts[1 + i * 2]) * img_width
+                        y = float(parts[2 + i * 2]) * img_height
+                        # Clip coordinates to image bounds
+                        x = np.clip(x, 0, img_width)
+                        y = np.clip(y, 0, img_height)
+                        polygon.append([x, y])
+                    x_center = float(parts[1 + num_points * 2]) * img_width
+                    y_center = float(parts[2 + num_points * 2]) * img_height
+                    width = float(parts[3 + num_points * 2]) * img_width
+                    height = float(parts[4 + num_points * 2]) * img_height
+                    # Compute box corners
+                    x_left = np.clip(x_center - width / 2, 0, img_width)
+                    y_top = np.clip(y_center - height / 2, 0, img_height)
+                    x_right = np.clip(x_center + width / 2, 0, img_width)
+                    y_bottom = np.clip(y_center + height / 2, 0, img_height)
+                    box = [x_left, y_top, x_right, y_bottom]
+                else:
+                    print(f"Invalid annotation format in {label_path}: {line.strip()}")
+                    continue
+                annotations.append({'class_id': class_id, 'box': box, 'polygon': polygon})
+                print(f"Loaded annotation: class_id={class_id}, polygon_points={len(polygon)}, box={box}")
+            except ValueError as e:
+                print(f"Error parsing annotation in {label_path}: {line.strip()} ({e})")
                 continue
-            annotations.append({'class_id': class_id, 'box': box, 'polygon': polygon})
     return annotations
 
 def visualize_annotations(image, annotations):
-    vis_img = image.copy()
+    # Validate image
+    if not isinstance(image, np.ndarray) or len(image.shape) != 3 or image.shape[2] != 3:
+        print("Error: Input image must be a 3-channel RGB numpy array")
+        return image
     
+    vis_img = image.copy()
+    img_height, img_width = image.shape[:2]
+    print(f"Visualizing on image size: {img_width}x{img_height}")
+
+    # Define colors (RGB)
+    colors = {
+        12: (0, 255, 0),  # Green for drivable area
+        3: (0, 0, 255),   # Red for lane lines (matches your mask context)
+        11: (255, 0, 0)   # Blue for other class (if needed)
+    }
+
     # Draw annotations
     for ann in annotations:
         class_id = ann['class_id']
         box = ann['box']
         polygon = ann['polygon']
-        class_name = f"{class_id}"
-        if (class_id == 80):
-            color = (0, 255, 0) 
-        else: 
-            color = (255, 0, 0) 
+        class_name = f"Class {class_id}"
+        color = colors.get(class_id, (255, 255, 0))  # Default yellow if class_id not in colors
+        print(f"Drawing annotation: class_id={class_id}, color={color}")
+
+        # Draw bounding box (uncommented for clarity)
+        # if box:
+        #     x_left, y_top, x_right, y_bottom = map(int, box)
+        #     cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
+        #     cv2.putText(vis_img, class_name, (x_left, y_top - 10),
+        #                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
         
-        # Draw bounding box
-        if box:
-            x_left, y_top, x_right, y_bottom = map(int, box)
-            cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
-            cv2.putText(vis_img, class_name, (x_left, y_top - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
-        
+        # Draw polygon
         if polygon:
             points = np.array(polygon, dtype=np.int32).reshape((-1, 1, 2))
             cv2.polylines(vis_img, [points], isClosed=True, color=color, thickness=2)
     
     return vis_img
+
+# def load_annotations(label_path, img_width, img_height):
+#     annotations = []
+#     if not os.path.exists(label_path):
+#         return annotations
+#     with open(label_path, 'r') as f:
+#         for line in f:
+#             parts = line.strip().split()
+#             if not parts:
+#                 continue
+#             class_id = parts[0]
+#             if len(parts) > 5:  # Polygon + box
+#                 num_points = (len(parts) - 5) // 2
+#                 polygon = []
+#                 for i in range(num_points):
+#                     x = float(parts[1 + i * 2]) * img_width
+#                     y = float(parts[2 + i * 2]) * img_height
+#                     polygon.append([x, y])
+#                 x_center = float(parts[1 + num_points * 2]) * img_width
+#                 y_center = float(parts[2 + num_points * 2]) * img_height
+#                 width = float(parts[3 + num_points * 2]) * img_width
+#                 height = float(parts[4 + num_points * 2]) * img_height
+#                 box = [x_center - width / 2, y_center - height / 2,
+#                        x_center + width / 2, y_center + height / 2]
+#             else:
+#                 print(f"Invalid annotation format in {label_path}: {line.strip()}")
+#                 continue
+#             annotations.append({'class_id': class_id, 'box': box, 'polygon': polygon})
+#     return annotations
+
+# def visualize_annotations(image, annotations):
+#     vis_img = image.copy()
+    
+#     # Draw annotations
+#     colors = {
+#         12: (0, 255, 0),  # Green for drivable area
+#         3: (0, 0, 255),   # Red for lane lines (matches your mask context)
+#         11: (255, 0, 0)   # Blue for other class (if needed)
+#     }
+#     for ann in annotations:
+#         class_id = ann['class_id']
+#         box = ann['box']
+#         polygon = ann['polygon']
+#         class_name = f"{class_id}"
+#         color = colors.get(class_id, (255, 255, 0)) 
+#         # if (class_id == 3):
+#         #     color = (0, 255, 0) 
+#         # else: 
+#         #     color = (255, 0, 0) 
+        
+#         # # Draw bounding box
+#         # if box:
+#         #     x_left, y_top, x_right, y_bottom = map(int, box)
+#         #     cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
+#         #     cv2.putText(vis_img, class_name, (x_left, y_top - 10),
+#         #                 cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+        
+#         if polygon:
+#             points = np.array(polygon, dtype=np.int32).reshape((-1, 1, 2))
+#             cv2.polylines(vis_img, [points], isClosed=True, color=color, thickness=2)
+    
+#     return vis_img
 
 def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
     os.makedirs(output_dir, exist_ok=True)
@@ -127,8 +217,8 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
 
 def main():
     shutil.rmtree('/home/seame/ObjectDetectionAvoidance/verify', ignore_errors=True)
-    image_dir = '../dataset/images/train'  # Adjust this path as needed
-    label_dir = '../dataset/labels/train/'
+    image_dir = './chosen_crumbs/images'  # Adjust this path as needed
+    label_dir = './chosen_crumbs/labels/'
     output_dir = '/home/seame/ObjectDetectionAvoidance/verify'
     num_samples = 10000
     verify_dataset(image_dir, label_dir, output_dir, num_samples)

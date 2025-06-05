@@ -1,8 +1,6 @@
 from ultralytics import YOLO
 import shutil
 import os
-# import albumentations as A
-# from albumentations.pytorch import ToTensorV2
 
 def copy_files(source_dir, dest_dir):
     os.makedirs(dest_dir, exist_ok=True)
@@ -17,13 +15,10 @@ def copy_files(source_dir, dest_dir):
 
 source_directory = "../models/"
 destination_directory = "../models/old_models/"
-copy_files(source_directory, destination_directory)
-shutil.rmtree("../models/yolo-object-lane/", ignore_errors=True)
-shutil.rmtree("../models/yolo-object-lane-unfroze/", ignore_errors=True)
-# transform = A.Compose([
-#     A.GaussNoise(var_limit=(5.0, 20.0), p=0.3),  # Low-intensity noise, applied to 30% of images
-#     A.GaussianBlur(blur_limit=(3, 5), p=0.3),    # Subtle blur, applied to 30% of images
-# ], additional_targets={'mask': 'mask'}) # Ensure masks are preserved
+# copy_files(source_directory, destination_directory)
+# shutil.rmtree("../models/yolo-object-lane/", ignore_errors=True)
+# shutil.rmtree("../models/yolo-object-lane-unfroze/", ignore_errors=True)
+
 
 model = YOLO("../pretrained_yolo/yolov8n-seg.pt")
 # model = YOLO("../old_models/yolo-lane-seame-unfroze/weights/best.pt")
@@ -45,37 +40,37 @@ results = model.train(
     device=0,
     workers=4,
     project="../models",
-    name="yolo-object-lane",
+    name="test",
     exist_ok=True,
-    freeze=10,  # Freeze backbone
+    # freeze=10,  # Freeze backbone
     lr0=0.01,  
     patience=7,  # Early stopping
     weight_decay=0.0005
 )
 
 
-model = YOLO("../models/yolo-object-lane/weights/best.pt")
-results = model.train(
-    data="/home/seame/ObjectDetectionAvoidance/dataset/data.yaml",
-    epochs=50,
-    imgsz=320,
-    hsv_h=0.3,        # hue
-    hsv_s=0.3,        # saturation
-    hsv_v=0.3,        # Brightness/contrast (±40%)
-    translate=0.0,    # Disable translation
-    scale=0.0,        # Disable scaling
-    fliplr=0.0,       # Disable horizontal flip
-    mosaic=0.0,       # Disable mosaic
-    erasing=0.0,      # Disable random erasing
-    auto_augment=None,  # Disable auto-augmentation
-    batch=16,
-    device=0,
-    workers=4,
-    project="../models",
-    name="yolo-object-lane-unfroze",
-    exist_ok=True,
-    freeze=0,  # Unfreeze all layers
-    lr0=0.001, 
-    patience=30,  # Early stopping
-    weight_decay=0.0005
-)
+# model = YOLO("../models/yolo-object-lane/weights/best.pt")
+# results = model.train(
+#     data="/home/seame/ObjectDetectionAvoidance/dataset/data.yaml",
+#     epochs=100,
+#     imgsz=320,
+#     hsv_h=0.3,        # hue
+#     hsv_s=0.3,        # saturation
+#     hsv_v=0.3,        # Brightness/contrast (±40%)
+#     translate=0.0,    # Disable translation
+#     scale=0.0,        # Disable scaling
+#     fliplr=0.0,       # Disable horizontal flip
+#     mosaic=0.0,       # Disable mosaic
+#     erasing=0.0,      # Disable random erasing
+#     auto_augment=None,  # Disable auto-augmentation
+#     batch=16,
+#     device=0,
+#     workers=4,
+#     project="../models",
+#     name="yolo-object-lane-unfroze",
+#     exist_ok=True,
+#     freeze=0,  # Unfreeze all layers
+#     lr0=0.001, 
+#     patience=50,  # Early stopping
+#     weight_decay=0.0005
+# )
