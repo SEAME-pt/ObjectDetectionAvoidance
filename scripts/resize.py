@@ -65,14 +65,14 @@ def normal_resize_images(input_dir, output_dir, target_size=320):
 
 if __name__ == "__main__":
     # shutil.rmtree("./img_resize", ignore_errors=True)
-    input_directory = "../bdd/images/train/img"  # Path to 640x640 images
-    output_directory = "./img_resize/images"  # Path for 320x320 images
-    resize_images_letterbox(input_directory, output_directory)
-    input_directory = "../bdd/ll"  # Path to 640x640 images
-    output_directory = "./img_resize/ll"  # Path for 320x320 images
-    resize_images_letterbox(input_directory, output_directory)
-    input_directory = "../bdd/da/train"  # Path to 640x640 images
-    output_directory = "./img_resize/da"  # Path for 320x320 images
-    resize_images_letterbox(input_directory, output_directory)
+    input_directory = "/home/seame/frames/frames3/"  # Path to 640x640 images
+    output_directory = "./frames/images_resized"  # Path for 320x320 images
+    normal_resize_images(input_directory, output_directory)
+    # input_directory = "../chosen/masks"  # Path to 640x640 images
+    # output_directory = "./img_resize/ll"  # Path for 320x320 images
+    # normal_resize_images(input_directory, output_directory)
+    # input_directory = "../bdd/da/train"  # Path to 640x640 images
+    # output_directory = "./img_resize/da"  # Path for 320x320 images
+    # resize_images_letterbox(input_directory, output_directory)
 
 
