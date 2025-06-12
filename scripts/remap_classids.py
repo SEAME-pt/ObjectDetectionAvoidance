@@ -2,8 +2,8 @@ import os
 
 def change_annotation_labels(label_dir):
     # Mapping of old labels to new labels
-    label_map = {'2': '1',  # Change '80' to '0'
-                    '6': '9'
+    label_map = {'0': '12',  # Change '80' to '0'
+                    '1': '13'
                 }
     
     # Get list of txt files in label directory
@@ -55,7 +55,7 @@ def change_annotation_labels(label_dir):
     print(f"Total files modified: {modified_count}")
 
 if __name__ == "__main__":
-    output_directory = "../speed/train/merged"  
+    output_directory = "../prioridade/train/labels_seg" 
     change_annotation_labels(output_directory)
 
     # label_directory = "../speed/val/labels_seg"  

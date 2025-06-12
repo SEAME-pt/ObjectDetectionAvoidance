@@ -6,3 +6,5 @@ scripts/runs
 scripts/yolo11n.pt
 da_obj/
 scripts/frames/
+debug_masks/
+clutter/

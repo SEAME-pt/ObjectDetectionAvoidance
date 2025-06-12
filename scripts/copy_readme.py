@@ -13,7 +13,6 @@ def copy_markdown_lines(source_file, target_file, start_line=12):
 
         with open(target_file, 'r', encoding='utf-8') as dst:
             dest_lines = dst.readlines()
- -
  
         content_to_copy = dest_lines[:start_line] + source_lines[start_line + 1:-4]
 
