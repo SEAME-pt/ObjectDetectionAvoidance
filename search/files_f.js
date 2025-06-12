@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['json_5ftxt_2epy_0',['json_txt.py',['../json__txt_8py.html',1,'']]]
+  ['lampu_2dlalu_2dlintas_2d1024x1024_5fjpg_2erf_2ee227680bdb9bca542a4e964430523e64_2ejpg_0',['lampu-lalu-lintas-1024x1024_jpg.rf.e227680bdb9bca542a4e964430523e64.jpg',['../predict_2lampu-lalu-lintas-1024x1024__jpg_8rf_8e227680bdb9bca542a4e964430523e64_8jpg.html',1,'(Global Namespace)'],['../predict2_2lampu-lalu-lintas-1024x1024__jpg_8rf_8e227680bdb9bca542a4e964430523e64_8jpg.html',1,'(Global Namespace)']]],
+  ['lampu_2dmerah_2d6e85_5fjpg_2erf_2e95583d3010eba3b9a3fd671ea0c9feec_2ejpg_1',['lampu-merah-6e85_jpg.rf.95583d3010eba3b9a3fd671ea0c9feec.jpg',['../predict_2lampu-merah-6e85__jpg_8rf_895583d3010eba3b9a3fd671ea0c9feec_8jpg.html',1,'(Global Namespace)'],['../predict2_2lampu-merah-6e85__jpg_8rf_895583d3010eba3b9a3fd671ea0c9feec_8jpg.html',1,'(Global Namespace)']]],
+  ['lampu_5fwarning_5flight_5f2_5faspek_5f30_5fcm_5fwebp_2erf_2e0680afe4baa5451c5c1cdc646cf77eda_2ejpg_2',['lampu_warning_light_2_aspek_30_cm_webp.rf.0680afe4baa5451c5c1cdc646cf77eda.jpg',['../predict_2lampu__warning__light__2__aspek__30__cm__webp_8rf_80680afe4baa5451c5c1cdc646cf77eda_8jpg.html',1,'(Global Namespace)'],['../predict2_2lampu__warning__light__2__aspek__30__cm__webp_8rf_80680afe4baa5451c5c1cdc646cf77eda_8jpg.html',1,'(Global Namespace)']]]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['main_0',['main',['../namespacecreate__annotations.html#a5d139d7f60cdd27970b2c04ed5494d6d',1,'create_annotations.main()'],['../namespacevisual__annotations.html#abf6fb700c73608f789bae289737fef31',1,'visual_annotations.main()']]],
-  ['max_5fper_5fgroup_1',['max_per_group',['../namespacerename__files.html#a9b94c6f84912a3bc46a5238cd86fd42c',1,'rename_files']]],
-  ['merge_5fannotations_2',['merge_annotations',['../namespacecreate__annotations.html#a417f22a7656fa7487c254aad06223c67',1,'create_annotations']]],
-  ['model_3',['model',['../namespacetesting.html#a81baff8fb201cb466c511ea9298e7be7',1,'testing.model'],['../namespacetraining.html#a9ccdd7df0faec3043290ad3e817b3d69',1,'training.model']]],
-  ['model_5fpath_4',['model_path',['../namespacetesting.html#a42991943e8a4474ce4b35120877b1c7c',1,'testing']]]
+  ['label_5fdirectory_0',['label_directory',['../namespacebbox__seg.html#aacc0944199bc05b05fe5fa4c3b0ea877',1,'bbox_seg.label_directory'],['../namespacecount__labels.html#a8a7fa1bc7ea4e5edf81dabeb704ef3ee',1,'count_labels.label_directory'],['../namespacedelete__images.html#a31a15e61b22a97a5c31552cb3eb9e07c',1,'delete_images.label_directory']]],
+  ['lampu_2dlalu_2dlintas_2d1024x1024_5fjpg_2erf_2ee227680bdb9bca542a4e964430523e64_2ejpg_1',['lampu-lalu-lintas-1024x1024_jpg.rf.e227680bdb9bca542a4e964430523e64.jpg',['../predict_2lampu-lalu-lintas-1024x1024__jpg_8rf_8e227680bdb9bca542a4e964430523e64_8jpg.html',1,'(Global Namespace)'],['../predict2_2lampu-lalu-lintas-1024x1024__jpg_8rf_8e227680bdb9bca542a4e964430523e64_8jpg.html',1,'(Global Namespace)']]],
+  ['lampu_2dmerah_2d6e85_5fjpg_2erf_2e95583d3010eba3b9a3fd671ea0c9feec_2ejpg_2',['lampu-merah-6e85_jpg.rf.95583d3010eba3b9a3fd671ea0c9feec.jpg',['../predict_2lampu-merah-6e85__jpg_8rf_895583d3010eba3b9a3fd671ea0c9feec_8jpg.html',1,'(Global Namespace)'],['../predict2_2lampu-merah-6e85__jpg_8rf_895583d3010eba3b9a3fd671ea0c9feec_8jpg.html',1,'(Global Namespace)']]],
+  ['lampu_5fwarning_5flight_5f2_5faspek_5f30_5fcm_5fwebp_2erf_2e0680afe4baa5451c5c1cdc646cf77eda_2ejpg_3',['lampu_warning_light_2_aspek_30_cm_webp.rf.0680afe4baa5451c5c1cdc646cf77eda.jpg',['../predict_2lampu__warning__light__2__aspek__30__cm__webp_8rf_80680afe4baa5451c5c1cdc646cf77eda_8jpg.html',1,'(Global Namespace)'],['../predict2_2lampu__warning__light__2__aspek__30__cm__webp_8rf_80680afe4baa5451c5c1cdc646cf77eda_8jpg.html',1,'(Global Namespace)']]],
+  ['load_5fannotations_4',['load_annotations',['../namespacevisual__annotations.html#a0f77599b8126064a14f429f9aab7c564',1,'visual_annotations']]]
 ];

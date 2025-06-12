@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['smooth_5fmask_0',['smooth_mask',['../namespacecreate__annotations.html#af3f26308ab1c77f339acb11e42971057',1,'create_annotations']]],
-  ['split_5fdataset_1',['split_dataset',['../namespaceseparate__mask__img.html#a8529daf39399d1f17b2a028ecf5663ef',1,'separate_mask_img']]]
+  ['remove_5funmatched_5ftxt_0',['remove_unmatched_txt',['../namespacedelete__images.html#ad1541ddc8364fc8cd9147d67a2e6de39',1,'delete_images']]],
+  ['rename_5ffiles_5fby_5fprefix_1',['rename_files_by_prefix',['../namespacerename__files.html#abbf5f0fb44e08e5c4853765cc8b7a99b',1,'rename_files']]],
+  ['resize_5fimages_5fletterbox_2',['resize_images_letterbox',['../namespaceresize.html#a9fed64a9b067277b81b4c78b8db7735f',1,'resize']]],
+  ['resize_5fletterbox_3',['resize_letterbox',['../namespaceresize.html#ab5e4132bfd4cfeb20e41885e9dc8b3f1',1,'resize']]]
 ];

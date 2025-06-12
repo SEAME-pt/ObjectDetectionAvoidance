@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['thin_5fmask_0',['thin_mask',['../namespacecreate__annotations.html#a2459f33d6e432e9065828d5734ba2d9e',1,'create_annotations']]]
+  ['smooth_5fmask_0',['smooth_mask',['../namespacecreate__annotations.html#af3f26308ab1c77f339acb11e42971057',1,'create_annotations']]],
+  ['split_5fdataset_1',['split_dataset',['../namespaceseparate__dataset.html#ab8b9f5dffdec11d31f85d440e2daba99',1,'separate_dataset']]]
 ];

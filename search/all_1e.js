@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['–_20performance_20improvements_20and_20benchmarks_0',['– performance improvements and benchmarks',['../index.html#autotoc_md7',1,'YOLO Inference on Jetson Nano – Performance Improvements and Benchmarks'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html#autotoc_md26',1,'YOLO Inference on Jetson Nano – Performance Improvements and Benchmarks']]]
+  ['znak0425_2d_5fjpg_2erf_2e96df012f84bf8635d86eb294515015ca_2ejpg_0',['znak0425-_jpg.rf.96df012f84bf8635d86eb294515015ca.jpg',['../znak0425-__jpg_8rf_896df012f84bf8635d86eb294515015ca_8jpg.html',1,'']]]
 ];

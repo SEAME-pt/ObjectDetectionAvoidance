@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['json_5ftxt_0',['json_txt',['../namespacejson__txt.html',1,'']]]
+  ['get_5fmasks_0',['get_masks',['../namespaceget__masks.html',1,'']]]
 ];

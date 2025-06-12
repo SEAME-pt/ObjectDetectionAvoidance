@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['separate_5fmask_5fimg_0',['separate_mask_img',['../namespaceseparate__mask__img.html',1,'']]]
+  ['separate_5fdataset_0',['separate_dataset',['../namespaceseparate__dataset.html',1,'']]]
 ];
