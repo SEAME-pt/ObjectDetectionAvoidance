@@ -68,6 +68,6 @@ def convert_bbox_to_segmentation(label_dir, output_dir):
 
 
 if __name__ == "__main__":
-    label_directory = "../speed/train/labels"  # Path to the label directory
-    output_directory = "../speed/train/labels_seg"  
+    label_directory = "../prioridade/train/labels"  # Path to the label directory
+    output_directory = "../prioridade/train/labels_seg"  
     convert_bbox_to_segmentation(label_directory, output_directory)
