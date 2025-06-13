@@ -11,6 +11,9 @@ def resize_letterbox(img_path, output_path, target_size=(320, 320)):
         return False
     
     h, w = img.shape[:2]
+    if h != 416 or w != 416:
+        print(f"Skipping ")
+        return False
     scale = min(target_size[0] / w, target_size[1] / h)  # Scale to fit within 320x320
     new_w, new_h = int(w * scale), int(h * scale)
     
@@ -32,6 +35,7 @@ def resize_images_letterbox(input_dir, output_dir, target_size=(320, 320)):
     for img_name in tqdm(os.listdir(input_dir), desc="Resizing images"):
         if not img_name.endswith(('.jpg', '.jpeg', '.png')):
             continue
+        
         img_path = os.path.join(input_dir, img_name)
         output_path = os.path.join(output_dir, img_name)
         # letterbox_resize_mask(img_path, target_size)
@@ -50,7 +54,10 @@ def normal_resize_images(input_dir, output_dir, target_size=320):
                 if image is None:
                     print(f"Failed to load {img_path}")
                     continue
-                
+                height, width = image.shape[:2]
+                if height != 416 or width != 416:
+                    print(f"Skipping {filename}")
+                    continue
                 # Resize to 320x320 (scale factor 0.5)
                 resized = cv2.resize(image, (target_size, target_size), interpolation=cv2.INTER_LANCZOS4)
                 
@@ -65,14 +72,14 @@ def normal_resize_images(input_dir, output_dir, target_size=320):
 
 if __name__ == "__main__":
     # shutil.rmtree("./img_resize", ignore_errors=True)
-    input_directory = "/home/seame/frames/frames3/"  # Path to 640x640 images
-    output_directory = "./frames/images_resized"  # Path for 320x320 images
-    normal_resize_images(input_directory, output_directory)
+    input_directory = "../dataset/images/train"  # Path to 640x640 images
+    output_directory = "./images_resized2"  # Path for 320x320 images
+    # normal_resize_images(input_directory, output_directory)
     # input_directory = "../chosen/masks"  # Path to 640x640 images
     # output_directory = "./img_resize/ll"  # Path for 320x320 images
     # normal_resize_images(input_directory, output_directory)
     # input_directory = "../bdd/da/train"  # Path to 640x640 images
     # output_directory = "./img_resize/da"  # Path for 320x320 images
-    # resize_images_letterbox(input_directory, output_directory)
+    resize_images_letterbox(input_directory, output_directory)
 
 

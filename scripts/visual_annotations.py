@@ -6,7 +6,7 @@ import random
 import argparse
 import shutil
 
-def load_annotations(label_path, img_width=320, img_height=320, normalize=True):
+def load_annotations(label_path, img_width, img_height):
     annotations = []
     if not os.path.exists(label_path):
         print(f"Annotation file not found: {label_path}")
@@ -38,9 +38,8 @@ def load_annotations(label_path, img_width=320, img_height=320, normalize=True):
                 for i in range(num_points):
                     x = float(remaining[i * 2])
                     y = float(remaining[i * 2 + 1])
-                    if normalize:
-                        x *= img_width
-                        y *= img_height
+                    x *= img_width
+                    y *= img_height
                     x = np.clip(x, 0, img_width)
                     y = np.clip(y, 0, img_height)
                     polygon.append([x, y])
@@ -51,11 +50,10 @@ def load_annotations(label_path, img_width=320, img_height=320, normalize=True):
                     y_center = float(box_parts[1])
                     width = float(box_parts[2])
                     height = float(box_parts[3])
-                    if normalize:
-                        x_center *= img_width
-                        y_center *= img_height
-                        width *= img_width
-                        height *= img_height
+                    x_center *= img_width
+                    y_center *= img_height
+                    width *= img_width
+                    height *= img_height
                     x_left = np.clip(x_center - width / 2, 0, img_width)
                     y_top = np.clip(y_center - height / 2, 0, img_height)
                     x_right = np.clip(x_center + width / 2, 0, img_width)
@@ -81,8 +79,8 @@ def visualize_annotations(image, annotations):
 
     # Define colors (RGB)
     colors = {
-        12: (0, 255, 0),  # Green for drivable area
-        3: (0, 0, 255),   # Red for lane lines (matches your mask context)
+        8: (0, 255, 0),  # Green for drivable area
+        5: (0, 0, 255),   # Red for lane lines (matches your mask context)
         11: (255, 0, 0)   # Blue for other class (if needed)
     }
 
@@ -96,7 +94,7 @@ def visualize_annotations(image, annotations):
         print(f"Drawing annotation: class_id={class_id}, color={color}")
 
         # Draw bounding box 
-        if box and class_id != 3 and class_id != 12 :
+        if box and class_id != 4 and class_id != 8 :
             x_left, y_top, x_right, y_bottom = map(int, box)
             cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
             cv2.putText(vis_img, class_name, (x_left, y_top - 10),
@@ -149,13 +147,14 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
             polygon = ann['polygon']
 
             # Validate box coordinates
-            x_left, y_top, x_right, y_bottom = box
-            if not (0 <= x_left < x_right <= width and 0 <= y_top < y_bottom <= height):
-                print(f"Invalid box coordinates in {label_path}: {box}")
-                invalid_annotations += 1
+            
+            # x_left, y_top, x_right, y_bottom = box
+            # if not (0 <= x_left < x_right <= width and 0 <= y_top < y_bottom <= height):
+            #     print(f"Invalid box coordinates in {label_path}: {box}")
+            #     invalid_annotations += 1
             
             # Validate polygon
-            if polygon and class_id == 12:
+            if polygon:
                 total_segments += 1
                 for x, y in polygon:
                     if not (0 <= x <= width and 0 <= y <= height):
@@ -176,8 +175,8 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
 
 def main():
     shutil.rmtree('/home/seame/ObjectDetectionAvoidance/verify', ignore_errors=True)
-    image_dir = '../dataset/images/train'  # Adjust this path as needed
-    label_dir = '../dataset/labels/train'  # Adjust this path as needed
+    image_dir = '../new3/train'  # Adjust this path as needed
+    label_dir = '../new3/output'  # Adjust this path as needed
     output_dir = '/home/seame/ObjectDetectionAvoidance/verify'
     num_samples = 10000
     verify_dataset(image_dir, label_dir, output_dir, num_samples)
