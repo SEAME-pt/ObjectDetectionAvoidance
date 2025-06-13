@@ -46,8 +46,65 @@ For testing, (in *scripts/testing.py*), we call our trained model and set it to 
 
 For debugging we added *scripts/count_labels.py* that outputs how many annotations we have for each class id.
 
+
 ## Jetson Nano
 
-## Documentation
+### YOLO Inference on Jetson Nano – Performance Improvements and Benchmarks
 
-For a more structured documentation click here: [Doxygen](https://seame-pt.github.io/ObjectDetectionAvoidance/).
+This project documents the key improvements and testing results when running various versions of YOLO on the Jetson Nano. The main goal was to maximize the inference speed (FPS) while using limited hardware resources.
+
+---
+
+#### Key Improvements
+
+#### 1. Upgrading to Ubuntu 20.04
+To unlock better compatibility and performance, the default OS was upgraded to **Ubuntu 20.04**, following this image and guide by Qengineering:
+
+👉 [Qengineering Jetson Nano Ubuntu 20.04 Image](https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image)
+
+This enabled smoother installation of recent dependencies, CUDA support, and improved system stability.
+
+---
+
+#### 2. Converting YOLO to TensorRT
+The second major improvement was converting YOLO models to **TensorRT** using the `tensorrtx` repository:
+
+👉 [Tensorrtx YOLOv5 Conversion (v7.0)](https://github.com/wang-xinyu/tensorrtx/tree/yolov5-v7.0)
+
+By doing so, we achieved significantly higher inference performance using the Jetson's GPU and Tensor cores, particularly with small and segmentation models.
+
+---
+
+#### Benchmark Results
+
+| Environment                              | YOLO Version   | Frames/s | Type cam | Framework             |
+|------------------------------------------|----------------|----------|----------|------------------------|
+| Container Ultralytics (Jetson nano 18.04) | v11 nano       | 6.94     | USB      | Pytorch                |
+| Container Ultralytics (Jetson nano 18.04) | v8 nano        | 12.66    | USB      | Pytorch                |
+| Jetson nano Ubuntu 20.04                 | v11 nano       | 12.05    | USB      | Pytorch                |
+| Jetson nano Ubuntu 20.04                 | v8 nano        | 14.08    | USB      | Pytorch                |
+| Jetson nano Ubuntu 20.04                 | v8 nano        | 15.47    | CSI      | Pytorch                |
+| **Jetson nano Ubuntu 20.04**             | **v5 small**   | **47**   | CSI      | **CPP and TensorRT**   |
+| Jetson nano Ubuntu 20.04                 | v5 small seg   | 37       | CSI      | CPP and TensorRT       |
+| **Jetson nano Ubuntu 20.04**             | **v8 nano seg**| **57**   | Images   | **CPP and TensorRT**   |
+
+---
+
+#### Summary
+
+- Upgrading to **Ubuntu 20.04** greatly improved system support and performance.
+- Converting models to **TensorRT** delivered **3x to 4x speedup** in FPS.
+- The best result was with **YOLOv8 nano segmentation (TensorRT)** at **57 FPS** using preloaded images.
+- **CSI cameras** outperform USB in most live camera inference scenarios.
+
+---
+
+#### Recommendations
+
+- For maximum performance: use **TensorRT + CSI camera**.
+- For segmentation tasks: consider using YOLOv5 or v8 nano models with `tensorrtx`.
+- Avoid using Docker unless strictly needed, as native Ubuntu 20.04 offers better access to CUDA/TensorRT features.
+
+---
+
+Tested on: **Jetson Nano 4GB**, Ubuntu 20.04, JetPack 4.x, CUDA, cuDNN, TensorRT.
