@@ -13,15 +13,21 @@ def copy_files_with_class_ids(txt_dir, img_dir, output_dir, target_class_ids=[2,
         txt_path = os.path.join(txt_dir, txt_file)
         
         # Read txt file and check for target class IDs
+        has_required_class = False 
         has_target_class = False
         with open(txt_path, 'r') as f:
             for line in f:
                 parts = line.strip().split()
-                if parts and int(parts[0]) in target_class_ids and int(parts[0]) != 12:
-                    has_target_class = True
-                    break
+                if parts:
+                    class_id = int(parts[0])
+                    if class_id == 12 or class_id == 3:
+                        has_required_class = True
+                    if class_id in target_class_ids:
+                        has_target_class = True
+                    if has_required_class and has_target_class:
+                        break 
         
-        if has_target_class:
+        if has_target_class and has_required_class:
             # Copy txt file
             shutil.copy(txt_path, os.path.join(output_dir, 'labels', txt_file))
             print(f"Copied txt: {txt_file}")

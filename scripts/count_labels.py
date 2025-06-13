@@ -51,5 +51,5 @@ def count_class_ids(label_dir):
 
 # Example usage
 if __name__ == "__main__":
-    label_directory = "../dataset/labels/train"  # Replace with your label directory path
+    label_directory = "../new/output"  # Replace with your label directory path
     class_counts = count_class_ids(label_directory)
