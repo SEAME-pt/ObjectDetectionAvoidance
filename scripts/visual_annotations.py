@@ -79,9 +79,28 @@ def visualize_annotations(image, annotations):
 
     # Define colors (RGB)
     colors = {
-        8: (0, 255, 0),  # Green for drivable area
-        5: (0, 0, 255),   # Red for lane lines (matches your mask context)
-        11: (255, 0, 0)   # Blue for other class (if needed)
+        12: (0, 255, 0),  # Green 
+        3: (0, 0, 255),   # Red 
+        11: (255, 0, 0)   # Blue for other class 
+    }
+
+    # Define class ID to label name mapping
+    class_labels = {
+        0: "person",
+        1: "car",
+        2: "stop sign",
+        3: "lane",
+        4: "passadeira",
+        5: "verde",
+        6: "amarelo",
+        7: "vermelho",
+        8: "perigo",
+        9: "50",
+        10: "80",
+        11: "jetracer",
+        12: "Drivable Area",
+        13: "prioridade",
+        14: "portao",
     }
 
     # Draw annotations
@@ -89,16 +108,53 @@ def visualize_annotations(image, annotations):
         class_id = ann['class_id']
         box = ann['box']
         polygon = ann['polygon']
-        class_name = f"Class {class_id}"
-        color = colors.get(class_id, (255, 255, 0))  # Default yellow if class_id not in colors
-        print(f"Drawing annotation: class_id={class_id}, color={color}")
+        # Get label name or fallback to class_id as string
+        label_name = class_labels.get(class_id, f"Class {class_id}")
+        # Combine class_id and label_name for display
+        display_text = f"ID: {class_id} ({label_name})"
+        color = colors.get(class_id, (0, 255, 255))  # Default yellow if class_id not in colors
+        print(f"Drawing annotation: class_id={class_id}, label={display_text}, color={color}")
 
-        # Draw bounding box 
-        if box and class_id != 4 and class_id != 8 :
+        # Draw bounding box
+        if box and class_id != 12 and class_id != 3:
             x_left, y_top, x_right, y_bottom = map(int, box)
+            # Ensure coordinates are within image bounds
+            x_left = max(0, min(x_left, img_width - 1))
+            x_right = max(0, min(x_right, img_width - 1))
+            y_top = max(0, min(y_top, img_height - 1))
+            y_bottom = max(0, min(y_bottom, img_height - 1))
+
+            # Draw rectangle
             cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
-            cv2.putText(vis_img, class_name, (x_left, y_top - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+
+            # Draw text (class_id and label_name)
+            text_y = max(10, y_top - 10)  # Prevent text from going above image
+            cv2.putText(
+                vis_img,
+                display_text,
+                (x_left, text_y),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.7,  # Font scale for visibility
+                color,
+                2
+            )
+
+    # # Draw annotations
+    # for ann in annotations:
+    #     class_id = ann['class_id']
+    #     box = ann['box']
+    #     polygon = ann['polygon']
+    #     class_name = f"{class_id}"
+    #     color = colors.get(class_id, (255, 255, 0))  # Default yellow if class_id not in colors
+    #     print(f"Drawing annotation: class_id={class_id}, color={color}")
+
+    #     # Draw bounding box 
+    #     if box and class_id != 12 and class_id != 3 :
+    #         x_left, y_top, x_right, y_bottom = map(int, box)
+    #         text_y = max(10, y_top - 10)
+    #         cv2.rectangle(vis_img, (x_left, y_top), (x_right, y_bottom), color, 2)
+    #         cv2.putText(vis_img, class_name, (x_left, text_y),
+    #                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
         
         # Draw polygon
         if polygon:
@@ -174,10 +230,10 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
     print(f"Missing label files: {missing_labels}")
 
 def main():
-    shutil.rmtree('/home/seame/ObjectDetectionAvoidance/verify', ignore_errors=True)
-    image_dir = '../new3/train'  # Adjust this path as needed
-    label_dir = '../new3/output'  # Adjust this path as needed
-    output_dir = '/home/seame/ObjectDetectionAvoidance/verify'
+    shutil.rmtree('/home/seame/ObjectDetectionAvoidance/clutter/verify', ignore_errors=True)
+    image_dir = '../clutter/new/train'  # Adjust this path as needed
+    label_dir = '../clutter/new/output'  # Adjust this path as needed
+    output_dir = '/home/seame/ObjectDetectionAvoidance/clutter/verify'
     num_samples = 10000
     verify_dataset(image_dir, label_dir, output_dir, num_samples)
 
