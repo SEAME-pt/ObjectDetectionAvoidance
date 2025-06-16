@@ -69,48 +69,6 @@ def remove_unmatched_txt(label_dir, image_dir):
     print(f"Total files removed: {removed_count}")
 
 
-# def delete_320x240_images(directory):
-#     # Validate directory
-#     if not os.path.isdir(directory):
-#         print(f"Error: {directory} is not a valid directory")
-#         return
-
-#     # Initialize counter
-#     deleted_count = 0
-
-#     # Supported image extensions
-#     image_extensions = ('.png', '.jpg', '.jpeg', '.bmp', '.tiff')
-
-#     # Iterate through files in the directory
-#     for filename in os.listdir(directory):
-#         if not filename.lower().endswith(image_extensions):
-#             continue
-
-#         file_path = os.path.join(directory, filename)
-
-#         # Read image to check dimensions
-#         try:
-#             img = cv2.imread(file_path)
-#             if img is None:
-#                 print(f"Failed to load image: {file_path}")
-#                 continue
-
-#             # Check dimensions
-#             height, width = img.shape[:2]
-#             if width == 320 and height == 240 and filename.startswith('frame_'):
-#                 # Delete the file
-#                 os.remove(file_path)
-#                 deleted_count += 1
-#                 print(f"[{deleted_count}] Deleted: {filename}")
-#             # else:
-#             #     print(f"Skipped {filename}: Size {width}x{height} (not 320x240)")
-
-#         except Exception as e:
-#             print(f"Error processing {filename}: {e}")
-
-#     print(f"Total files deleted: {deleted_count}")
-
-
 if __name__ == "__main__":
     label_directory = "../dataset/labels/train"  # Replace with your label directory path
     image_directory = "../dataset/images/train"  # Replace with your image directory path

@@ -1,11 +1,8 @@
 pretrained_yolo/
-verify/
 dataset/images
 dataset/labels
 scripts/runs
 scripts/yolo11n.pt
-da_obj/
-scripts/frames/
 debug_masks/
 clutter/
 pid_control/images/

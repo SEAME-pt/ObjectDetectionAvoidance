@@ -80,14 +80,14 @@ def copy_matching_files(dir1, dir2, dest_dir):
         
         src1 = os.path.join(dir1, file1)
         src2 = os.path.join(dir2, file2)
-        dst1 = os.path.join(dest_dir, file1)
-        dst2 = os.path.join(dest_dir, file2)
+        # dst1 = os.path.join(dest_dir, file1)
+        # dst2 = os.path.join(dest_dir, file2)
         
         try:
-            # shutil.copy2(src1, dst1)  # Preserves metadata
-            shutil.copy2(src2, dst2)
-            print(f"Copied: {file1} -> {dst1}")
-            print(f"Copied: {file2} -> {dst2}")
+            # shutil.copy2(src2, dst2)
+            os.remove(src2)   # Remove existing file 
+            print(f"removing {src2}")
+            # print(f"Copied: {file2} -> {dst2}")
             copied_files += 1
         except Exception as e:
             print(f"Error copying {file1} or {file2}: {e}")
@@ -100,8 +100,8 @@ if __name__ == "__main__":
     # destination_dir = "../dataset/images/train"  
     # copy_directory_files(dir, destination_dir, include_subdirs=True)
 
-    dir1 = "./chosen/"
-    dir2 = "/home/seame/frames/frames3"  
+    dir1 = "../clutter/filtered/images"
+    dir2 = "../dataset/images/train"  
     destination_dir = "./chosen/images"  
     copy_matching_files(dir1, dir2, destination_dir)
     # copy_directory_files(dir, destination_dir, include_subdirs=True)

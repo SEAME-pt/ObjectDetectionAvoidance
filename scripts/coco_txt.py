@@ -107,8 +107,8 @@ def coco_to_seg_txt(coco_json_path, output_txt_dir, target_class_ids=None):
     print(f"Processed {processed_images} images, saved {total_txts} TXT files")
 
 
-coco_json_path = '../new3/train/_annotations.coco.json'
-output_dir = '../new3/output/'
+coco_json_path = '../clutter/new/train/_annotations.coco.json'
+output_dir = '../clutter/new/output/'
 target_class_ids = [1, 2, 3]  # Specify target class IDs if needed
 
 coco_to_seg_txt(coco_json_path, output_dir)
