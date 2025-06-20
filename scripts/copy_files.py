@@ -8,7 +8,7 @@ def copy_directory_files(source_dir, dest_dir, include_subdirs=True):
         return
     
     # Create destination directory if it doesn't exist
-    os.makedirs(dest_dir, exist_ok=True)
+    # os.makedirs(dest_dir, exist_ok=True)
     
     # Counter for copied files
     copied_count = 0
@@ -100,9 +100,14 @@ if __name__ == "__main__":
     # destination_dir = "../dataset/images/train"  
     # copy_directory_files(dir, destination_dir, include_subdirs=True)
 
-    dir1 = "../clutter/filtered/images"
+    dir1 = "../dataset/train"
     dir2 = "../dataset/images/train"  
     destination_dir = "./chosen/images"  
-    copy_matching_files(dir1, dir2, destination_dir)
-    # copy_directory_files(dir, destination_dir, include_subdirs=True)
+    # copy_matching_files(dir1, dir2, destination_dir)
+    copy_directory_files(dir1, dir2, include_subdirs=False)
+    dir1 = "../dataset/output"
+    dir2 = "../dataset/labels/train"  
+    destination_dir = "./chosen/images"  
+    # copy_matching_files(dir1, dir2, destination_dir)
+    copy_directory_files(dir1, dir2, include_subdirs=False)
 

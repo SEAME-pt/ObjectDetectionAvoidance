@@ -53,7 +53,7 @@ def remove_unmatched_txt(label_dir, image_dir):
         if txt_file not in jpg_files:
             txt_path = os.path.join(label_dir, txt_file + '.txt')
             if os.path.exists(txt_path):
-                os.remove(txt_path)
+                # os.remove(txt_path)
                 removed_count += 1
 
     print(f"Total files removed: {removed_count}")
@@ -63,7 +63,7 @@ def remove_unmatched_txt(label_dir, image_dir):
             # print(f"Checking files: {jpg_file}")
             jpg_path = os.path.join(image_dir, jpg_file + '.jpg')
             if os.path.exists(jpg_path):
-                # os.remove(jpg_path)
+                os.remove(jpg_path)
                 removed_count += 1
     
     print(f"Total files removed: {removed_count}")

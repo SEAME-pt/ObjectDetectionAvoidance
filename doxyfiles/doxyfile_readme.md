@@ -1,24 +1,19 @@
 ## Project Architecture
 
-You can find our **best models** in dev branch, *models/yolo-object-lane-unfroze/weights/*.
-
+You can find our **best models** in dev branch, [weights folder](models/yolo-object-lane/weights/). You can also download our model and dataset here: [Click to access our dataset](https://drive.google.com/drive/folders/1RwFmYyjxCafdnUORBcm2kgo62itcLmcS?usp=drive_link). In there you have our full dataset, and separate folders with some of the images we used.
 Training a Yolo Object detection model, with **Lane detection (segmentation)** as well.
 
 \image html ADR/Fluxograma.jpg "Project Structure" width=60%
 
 ## Inference Result
 
-\image html models/yolo-object-lane-unfroze/val_batch1_pred.jpg "Results" width=50%
-
-<!-- This image is a result of running *testing.py*, so running predict() of our model. The **lane points** (polygons, mask) are in blue. -->
+\image html models/yolo-object-lane/val_batch0_pred.jpg "Results" width=50%
 
 ## Datasets
 
 You can download our dataset here: [Click to access our dataset](https://drive.google.com/drive/folders/1RwFmYyjxCafdnUORBcm2kgo62itcLmcS?usp=drive_link).
 
 For lane and drivable area detection, we took some images of our lab and also used the bdd10k dataset. For the objects, we downloaded some datasets from Roboflow.
-
- <!-- few images from dataset8, you can find in this link: [Link to CARLA dataset](https://onedrive.live.com/?id=4EF9629CA3CB4B5E%213022&cid=4EF9629CA3CB4B5E&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBbDVMeTZPY1l2bE9sMDQxNHNSb3BGVkgyOTVXP2U9Q2pjbDYy). -->
 
 I noticed a decay of object detection outside the objects of my dataset, despite the fact that i froze the backbone and lowered the learning rate. So you might need to add some object images to preserve more information.
 

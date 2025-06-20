@@ -79,9 +79,21 @@ def visualize_annotations(image, annotations):
 
     # Define colors (RGB)
     colors = {
-        12: (0, 255, 0),  # Green 
-        3: (0, 0, 255),   # Red 
-        11: (255, 0, 0)   # Blue for other class 
+        0: (255, 255, 0),  # Yellow for person
+        1: (0, 255, 0),    # Green for car
+        2: (0, 0, 255),    # Red for stop sign
+        3: (255, 0, 0),    # Blue for lane
+        4: (255, 165, 0),  # Orange for passadeira
+        5: (0, 255, 255),  # Cyan for verde
+        6: (255, 255, 0),  # Yellow for amarelo
+        7: (0, 0, 0),      # Black for vermelho
+        8: (128, 0, 128),  # Purple for perigo
+        9: (255, 192, 203), # Pink for 50
+        10: (128, 128, 0), # Olive for 80
+        11: (255, 0, 255), # Magenta for jetracer
+        12: (0, 128, 128), # Teal for Drivable Area
+        13: (128, 128, 128), # Gray for prioridade
+        14: (255, 105, 180), # Hot Pink for portao
     }
 
     # Define class ID to label name mapping
@@ -116,7 +128,7 @@ def visualize_annotations(image, annotations):
         print(f"Drawing annotation: class_id={class_id}, label={display_text}, color={color}")
 
         # Draw bounding box
-        if box and class_id != 12 and class_id != 3:
+        if box and class_id != 3:
             x_left, y_top, x_right, y_bottom = map(int, box)
             # Ensure coordinates are within image bounds
             x_left = max(0, min(x_left, img_width - 1))
@@ -231,8 +243,8 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
 
 def main():
     shutil.rmtree('/home/seame/ObjectDetectionAvoidance/clutter/verify', ignore_errors=True)
-    image_dir = '../clutter/new/train'  # Adjust this path as needed
-    label_dir = '../clutter/new/output'  # Adjust this path as needed
+    image_dir = '../dataset/images/train'  # Adjust this path as needed
+    label_dir = '../dataset/labels/train'  # Adjust this path as needed
     output_dir = '/home/seame/ObjectDetectionAvoidance/clutter/verify'
     num_samples = 10000
     verify_dataset(image_dir, label_dir, output_dir, num_samples)
