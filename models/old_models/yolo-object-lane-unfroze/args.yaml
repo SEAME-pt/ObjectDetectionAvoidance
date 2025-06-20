@@ -2,9 +2,9 @@ task: segment
 mode: train
 model: ../models/yolo-object-lane/weights/best.pt
 data: /home/seame/ObjectDetectionAvoidance/dataset/data.yaml
-epochs: 50
+epochs: 100
 time: null
-patience: 30
+patience: 50
 batch: 16
 imgsz: 320
 save: true

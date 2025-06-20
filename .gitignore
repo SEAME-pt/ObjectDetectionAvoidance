@@ -1,5 +1,6 @@
 pretrained_yolo/
 dataset/images
+models/old_models
 dataset/labels
 scripts/runs
 scripts/yolo11n.pt
