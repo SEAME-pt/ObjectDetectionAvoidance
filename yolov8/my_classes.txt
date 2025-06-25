@@ -1,0 +1,13 @@
+person
+car
+stop sign
+lane
+passadeira
+sinal verde
+sinal amarelo
+sinal vermelho
+sinal perigo
+speed 50
+speed 80
+jetracer
+drivable
