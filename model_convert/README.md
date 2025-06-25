@@ -58,7 +58,7 @@ cd tensorrtx/yolov8
 rm -rf build && mkdir build && cd build
 
 # Copy the generated WTS file
-cp ../../ultralytics/ultralytics/1706_best.wts .
+cp ../../ultralytics/ultralytics/model.wts .
 
 # Generate build files and compile
 cmake ..
