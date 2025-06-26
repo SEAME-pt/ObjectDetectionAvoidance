@@ -12,6 +12,7 @@ This README provides a clear and concise guide to convert a YOLOv8 segmentation 
 - **OpenCV ≥ 3.4.0**
 - **PyTorch** and **ultralytics ≤ 8.2.103**
 - Compatible **CUDA Toolkit** and **cuDNN**
+- ultralytics
 
 ---
 
@@ -20,8 +21,6 @@ This README provides a clear and concise guide to convert a YOLOv8 segmentation 
 ### 1. Clone Repositories
 
 ```bash
-# Ultralytics PyTorch implementation
-git clone https://github.com/ultralytics/ultralytics.git
 
 # YOLOv8 TensorRT code
 https://github.com/wang-xinyu/tensorrtx/tree/master/yolov8
@@ -30,16 +29,12 @@ https://github.com/wang-xinyu/tensorrtx/tree/master/yolov8
 ### 2. Generate the `.wts` File
 
 ```bash
-# Copy the WTS generator script
-git clone https://github.com/xiaocao-tian/yolov8_tensorrt.git
-git clone https://github.com/ultralytics/ultralytics.git
-cp yolov8_tensorrt/yolov8/gen_wts.py ultralytics/ultralytics/
 
 # Run the conversion for segmentation (-t seg)
 cd ultralytics/ultralytics
 python3 gen_wts.py \
-  -w /path/to/1706_best.pt \
-  -o /path/to/1706_best.wts \
+  -w /path/to/model.pt \
+  -o /path/to/model.wts \
   -t seg
 ```
 
@@ -63,7 +58,7 @@ cd tensorrtx/yolov8
 rm -rf build && mkdir build && cd build
 
 # Copy the generated WTS file
-cp ../../ultralytics/ultralytics/1706_best.wts .
+cp ../../ultralytics/ultralytics/model.wts .
 
 # Generate build files and compile
 cmake ..
@@ -77,8 +72,8 @@ make -j$(nproc)
 docker
 title: Serialize model to TensorRT plan file
 sudo ./yolov8_seg \
-  -s 1706_best.wts \
-     1706_best.engine \
+  -s model.wts \
+     model.engine \
      n
 ```
 
@@ -86,14 +81,8 @@ sudo ./yolov8_seg \
 
 ### 6. Run Inference
 
-1. Prepare a folder with test images:
 
-   ```bash
-   mkdir -p images
-   cp /path/to/images/*.jpg images/
-   ```
-
-2. Run segmentation (CPU post-processing):
+1. Run segmentation (CPU post-processing):
 
    ```bash
    ./yolov8_seg \
@@ -103,7 +92,7 @@ sudo ./yolov8_seg \
      my_classes.txt
    ```
 
-3. Or run segmentation (GPU post-processing):
+2. Or run segmentation (GPU post-processing):
 
    ```bash
    ./yolov8_seg \
@@ -112,8 +101,6 @@ sudo ./yolov8_seg \
      g \
      my_classes.txt
    ```
-
-Results will be saved in the `images/` folder with the prefix `seg_`.
 
 ---
 
