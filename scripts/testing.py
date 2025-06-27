@@ -16,12 +16,12 @@ image_dir = "/home/seame/frames/frames2"
 #     if os.path.isfile(file_path):
 #         model.predict(file_path, save=True, imgsz=320, conf=0.1)
 
-os.system('yolo val model="../models/old_models/yolo-object-lane2/weights/best.pt" data="/home/seame/ObjectDetectionAvoidance/dataset/data.yaml"')
+os.system('yolo val model="../models/bdd100k/weights/best.pt" data="/home/seame/ObjectDetectionAvoidance/dataset/data.yaml"')
 # # os.system('yolo predict model="../models/yolo-object-lane2/weights/best.pt" source="/home/seame/frames/frames2/frame_0058.jpg \
 # #     /home/seame/frames/frames2/frame_0092.jpg /home/seame/frames/frames2/frame_0026.jpg /home/seame/frames/frames2/frame_0035.jpg \
 # #     /home/seame/frames/frames2/frame_0033.jpg" project=predictions name=lane2')
 
-os.system('yolo val model="../models/yolo-object-lane/weights/best.pt" data="/home/seame/ObjectDetectionAvoidance/dataset/data.yaml"')
+# os.system('yolo val model="../models/yolo-object-lane/weights/best.pt" data="/home/seame/ObjectDetectionAvoidance/dataset/data.yaml"')
 # os.system('yolo predict model="../models/yolo-object-lane2/weights/best.pt" source="/home/seame/frames/frames2/frame_0058.jpg \
 #     /home/seame/frames/frames2/frame_0092.jpg /home/seame/frames/frames2/frame_0026.jpg /home/seame/frames/frames2/frame_0035.jpg \
 #     /home/seame/frames/frames2/frame_0033.jpg" project=predictions name=lane')

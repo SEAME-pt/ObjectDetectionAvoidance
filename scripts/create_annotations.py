@@ -40,7 +40,7 @@ def generate_synthetic_object_annotations(model_path, img_dir, output_dir, split
                 for poly in polygons:
                     # Handle letterboxing: calculate content area (320x180 for 1280x720 aspect ratio)
                     class_id = class_ids[i]
-                    if class_id == 0 or class_id == 2 or class_id == 11 : 
+                    if class_id == 9: 
                         # print(f"class {class_id}")
                         content_height = int(imgsz * (orig_h / orig_w))  # e.g., 180 for 16:9
                         content_width = imgsz  # 320
@@ -402,18 +402,18 @@ def merge_annotations(output_dir, lane_label_dir, da_dir, object_label_dir=None 
                 print(f"No annotations for {label_name}")
 
 def main():
-    output_dir = '../best/label/'
-    img_dir = '/home/seame/frames/frames3'
+    output_dir = './objects'
+    img_dir = '../dataset/images/train'
     mask_dir = '../best'
     label_dir = './filtered/labels'
     shutil.rmtree('../debug_masks', ignore_errors=True)
     # mask_dir_val = '/home/seame/ObjectDetectionAvoidance/masks'
 
     os.makedirs(os.path.join(output_dir), exist_ok=True)
-    # generate_synthetic_object_annotations('../pretrained_yolo/yolo11n-seg.pt', img_dir, output_dir, '')
+    generate_synthetic_object_annotations('../pretrained_yolo/yolo11n-seg.pt', img_dir, output_dir, '')
     # generate_synthetic_object_annotations('../pretrained_yolo/yolo11n-seg.pt', img_dir, output_dir, 'val')
 
-    process_directory(mask_dir, output_dir)
+    # process_directory(mask_dir, output_dir)
     # process_directory(mask_dir2, output_dir2)
     # merge_annotations(output_dir, None, label_dir, '../filtered/other/labels' , '')
 

@@ -3,20 +3,18 @@ import os
 def change_annotation_labels(label_dir):
     # Mapping of old labels to new labels
     label_map = {
-                '1': '0',  # Assuming '1' is the background class
-                '2': '1',
-                '3': '10',
-                '4': '11',
-                '5': '12', 
-                '6': '13',
-                '7': '14',
-                '8': '2',
-                '9': '3',
-                '10': '4',
-                '11': '5',
-                '12': '8',
-                '13': '9',
-
+                '0': '6', 
+                '1': '0', 
+                '2': '12',
+                '8': '13',
+                '9': '14',
+                '10': '15',
+                '11': '16',
+                '12': '2',
+                '13': '17',
+                '14': '18',
+                '15': '19',
+                '16': '20',
                 }
     
     # Get list of txt files in label directory
@@ -68,7 +66,7 @@ def change_annotation_labels(label_dir):
     print(f"Total files modified: {modified_count}")
 
 if __name__ == "__main__":
-    output_directory = "../clutter/new/output" 
+    output_directory = "../second_training/labels/val"  # Adjust this path as needed
     change_annotation_labels(output_directory)
 
     # label_directory = "../speed/val/labels_seg"  

@@ -15,62 +15,66 @@ def copy_files(source_dir, dest_dir):
 
 source_directory = "../models/"
 destination_directory = "../models/old_models/"
-copy_files(source_directory, destination_directory)
-shutil.rmtree("../models/yolo-object-lane/", ignore_errors=True)
+# copy_files(source_directory, destination_directory)
+# shutil.rmtree("../models/yolo-object-lane/", ignore_errors=True)
 # shutil.rmtree("../models/yolo-object-lane-unfroze/", ignore_errors=True)
 
 
-model = YOLO("yolov8l-seg.pt")
-# model = YOLO("../old_models/yolo-lane-seame-unfroze/weights/best.pt")
+# model = YOLO("yolov8l-seg.pt")
+model = YOLO("../models/bdd100k/weights/best.pt")
 results = model.train(
     data="/home/seame/ObjectDetectionAvoidance/dataset/data.yaml",
     epochs=100,
-    imgsz=320,
-    hsv_h=0.015,        # hue
-    hsv_s=0.3,        # saturation
-    hsv_v=0.3,        # Brightness/contrast 
-    translate=0.0,    # Disable translation
-    scale=0.0,        # Disable scaling
-    fliplr=0.0,       # Disable horizontal flip
-    mosaic=0.0,       # Disable mosaic
-    erasing=0.0,      # Disable random erasing
+    warmup_epochs=3,  # Warmup epochs
+    imgsz=640,  # Increased for better detail
+    hsv_h=0.015,
+    hsv_s=0.7,  # Stronger HSV for lighting variations
+    hsv_v=0.4,
+    translate=0.1,  # Moderate translation
+    scale=0.3,  # Reduced for segmentation precision
+    fliplr=0.5,  # Kept for driving scenarios
+    mosaic=0.7,  # Slightly reduced for segmentation
+    erasing=0.2,  # Reduced to avoid excessive mask corruption
+    batch=16,  # Feasible with 16GB VRAM for imgsz=640
+    device=0,
+    workers=8,
     # augment=transform,
     auto_augment=None,  # Disable auto-augmentation
-    batch=8,
-    device=0,
-    workers=4,
     project="../models",
-    name="yolo-object-lane",
+    name="bdd100k2",
     exist_ok=True,
-    freeze=0,  # Freeze backbone
-    lr0=0.005,  
-    patience=30,  # Early stopping
+    freeze=10,  # Freeze backbone
+    lr0=0.001,
+    patience=20,  # Early stopping
     weight_decay=0.0005
 )
 
 
-# model = YOLO("../models/yolo-object-lane/weights/best.pt")
-# results = model.train(
-#     data="/home/seame/ObjectDetectionAvoidance/dataset/data.yaml",
-#     epochs=100,
-#     imgsz=320,
-#     hsv_h=0.3,        # hue
-#     hsv_s=0.3,        # saturation
-#     hsv_v=0.3,        # Brightness/contrast (±40%)
-#     translate=0.0,    # Disable translation
-#     scale=0.0,        # Disable scaling
-#     fliplr=0.0,       # Disable horizontal flip
-#     mosaic=0.0,       # Disable mosaic
-#     erasing=0.0,      # Disable random erasing
-#     auto_augment=None,  # Disable auto-augmentation
-#     batch=16,
-#     device=0,
-#     workers=4,
-#     project="../models",
-#     name="yolo-object-lane-unfroze",
-#     exist_ok=True,
-#     freeze=0,  # Unfreeze all layers
-#     lr0=0.001, 
-#     patience=50,  # Early stopping
-#     weight_decay=0.0005
-# )
+model = YOLO("../models/bdd100k2/weights/best.pt")
+results = model.train(
+    data="/home/seame/ObjectDetectionAvoidance/second_training/data.yaml",
+    epochs=100,
+    warmup_epochs=3,
+    imgsz=320,
+    hsv_h=0.015,
+    hsv_s=0.7,  # Stronger HSV for lighting variations
+    hsv_v=0.4,
+    translate=0.1,  # Moderate translation
+    scale=0.3,  # Reduced for segmentation precision
+    fliplr=0.5,  # Kept for driving scenarios
+    mosaic=0.7,  # Slightly reduced for segmentation
+    erasing=0.2,  # Reduced to avoid excessive mask corruption
+    batch=16,  
+    device=0,
+    workers=8,
+    auto_augment=None,  # Disable auto-augmentation
+    project="../models",
+    name="second_training2",
+    exist_ok=True,
+    freeze=None,  # Unfreeze all layers
+    lr0=0.002, 
+    patience=20,  # Early stopping
+    weight_decay=0.0005,
+    mixup=0.1,  # Add mixup for small dataset
+    copy_paste=0.3  #
+)

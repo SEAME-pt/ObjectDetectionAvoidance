@@ -1,6 +1,6 @@
 ## Project Architecture
 
-You can find our **best models** in dev branch, [weights folder](models/yolo-object-lane/weights/). You can also download our model and dataset here: [Click to access our dataset](https://drive.google.com/drive/folders/1RwFmYyjxCafdnUORBcm2kgo62itcLmcS?usp=drive_link). In there you have our full dataset, and separate folders with some of the images we used.
+You can find our **best models** in the [weights folder](models/yolo-object-lane/weights/). You can also download our model and dataset here: [Click to access our dataset](https://drive.google.com/drive/folders/1RwFmYyjxCafdnUORBcm2kgo62itcLmcS?usp=drive_link). In there you have our full dataset, and separate folders with some of the images we used.
 Training a Yolo Object detection model, with **Lane detection (segmentation)** as well.
 
 \image html ADR/Fluxograma.jpg "Project Structure" width=60%

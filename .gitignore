@@ -7,3 +7,5 @@ scripts/yolo11n.pt
 debug_masks/
 clutter/
 pid_control/images/
+correct/
+second_training/

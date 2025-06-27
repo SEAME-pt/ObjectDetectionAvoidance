@@ -42,7 +42,7 @@ def resize_images_letterbox(input_dir, output_dir, target_size=(320, 320)):
         resize_letterbox(img_path, output_path, target_size)
 
 # no letetrbox
-def normal_resize_images(input_dir, output_dir, target_size=320):
+def normal_resize(input_dir, output_dir, target_size=320):
     os.makedirs(output_dir, exist_ok=True)
     valid_extensions = ('.png', '.jpg', '.jpeg')
     
@@ -55,8 +55,8 @@ def normal_resize_images(input_dir, output_dir, target_size=320):
                     print(f"Failed to load {img_path}")
                     continue
                 height, width = image.shape[:2]
-                if height != 416 or width != 416:
-                    print(f"Skipping {filename}")
+                if height == 320 and width == 320:
+                    # print(f"Skipping {filename}")
                     continue
                 # Resize to 320x320 (scale factor 0.5)
                 resized = cv2.resize(image, (target_size, target_size), interpolation=cv2.INTER_LANCZOS4)
@@ -72,14 +72,11 @@ def normal_resize_images(input_dir, output_dir, target_size=320):
 
 if __name__ == "__main__":
     # shutil.rmtree("./img_resize", ignore_errors=True)
-    input_directory = "../dataset/images/train"  # Path to 640x640 images
+    input_directory = "../filtered2/images/"  # Path to 640x640 images
     output_directory = "./images_resized2"  # Path for 320x320 images
-    # normal_resize_images(input_directory, output_directory)
-    # input_directory = "../chosen/masks"  # Path to 640x640 images
-    # output_directory = "./img_resize/ll"  # Path for 320x320 images
-    # normal_resize_images(input_directory, output_directory)
+    normal_resize(input_directory, output_directory)
     # input_directory = "../bdd/da/train"  # Path to 640x640 images
     # output_directory = "./img_resize/da"  # Path for 320x320 images
-    resize_images_letterbox(input_directory, output_directory)
+    # resize_images_letterbox(input_directory, output_directory)
 
 

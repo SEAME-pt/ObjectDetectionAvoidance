@@ -2,7 +2,7 @@ task: segment
 mode: train
 model: yolov8l-seg.pt
 data: /home/seame/ObjectDetectionAvoidance/dataset/data.yaml
-epochs: 100
+epochs: 300
 time: null
 patience: 30
 batch: 8
@@ -69,11 +69,11 @@ simplify: true
 opset: null
 workspace: null
 nms: false
-lr0: 0.005
+lr0: 0.002
 lrf: 0.01
 momentum: 0.937
 weight_decay: 0.0005
-warmup_epochs: 3.0
+warmup_epochs: 3
 warmup_momentum: 0.8
 warmup_bias_lr: 0.1
 box: 7.5

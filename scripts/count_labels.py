@@ -30,6 +30,8 @@ def count_class_ids(label_dir):
                 if parts:  # Check if line is not empty
                     try:
                         class_id = parts[0]  # Class ID is the first element
+                        # if class_id == '10' or class_id == '11':
+                        #     print(f"class {class_id} in {txt_file}")
                         class_counts[class_id] += 1
                     except (IndexError, ValueError):
                         print(f"Invalid line in {txt_file}: {line.strip()}")
@@ -52,5 +54,7 @@ def count_class_ids(label_dir):
 
 # Example usage
 if __name__ == "__main__":
-    label_directory = "../dataset/labels/train"  # Replace with your label directory path
+    label_directory = "../second_training/labels/train"  # Replace with your label directory path
+    class_counts = count_class_ids(label_directory)
+    label_directory = "../dataset/labels/train"  # Ensure absolute path
     class_counts = count_class_ids(label_directory)

@@ -2,8 +2,9 @@ import os
 import cv2
 import random
 import re
+import shutil
 
-def delete_random_short_basename_images(image_dir, num_to_delete=1000, max_basename_length=6):
+def delete_random_basename_images(image_dir, num_to_delete=1000):
     # Ensure directory exists
     if not os.path.exists(image_dir):
         print(f"Image directory does not exist: {image_dir}")
@@ -12,7 +13,7 @@ def delete_random_short_basename_images(image_dir, num_to_delete=1000, max_basen
     # Get list of jpg files with basename length <= max_basename_length
     jpg_files = [
         f for f in os.listdir(image_dir)
-        if f.endswith('.jpg') and re.match(r'^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{8}$', os.path.splitext(f)[0])
+        if f.endswith('.jpg') and re.match(r'^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{8}(_\d+)?$', os.path.splitext(f)[0])
     ]
     
     # Check if there are enough files to delete
@@ -35,7 +36,9 @@ def delete_random_short_basename_images(image_dir, num_to_delete=1000, max_basen
     for file in files_to_delete:
         file_path = os.path.join(image_dir, file)
         try:
-            # os.remove(file_path)
+            os.remove(file_path)
+            # dst_path = os.path.join('lights', file)
+            # shutil.copy2(file_path, dst_path)
             print(f"Deleted: {file}")
             deleted_count += 1
         except OSError as e:
@@ -52,26 +55,29 @@ def remove_unmatched_txt(label_dir, image_dir):
     for txt_file in txt_files:
         if txt_file not in jpg_files:
             txt_path = os.path.join(label_dir, txt_file + '.txt')
+            print(f"Checking files: {txt_file}")
             if os.path.exists(txt_path):
                 # os.remove(txt_path)
                 removed_count += 1
 
-    print(f"Total files removed: {removed_count}")
+    print(f"Total txt removed: {removed_count}")
     removed_count = 0
     for jpg_file in jpg_files:
         if jpg_file not in txt_files:
-            # print(f"Checking files: {jpg_file}")
+            print(f"Checking files: {jpg_file}")
             jpg_path = os.path.join(image_dir, jpg_file + '.jpg')
             if os.path.exists(jpg_path):
-                os.remove(jpg_path)
+                # os.remove(jpg_path)
                 removed_count += 1
     
-    print(f"Total files removed: {removed_count}")
+    print(f"Total img removed: {removed_count}")
 
 
 if __name__ == "__main__":
     label_directory = "../dataset/labels/train"  # Replace with your label directory path
     image_directory = "../dataset/images/train"  # Replace with your image directory path
-    # delete_random_short_basename_images(image_directory)
+    # delete_random_basename_images(image_directory)
+    label_directory = "../second_training/labels"  # Replace with your label directory path
+    image_directory = "../second_training/images"
     remove_unmatched_txt(label_directory, image_directory)
     # delete_320x240_images(image_directory)

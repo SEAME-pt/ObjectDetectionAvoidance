@@ -100,14 +100,10 @@ if __name__ == "__main__":
     # destination_dir = "../dataset/images/train"  
     # copy_directory_files(dir, destination_dir, include_subdirs=True)
 
-    dir1 = "../dataset/train"
-    dir2 = "../dataset/images/train"  
-    destination_dir = "./chosen/images"  
-    # copy_matching_files(dir1, dir2, destination_dir)
-    copy_directory_files(dir1, dir2, include_subdirs=False)
-    dir1 = "../dataset/output"
+    dir1 = "../output"
     dir2 = "../dataset/labels/train"  
     destination_dir = "./chosen/images"  
     # copy_matching_files(dir1, dir2, destination_dir)
     copy_directory_files(dir1, dir2, include_subdirs=False)
+
 
