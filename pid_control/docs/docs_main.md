@@ -15,8 +15,8 @@ This file wires the entire **JetRacer autonomous lane‑keeping loop**:
 
 ```mermaid
 graph TD
-    A[Program start] --> B[Init JetRacer (I2C 0x40 / 0x60)]
-    B --> C[Map shared memory "mask_shared"]
+    A[Program start] --> B["Init JetRacer (I2C 0x40 &sol; 0x60)"]
+    B --> C["Map shared memory \"mask_shared\""]
     C --> D[while(true)]
     D -->|flag==0| D
     D -->|flag==1| E[PIDexecute(mask)]
@@ -66,15 +66,15 @@ graph TD
 ## Build & run
 
 ```bash
-# assuming a top-level CMakeLists
-cd build
-make main_pid_sharedmem
+
+# Terminal 2: compile
+make
 
 # Terminal 1: producer writing masks to shared memory
-python3 tools/camera_mask_writer.py &
+python3 scripts/camera_yolo_to_shm.py &
 
 # Terminal 2: this C++ binary
-./bin/main_pid_sharedmem
+./bin//jetracer_pid_controler
 ```
 
 **Dependencies**
@@ -82,16 +82,6 @@ python3 tools/camera_mask_writer.py &
 * OpenCV ≥ 4.5
 * JetRacer libraries (`jetracer::control`, `jetracer::vision`, `jetracer::pid`)
 * POSIX shared memory, mmap, signals (Linux)
-
----
-
-## Possible extensions
-
-* **Anti‑wind‑up** – clamp `integral_error` inside `PIDStatus`.
-* **Real `dt`** – measure elapsed time with `std::chrono` instead of fixed 0.1 s.
-* **Telemetry** – publish `angle`, `error`, `fps` via MQTT or ROS 2.
-* **Watchdog** – reset steering if mask producer stalls.
-* **Dynamic resolution** – parameterise `WIDTH` / `HEIGHT` instead of compile‑time constants.
 
 ---
 
