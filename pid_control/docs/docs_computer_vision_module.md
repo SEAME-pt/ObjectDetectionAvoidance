@@ -155,6 +155,7 @@ It draws:
 
 ## Flow
 
+```mermaid
 graph TD
     %% ===== TOP-LEVEL PIPELINE =====
     subgraph Pipeline  [Vision pipeline]
@@ -195,6 +196,7 @@ graph TD
         C7 --> C8["draw circles  ●"]
         C8 --> E
     end
+```
 
 ---
 
