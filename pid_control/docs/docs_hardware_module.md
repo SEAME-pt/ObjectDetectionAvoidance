@@ -44,7 +44,7 @@ graph TD
 graph TD
     A["read_byte(reg)"] --> B["write(fd_, &reg, 1)"]
     B -->|!=1| C["throw runtime_error"]
-    B --> D["read(fd_, &value, 1)"]
+    B["write(fd_, &amp;reg, 1)"]
     D -->|!=1| E["throw runtime_error"]
     D --> F["return value"]
 ```
