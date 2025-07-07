@@ -86,6 +86,37 @@ You can use **MATLAB Control Toolbox** or empirical methods (e.g., Ziegler–Nic
 
 ---
 
+## Flow
+
+```mermaid
+graph TD
+    %% ===== TOP-LEVEL PIPELINE =====
+    subgraph Pipeline  ["PIDexecute()"]
+        A["Segmentation mask"] --> B["extractLanePoints"]
+        B --> C["calculateTrackCenter"]
+        C --> D["compute lateral error  e (px)"]
+        D --> E["px → degrees (scale)"]
+        E --> F["PIDapply(e, dt)"]
+        F --> G["Clamp ±MAX_ANGLE"]
+        G --> H["Return steering angle"]
+        B -. "no lane" .-> Z["Return 0°"]
+    end
+
+    %% ===== PIDapply DETAILS =====
+    subgraph F_details  ["Inside PIDapply()"]
+        F1["derivative = (error - previous_error)/dt"] --> F2["integral_error += error*dt"]
+        F2 --> F3["output = Kp*e + Ki*integral + Kd*derivative"]
+        F3 --> F4{"output > MAX?"}
+        F4 -- yes --> F5["output = MAX"]
+        F4 -- no  --> F6{"output < -MAX?"}
+        F6 -- yes --> F7["output = -MAX"]
+        F6 -- no  --> F8["keep output"]
+        F5 --> F9["previous_error = error"]
+        F8 --> F9
+        F9 --> G
+    end
+```
+
 ## Notes & Best Practices
 
 * The input frame **must be pre-segmented** (see `computer_vision` module).
