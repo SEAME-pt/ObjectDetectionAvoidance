@@ -33,22 +33,23 @@ Makefile             # default target: make && make run
 
 ## Execution
 
+```bash
 # Terminal 1: producer writes lane masks to shared memory
 python3 scripts/camera_yolo_to_shm.py
 
 # Terminal 2: run the C++ controller
 ./bin/jetracer_pid_controler
+```
 
 ---
 
 ## Execution Flow (Simplified)
 
+```mermaid
 graph TD
     P1["Python – YOLO mask"] --> M1["/dev/shm/mask_shared"]
     M1 --> C1["apps/main.cpp"]
     C1 --> V1["computer_vision"]
     V1 --> PID1["pid_controller"]
     PID1 --> J1["JetRacer::smooth_steering"]
-
-
-
+```
