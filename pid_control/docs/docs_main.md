@@ -17,10 +17,10 @@ This file wires the entire **JetRacer autonomous lane‑keeping loop**:
 graph TD
     A[Program start] --> B["Init JetRacer (I2C 0x40 &sol; 0x60)"]
     B --> C["Map shared memory \"mask_shared\""]
-    C --> D[while(true)]
+    C --> D[while true]
     D -->|flag==0| D
-    D -->|flag==1| E[PIDexecute(mask)]
-    E --> F[smooth_steering(angle)]
+    D -->|flag==1| E[PIDexecute with mask]
+    E --> F["smooth_steering(angle)"]
     F --> G[flag = 0]
     G --> D
 ```
