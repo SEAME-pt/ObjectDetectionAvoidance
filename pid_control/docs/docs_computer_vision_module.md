@@ -158,42 +158,42 @@ It draws:
 ```mermaid
 graph TD
     %% ===== TOP-LEVEL PIPELINE =====
-    subgraph Pipeline  [Vision pipeline]
+    subgraph Pipeline ["Vision pipeline"]
         A["Binary mask (128×128)"] --> B["extractLanePoints"]
         B -->|"lanes detected"| C["calculateTrackCenter"]
-        B -->|"no lane"| Z["Return −1"]
+        B -->|"no lane"| Z["Return -1"]
         C --> D["draw_overlay (optional)"]
-        C --> E["centre X + y_ref"]
+        C --> E["center X plus y_ref"]
     end
 
-    %% ====== extractLanePoints DETAILS ======
-    subgraph B_details  ["Inside extractLanePoints()"]
-        B1["Loop ROIs (row 3 … 6)"] --> B2["findContours"]
-        B2 --> B3{"contour.size() ≥ 5?"}
-        B3 -- no --> B1
+    %% ===== extractLanePoints DETAILS =====
+    subgraph B_details ["Inside extractLanePoints()"]
+        B1["Loop ROIs (rows 3 … 6)"] --> B2["findContours"]
+        B2 --> B3{"contour.size() ≥ 5 ?"}
+        B3 -- no  --> B1
         B3 -- yes --> B4["fitLine(contour)"]
-        B4 --> B5["slope & distance ↦ classify • left / right"]
-        B5 --> B6{"better than previous?"}
-        B6 -- no --> B1
-        B6 -- yes --> B7["store centre_left / centre_right"]
+        B4 --> B5["slope & distance → classify left or right"]
+        B5 --> B6{"better than previous ?"}
+        B6 -- no  --> B1
+        B6 -- yes --> B7["store center_left and center_right"]
         B7 --> B1
-        B1 --> B8{"found at least one lane?"}
-        B8 -- no --> Z
-        B8 -- yes --> B9["return left/right pts & y_ref"]
+        B1 --> B8{"found at least one lane ?"}
+        B8 -- no  --> Z
+        B8 -- yes --> B9["return left / right points and y_ref"]
     end
 
-    %% ====== calculateTrackCenter DETAILS ======
-    subgraph C_details  ["Inside calculateTrackCenter()"]
-        C1{"both lanes present?"}
-        C1 -- yes --> C2["fitLine (left) & fitLine (right)"]
-        C2 --> C3["x_left / x_right @ y_ref"]
-        C3 --> C7["centre = (xL+xR)/2"]
-        C1 -- only right --> C4["x_right @ y_ref"]
-        C4 --> C5["centre = xR − disp_cm/scale"]
-        C1 -- only left --> C6["x_left @ y_ref"]
+    %% ===== calculateTrackCenter DETAILS =====
+    subgraph C_details ["Inside calculateTrackCenter()"]
+        C1{"both lanes present ?"}
+        C1 -- yes        --> C2["fitLine(left) and fitLine(right)"]
+        C2 --> C3["x_left and x_right at y_ref"]
+        C3 --> C7["center = (xL + xR) / 2"]
+        C1 -- only right --> C4["x_right at y_ref"]
+        C4 --> C5["center = xR minus disp_cm / scale"]
+        C1 -- only left  --> C6["x_left at y_ref"]
         C6 --> C5
         C5 --> C7
-        C7 --> C8["draw circles  ●"]
+        C7 --> C8["draw circles"]
         C8 --> E
     end
 ```
