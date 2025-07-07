@@ -71,7 +71,7 @@ graph TD
 make
 
 # Terminal 1: producer writing masks to shared memory
-python3 scripts/camera_yolo_to_shm.py &
+python3 scripts/camera_yolo_to_shm.py
 
 # Terminal 2: this C++ binary
 ./bin//jetracer_pid_controler
