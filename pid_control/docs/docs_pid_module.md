@@ -88,6 +88,7 @@ You can use **MATLAB Control Toolbox** or empirical methods (e.g., Ziegler–Nic
 
 ## Flow
 
+```mermaid
 graph TD
     %% ===== TOP-LEVEL PIPELINE =====
     subgraph Pipeline  ["PIDexecute()"]
@@ -114,7 +115,7 @@ graph TD
         F8 --> F9
         F9 --> G
     end
-
+```
 
 ## Notes & Best Practices
 
