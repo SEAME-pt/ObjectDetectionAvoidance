@@ -1,4 +1,4 @@
-# `sources/main.cpp` – PID control with joystick & shared‑memory mask (English)
+# `sources/main.cpp` – PID control with joystick & shared‑memory mask
 
 This file wires the entire **JetRacer autonomous lane‑keeping loop**:
 
