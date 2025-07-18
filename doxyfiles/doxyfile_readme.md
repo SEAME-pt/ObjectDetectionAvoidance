@@ -1,7 +1,8 @@
 ## Project Architecture
 
-You can find our **best models** in the [weights folder](models/yolo-object-lane/weights/). You can also download our model and dataset here: [Click to access our dataset](https://drive.google.com/drive/folders/1RwFmYyjxCafdnUORBcm2kgo62itcLmcS?usp=drive_link). In there you have our full dataset, and separate folders with some of the images we used.
-Training a Yolo Object detection model, with **Lane detection (segmentation)** as well.
+This project aims to retrain Yolo for **Lane, Drivable Area and Road Object detection** as well.
+
+You can find our **best models** in [this folder](models/). You can also download our model and dataset here: [Link to Google Drive](https://drive.google.com/drive/folders/1RwFmYyjxCafdnUORBcm2kgo62itcLmcS?usp=drive_link). In there you have our full dataset, and separate folders with some of the images we used.
 
 \image html ADR/Fluxograma.jpg "Project Structure" width=60%
 
@@ -10,8 +11,6 @@ Training a Yolo Object detection model, with **Lane detection (segmentation)** a
 \image html models/yolo-object-lane/val_batch0_pred.jpg "Results" width=50%
 
 ## Datasets
-
-You can download our dataset here: [Click to access our dataset](https://drive.google.com/drive/folders/1RwFmYyjxCafdnUORBcm2kgo62itcLmcS?usp=drive_link).
 
 For lane and drivable area detection, we took some images of our lab and also used the bdd10k dataset. For the objects, we downloaded some datasets from Roboflow.
 
