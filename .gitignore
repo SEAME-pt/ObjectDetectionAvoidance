@@ -2,6 +2,7 @@ yolo_models/pretrained_yolo/
 yolo_models/models/old_models
 yolo_models/scripts/runs
 yolo_models/scripts/yolo11n.pt
+yolo_models/scripts/yolov8s-seg.pt/
 yolo_models/clutter/
 pid_control/images/
 yolo_models/split_dataset/
