@@ -23,7 +23,7 @@ This README provides a clear and concise guide to convert a YOLOv8 segmentation 
 ```bash
 
 # YOLOv8 TensorRT code
-https://github.com/wang-xinyu/tensorrtx/tree/master/yolov8
+git clone https://github.com/wang-xinyu/tensorrtx.git
 ```
 
 ### 2. Generate the `.wts` File
@@ -31,7 +31,6 @@ https://github.com/wang-xinyu/tensorrtx/tree/master/yolov8
 ```bash
 
 # Run the conversion for segmentation (-t seg)
-cd ultralytics/ultralytics
 python3 gen_wts.py \
   -w /path/to/model.pt \
   -o /path/to/model.wts \
@@ -57,8 +56,6 @@ cd tensorrtx/yolov8
 # Clean and create a build directory
 rm -rf build && mkdir build && cd build
 
-# Copy the generated WTS file
-cp ../../ultralytics/ultralytics/model.wts .
 
 # Generate build files and compile
 cmake ..
@@ -93,7 +90,6 @@ sudo ./yolov8_seg \
    ```
 
 2. Or run segmentation (GPU post-processing):
-
    ```bash
    ./yolov8_seg \
      -d 1706_best.engine \
