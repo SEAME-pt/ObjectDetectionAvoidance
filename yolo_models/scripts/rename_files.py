@@ -72,6 +72,6 @@ def rename_images_labels(dir_path_images, dir_path_labels):
             existing_images.add(candidate)
 
 
-image = "../seame_sig/train/"
-label = "../seame_sig/labels"
+image = "../8080/train/"
+label = "../8080/labels"
 rename_images_labels(image, label)

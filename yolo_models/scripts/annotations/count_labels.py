@@ -54,9 +54,9 @@ def count_class_ids(label_dir):
 
 # Example usage
 if __name__ == "__main__":
-    label_directory = "../../seame_training/val/labels"  # Replace with your label directory path
+    label_directory = "../../seame_training/train/labels"  # Replace with your label directory path
     class_counts = count_class_ids(label_directory)
-    # label_directory = "../../split_dataset/val/labels"  # Replace with your label directory path
+    # label_directory = "../../new_seame/val/labels"  # Replace with your label directory path
     # class_counts = count_class_ids(label_directory)
     # label_directory = "../dataset/labels/train"  # Ensure absolute path
     # class_counts = count_class_ids(label_directory)

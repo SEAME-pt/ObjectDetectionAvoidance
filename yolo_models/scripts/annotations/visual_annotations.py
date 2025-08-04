@@ -201,8 +201,8 @@ def verify_dataset(image_dir, label_dir,  output_dir, num_samples=10):
 
 if __name__ == '__main__':
     shutil.rmtree('/home/seame/ObjectDetectionAvoidance/yolo_models/clutter/verify', ignore_errors=True)
-    image_dir = '../../seame_sig/train/'  # Adjust this path as needed
-    label_dir = '../../seame_sig/labels/'  # Adjust this path as needed
+    image_dir = '../../8080/train/'  # Adjust this path as needed
+    label_dir = '../../8080/labels'  # Adjust this path as needed
     output_dir = '/home/seame/ObjectDetectionAvoidance/yolo_models/clutter/verify'
     num_samples = 100000
     # image_dir = '../second_training/val'  # Adjust this path as needed

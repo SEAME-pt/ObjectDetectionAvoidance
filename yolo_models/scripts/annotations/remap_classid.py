@@ -4,14 +4,14 @@ def change_annotation_labels(label_dir):
     # Mapping of old labels to new labels
     label_map = {
 
-            '1': '4',
+            # '8': '1',
+            # '0': '4',
+            # '1': '5',  
             '2': '5',
-            '3': '0',  
-            '4': '1',
-            '5': '2',   
-            '6': '3',
-            # '14': '4',
-            # '18': '7',
+            # '4': '7',   
+            # '5': '3',
+            # '6': '2',
+            # '7': '4',
 
                 
                 }
@@ -62,7 +62,7 @@ def change_annotation_labels(label_dir):
     print(f"Total files modified: {modified_count}")
 
 if __name__ == "__main__":
-    output_directory = "../../seame_sig/labels/"  # Adjust this path as needed
+    output_directory = "../../8080/labels/"  # Adjust this path as needed
     change_annotation_labels(output_directory)
 
     # label_directory = "../speed/val/labels_seg"  

@@ -7,4 +7,5 @@ yolo_models/clutter/
 pid_control/images/
 yolo_models/split_dataset/
 .Trash-1000/
+yolo_models/scripts/unused
 yolo_models/seame_training

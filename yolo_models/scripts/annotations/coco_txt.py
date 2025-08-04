@@ -113,8 +113,8 @@ def coco_to_txt(coco_json_path, output_txt_dir):
     print(f"Processed {processed_images} images, saved {total_txts} TXT files")
 
 
-coco_json_path = '../../seame_sig/train'
-output_dir = '../../seame_sig/labels'
+coco_json_path = '../../8080/train'
+output_dir = '../../8080/labels'
 
 for file in os.listdir(coco_json_path):
     if file.endswith('.json'):
