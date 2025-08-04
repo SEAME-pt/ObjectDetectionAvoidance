@@ -1,0 +1,43 @@
+name: Deploy Documentation to GitHub Pages
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+
+      - name: Generate Documentation
+        run: |
+          python3 ./scripts/copy_readme.py
+          cd doxyfiles
+          doxygen Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: doxyfiles/docs
+          token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+          clean: true
+          clean-exclude: |
+            .git
+            .gitignore
+
+          
