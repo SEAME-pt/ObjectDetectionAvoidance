@@ -111,3 +111,7 @@ Tested on: **Jetson Nano 4GB**, Ubuntu 20.04, JetPack 4.x, CUDA, cuDNN, TensorRT
 To see more Documentation on the PID control go to [this file](pid_control/README.md).
 
 To see a more structured Documentation go to [Doxygen](https://seame-pt.github.io/ObjectDetectionAvoidance/).
+
+## Test Coverage Report
+
+To see our test coverage report click here: [Coverage Report](https://seame-pt.github.io/ObjectDetectionAvoidance/coverage/index.html).
