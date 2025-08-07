@@ -82,12 +82,12 @@ Project Structure</div></div>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Inference Result</h1>
 <div class="image">
-<img src="models/yolo-object-lane/val_batch0_pred.jpg" alt="" width="50%"/>
+<img src="val_batch1_pred.jpg" alt="" width="50%"/>
 <div class="caption">
 Results</div></div>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Datasets</h1>
-<p>For lane and drivable area detection, we took some images of our lab and also used the bdd10k dataset. For the objects, we downloaded some datasets from Roboflow. For lane and drivable area detection, we took some images of our lab and also used the BDD100K dataset. For the objects, we downloaded some datasets from Roboflow.</p>
+<p>For lane and drivable area detection, we took some images of our lab and also used the bdd10k dataset. For the objects, we downloaded some datasets from Roboflow. For lane and drivable area detection, we took some images of our lab. For the objects, we downloaded some datasets from Roboflow.</p>
 <h2><a class="anchor" id="autotoc_md3"></a>
 Roboflow</h2>
 <p>To create the annotations of our lab images, we used Roboflow, we added blur, noise and grayscale to the images and resized them to 320x320, keeping aspect ratio. After this, we downloaded to <b>COCO segmentation</b> format. This creates a Json file with all the annotations. So, in <a href="yolo_models/scripts/annotations/coco_txt.py">this file</a> we convert these annotations, that have the polygons of the lanes in COCO format to yolo-seg txt format.</p>
@@ -165,9 +165,8 @@ Recommendations</h3>
 <hr  />
 <p>Tested on: <b>Jetson Nano 4GB</b>, Ubuntu 20.04, JetPack 4.x, CUDA, cuDNN, TensorRT.</p>
 <h1><a class="anchor" id="autotoc_md19"></a>
-Documentation</h1>
-<p>To see more Documentation on the PID control go to <a class="el" href="pid__control_2README_8md.html">this file</a>.</p>
-<p>To see a more structured Documentation go to <a href="https://seame-pt.github.io/ObjectDetectionAvoidance/">Doxygen</a>. </p>
+Test Coverage Report</h1>
+<p>To see our test coverage report click here: <a href="https://seame-pt.github.io/ObjectDetectionAvoidance/coverage/index.html">Coverage Report</a>. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
