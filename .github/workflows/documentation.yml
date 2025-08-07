@@ -17,6 +17,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pytest-cov numpy ultralytics
+
+      - name: Run Tests and Generate Coverage Report
+        run: |
+          cd yolo_models
+          export PYTHONPATH=$GITHUB_WORKSPACE/yolo_models
+          pytest --cov=scripts --cov-report=html
+
+      - name: Copy Coverage Report to Docs Folder
+        run: |
+          mkdir -p doxyfiles/docs/coverage
+          cp -r yolo_models/htmlcov/* doxyfiles/docs/coverage/
+
       - name: Install Doxygen
         run: |
           sudo apt-get update
@@ -24,7 +45,7 @@ jobs:
 
       - name: Generate Documentation
         run: |
-          python3 ./scripts/copy_readme.py
+          python3 ./yolo_models/scripts/copy_readme.py
           cd doxyfiles
           doxygen Doxyfile
 

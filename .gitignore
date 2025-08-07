@@ -9,3 +9,10 @@ yolo_models/split_dataset/
 .Trash-1000/
 yolo_models/scripts/unused
 yolo_models/seame_training
+yolo_models/scripts/tests/__pycache__/
+.pytest_cache/
+yolo_models/scripts/__pycache__/
+yolo_models/scripts/.pytest_cache/
+yolo_models/scripts/tests/__pycache__/
+yolo_models/scripts/tests/.pytest_cache/
+yolo_models/scripts/annotations/__pycache__/

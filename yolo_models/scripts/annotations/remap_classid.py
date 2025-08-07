@@ -1,20 +1,7 @@
 import os
 
-def change_annotation_labels(label_dir):
-    # Mapping of old labels to new labels
-    label_map = {
+def change_annotation_labels(label_dir, label_map):
 
-            # '8': '1',
-            # '0': '4',
-            # '1': '5',  
-            '2': '5',
-            # '4': '7',   
-            # '5': '3',
-            # '6': '2',
-            # '7': '4',
-
-                
-                }
     
     # Get list of txt files in label directory
     txt_files = [f for f in os.listdir(label_dir) if f.endswith('.txt')]
@@ -47,23 +34,14 @@ def change_annotation_labels(label_dir):
             with open(file_path, 'w') as f:
                 f.writelines(new_lines)
             modified_count += 1
-            # print(f"Modified: {txt_file}")
  
-        # else:
-        #     base_name = os.path.splitext(txt_file)[0]
-        #     image_dir = '../dataset/images/train'  # Adjust this path as needed
-        #     image_path = os.path.join(image_dir, base_name + '.jpg')
-        #     os.remove(file_path)
-        #     if os.path.exists(image_path):
-        #         # os.remove(image_path)
-        #         print(f"Removed: {txt_file} and corresponding image {base_name}.jpg")
-        #     else:
-        #         print(f"No corresponding image found for {txt_file}")
     print(f"Total files modified: {modified_count}")
 
 if __name__ == "__main__":
+    label_map = {
+        '2': '5',
+        # Add other mappings if needed
+    }
     output_directory = "../../8080/labels/"  # Adjust this path as needed
-    change_annotation_labels(output_directory)
+    change_annotation_labels(output_directory, label_map)
 
-    # label_directory = "../speed/val/labels_seg"  
-    # change_annotation_labels(label_directory)
