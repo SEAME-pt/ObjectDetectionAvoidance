@@ -8,7 +8,7 @@ You can find our **best models** in [this folder](models/). You can also downloa
 
 ## Inference Result
 
-\image html models/yolo-object-lane/val_batch0_pred.jpg "Results" width=50%
+\image html models/seame_training/val_batch1_pred.jpg "Results" width=50%
 
 ## Datasets
 
