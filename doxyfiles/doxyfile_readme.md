@@ -12,7 +12,7 @@ You can find our **best models** in [this folder](models/). You can also downloa
 
 ## Datasets
 
-For lane and drivable area detection, we took some images of our lab and also used the bdd10k dataset. For the objects, we downloaded some datasets from Roboflow.
+For lane and drivable area detection, we took some images of our lab. For the objects, we downloaded some datasets from Roboflow.
 
 I noticed a decay of object detection outside the objects of my dataset, despite the fact that i froze the backbone and lowered the learning rate. So you might need to add some object images to preserve more information.
 
