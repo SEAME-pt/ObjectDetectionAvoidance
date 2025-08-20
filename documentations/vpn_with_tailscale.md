@@ -252,3 +252,13 @@ flowchart TD
 | Create ACLs          | https://login.tailscale.com/admin/acls           |
 | Apply restrictions   | Remove IPs from `dst` list and restart Tailscale |
 | Disconnect users     | `ss -tnp` + `kill <PID>` for active sessions     |
+
+
+| Machine                   | Address       | Version |
+|----------------------------|---------------|---------|
+| seame-thinkpad-p16-gen-2  | 100.122.103.80 | 18.04   |
+| nano                      | 100.101.78.17  | 18.04.3 |
+| okdot5-desktop            | 100.125.81.73  | 18.2.5  |
+| raspberrypi               | 100.123.70.46  | 18.04   |
+| seame-thinkpad-p16-gen-2  | 100.92.243.22  | 18.04   |
+| seame-tpad-without-model  | 100.91.145.67  | 18.04   |
