@@ -1,0 +1,14 @@
+[Unit]
+Description=Battery MQTT Cloud Publisher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/battery_mqtt_cloud
+Restart=always
+RestartSec=5
+User=jetracer
+
+[Install]
+WantedBy=multi-user.target

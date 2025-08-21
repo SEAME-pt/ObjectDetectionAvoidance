@@ -1,0 +1,15 @@
+[Unit]
+Description=MQTT Speed Publisher
+BindsTo=can-manager.service
+Requires=can-manager.service mosquitto.service
+After=network.target can-manager.service mosquitto.service
+PartOf=can-manager.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/speed_mqtt_local
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

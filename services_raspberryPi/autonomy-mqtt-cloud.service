@@ -1,0 +1,14 @@
+[Unit]
+Description=Car Autonomy Publisher Cloud
+After=network-online.target mosquitto.service autonomy-mqtt-local.service
+Wants=network-online.target autonomy-mqtt-local.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/autonomy_mqtt_cloud
+Restart=always
+RestartSec=5
+User=jetracer
+
+[Install]
+WantedBy=multi-user.target
