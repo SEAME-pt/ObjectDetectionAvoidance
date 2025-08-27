@@ -1,0 +1,15 @@
+[Unit]
+Description=GitHub Actions Self-Hosted Runner
+After=network.target
+
+[Service]
+Type=simple
+User=jetracer
+WorkingDirectory=/home/jetracer/actions-runner
+ExecStart=/home/jetracer/actions-runner/run.sh
+Restart=always
+RestartSec=10
+Environment=RUNNER_ALLOW_RUNASROOT=1
+
+[Install]
+WantedBy=multi-user.target

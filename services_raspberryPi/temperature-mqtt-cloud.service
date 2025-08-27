@@ -1,0 +1,16 @@
+[Unit]
+Description=Service to forward Raspberry Pi temperature from local to cloud MQTT broker
+BindsTo=temperature-mqtt-local
+Requires=temperature-mqtt-local
+After=network-online.target temperature-mqtt-local
+PartOf=temperature-mqtt-local
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/temperature_mqtt_cloud
+Restart=always
+RestartSec=5
+User=jetracer
+
+[Install]
+WantedBy=multi-user.target

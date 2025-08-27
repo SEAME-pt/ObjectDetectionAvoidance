@@ -1,0 +1,12 @@
+[Unit]
+Description=CAN Interface Manager (Activate, Monitor, Deactivate)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/can_manager
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
