@@ -1,0 +1,15 @@
+[Unit]
+Description=Service to publish speed data to the cloud MQTT broker
+BindsTo=speed-mqtt-local.service
+Requires=speed-mqtt-local.service
+After=network-online.target speed-mqtt-local.service
+PartOf=speed-mqtt-local.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/speed_mqtt_cloud
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

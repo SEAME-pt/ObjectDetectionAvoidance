@@ -1,0 +1,14 @@
+[Unit]
+Description=Car Autonomy Calculator and Publisher
+After=network-online.target mosquitto.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/autonomy_mqtt_local
+Restart=always
+RestartSec=5
+User=jetracer
+
+[Install]
+WantedBy=multi-user.target
