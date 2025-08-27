@@ -31,6 +31,6 @@ var searchData=
   ['count_5fclass_5fids_28',['count_class_ids',['../namespacecount__labels.html#ac9bb963cf9677187850dc9d7c798906c',1,'count_labels']]],
   ['count_5flabels_29',['count_labels',['../namespacecount__labels.html',1,'']]],
   ['count_5flabels_2epy_30',['count_labels.py',['../count__labels_8py.html',1,'']]],
-  ['coverage_20report_31',['coverage report',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html#autotoc_md91',1,'Test Coverage Report'],['../index.html#autotoc_md19',1,'Test Coverage Report']]],
+  ['coverage_20report_31',['Test Coverage Report',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2README.html#autotoc_md92',1,'']]],
   ['cpp_20tt_32',['cpp tt',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md51',1,'2. &lt;tt&gt;jetracer.cpp&lt;/tt&gt;'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md25',1,'2. &lt;tt&gt;jetracer.cpp&lt;/tt&gt;'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md52',1,'3. &lt;tt&gt;main.cpp&lt;/tt&gt;'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md26',1,'3. &lt;tt&gt;main.cpp&lt;/tt&gt;']]]
 ];
