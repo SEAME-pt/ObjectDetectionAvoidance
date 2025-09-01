@@ -109,11 +109,11 @@ Tested on: **Jetson Nano 4GB**, Ubuntu 20.04, JetPack 4.x, CUDA, cuDNN, TensorRT
 ## Documentation
 
 To see more documentation on:
-   - the PID control go to [this file](pid_control/README.md).
+   - the PID control, go to [this file](pid_control/README.md).
 
-   - our microservices go to [this file](services_raspberryPi/README.md).
+   - our microservices, go to [this file](services_raspberryPi/README.md).
 
-For a more structured documentation visit the [Doxygen Documentation](https://seame-pt.github.io/ObjectDetectionAvoidance/).
+For a more structured documentation, visit the [Doxygen Documentation](https://seame-pt.github.io/ObjectDetectionAvoidance/).
 
 ## Test Coverage Report
 
