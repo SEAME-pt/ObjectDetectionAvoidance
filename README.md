@@ -106,12 +106,14 @@ By doing so, we achieved significantly higher inference performance using the Je
 
 Tested on: **Jetson Nano 4GB**, Ubuntu 20.04, JetPack 4.x, CUDA, cuDNN, TensorRT.
 
+## Documentation
+
+To see more documentation on the PID control go to [this file](pid_control/README.md).
+
+To see more documentation on our microservices go to [this file](services_raspberryPi/README.md).
+
+To see a more structured documentation go to [Doxygen](https://seame-pt.github.io/ObjectDetectionAvoidance/).
+
 ## Test Coverage Report
 
 To see our test coverage report click here: [Coverage Report](https://seame-pt.github.io/ObjectDetectionAvoidance/coverage/index.html).
-
-## Documentation
-
-To see more Documentation on the PID control go to [this file](pid_control/README.md).
-
-To see a more structured Documentation go to [Doxygen](https://seame-pt.github.io/ObjectDetectionAvoidance/).
