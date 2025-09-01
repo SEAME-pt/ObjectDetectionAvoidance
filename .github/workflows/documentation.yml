@@ -45,7 +45,6 @@ jobs:
 
       - name: Generate Documentation
         run: |
-          python3 ./yolo_models/scripts/copy_readme.py
           cd doxyfiles
           doxygen Doxyfile
 
