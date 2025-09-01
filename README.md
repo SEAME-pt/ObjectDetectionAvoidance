@@ -112,7 +112,7 @@ To see more documentation on the PID control go to [this file](pid_control/READM
 
 To see more documentation on our microservices go to [this file](services_raspberryPi/README.md).
 
-To see a more structured Documentation go to [Doxygen](https://seame-pt.github.io/ObjectDetectionAvoidance/).
+To see a more structured documentation go to [Doxygen](https://seame-pt.github.io/ObjectDetectionAvoidance/).
 
 ## Test Coverage Report
 
