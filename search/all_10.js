@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['métodos_20públicos_3a_0',['Métodos Públicos:',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md65',1,'']]],
-  ['métodos_20privados_3a_1',['Métodos Privados:',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md66',1,'']]],
+  ['métodos_20públicos_3a_0',['Métodos Públicos:',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md45',1,'']]],
+  ['métodos_20privados_3a_1',['Métodos Privados:',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md46',1,'']]],
   ['main_2',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_20cpp_20tt_3',['main cpp tt',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md52',1,'3. &lt;tt&gt;main.cpp&lt;/tt&gt;'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md26',1,'3. &lt;tt&gt;main.cpp&lt;/tt&gt;']]],
+  ['main_20cpp_20tt_3',['main cpp tt',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md32',1,'3. &lt;tt&gt;main.cpp&lt;/tt&gt;'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md6',1,'3. &lt;tt&gt;main.cpp&lt;/tt&gt;']]],
   ['main_2ecpp_4',['main.cpp',['../main_8cpp.html',1,'']]],
   ['make_5fcoco_5fjson_5',['make_coco_json',['../namespacetest__coco__txt.html#a478a1f97a4bc333fcceee0a500df27bd',1,'test_coco_txt']]],
   ['mask_5ffinal_6',['mask_final',['../namespacecamera__yolo__to__shm.html#af1a3400519f416a5c322165449aec5b6',1,'camera_yolo_to_shm']]],
@@ -15,7 +15,7 @@ var searchData=
   ['maskr_5fcurve_2epng_12',['maskr_curve.png',['../seame__training__512_2MaskR__curve_8png.html',1,'(Global Namespace)'],['../seame__training_2MaskR__curve_8png.html',1,'(Global Namespace)'],['../seame__n_2MaskR__curve_8png.html',1,'(Global Namespace)'],['../objects__training_2MaskR__curve_8png.html',1,'(Global Namespace)'],['../objects_2MaskR__curve_8png.html',1,'(Global Namespace)'],['../new__dataset3_2MaskR__curve_8png.html',1,'(Global Namespace)'],['../512_2MaskR__curve_8png.html',1,'(Global Namespace)']]],
   ['masks_13',['masks',['../namespacecamera__yolo__to__shm.html#a9d5851303f52e46a80925fa4c69c4399',1,'camera_yolo_to_shm']]],
   ['max_5fangle_14',['MAX_ANGLE',['../namespacejetracer_1_1pid.html#a312d382b00c6084c5cd2b14fb0408bde',1,'jetracer::pid']]],
-  ['methods_3a_15',['methods:',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md40',1,'Private Methods:'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md39',1,'Public Methods:']]],
+  ['methods_3a_15',['methods:',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md20',1,'Private Methods:'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2pid__control_2README.html#autotoc_md19',1,'Public Methods:']]],
   ['model_16',['model',['../namespacecamera__yolo__to__shm.html#a14bf99f3b8694030b15b6487f4325e9b',1,'camera_yolo_to_shm.model'],['../namespacetesting.html#a81baff8fb201cb466c511ea9298e7be7',1,'testing.model']]],
   ['model_5fpath_17',['model_path',['../namespacetesting.html#a42991943e8a4474ce4b35120877b1c7c',1,'testing.model_path'],['../namespacecamera__yolo__to__shm.html#a099321716e2dfbcb8ffc4bbbfa2f23c4',1,'camera_yolo_to_shm.MODEL_PATH']]]
 ];

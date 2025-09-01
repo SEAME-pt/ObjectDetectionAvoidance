@@ -8,6 +8,5 @@ var searchData=
   ['shm_5fname_5',['SHM_NAME',['../namespacecamera__yolo__to__shm.html#ac141d4dc50138ace9081a02a7f3076a0',1,'camera_yolo_to_shm']]],
   ['size_6',['SIZE',['../namespacejetracer_1_1vision.html#aa6278f0db3591f82dfb3eb22d21ec9fd',1,'jetracer::vision']]],
   ['source_5fdirectory_7',['source_directory',['../namespacetraining.html#ab0f1d6430478179d942e0c8719b18155',1,'training']]],
-  ['source_5ffile_8',['source_file',['../namespacecopy__readme.html#a06f3c431ccd4572dac8d4121885b196e',1,'copy_readme']]],
-  ['start_9',['start',['../namespacecamera__yolo__to__shm.html#a27bddc5c27e195337db64faa1046e063',1,'camera_yolo_to_shm']]]
+  ['start_8',['start',['../namespacecamera__yolo__to__shm.html#a27bddc5c27e195337db64faa1046e063',1,'camera_yolo_to_shm']]]
 ];

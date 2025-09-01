@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['i2c_5fdevice_2ecpp_0',['i2c_device.cpp',['../i2c__device_8cpp.html',1,'']]],
-  ['i2c_5fdevice_2ehpp_1',['i2c_device.hpp',['../i2c__device_8hpp.html',1,'']]]
+  ['jetracer_2ecpp_0',['jetracer.cpp',['../jetracer_8cpp.html',1,'']]],
+  ['jetracer_2ehpp_1',['jetracer.hpp',['../jetracer_8hpp.html',1,'']]]
 ];
