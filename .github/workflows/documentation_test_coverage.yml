@@ -1,4 +1,4 @@
-name: Deploy Documentation to GitHub Pages
+name: Deploy Documentation and Test Coverage to GitHub Pages
 
 on:
   push:
@@ -45,7 +45,6 @@ jobs:
 
       - name: Generate Documentation
         run: |
-          python3 ./yolo_models/scripts/copy_readme.py
           cd doxyfiles
           doxygen Doxyfile
 

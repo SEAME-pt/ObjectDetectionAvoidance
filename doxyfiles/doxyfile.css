@@ -6,3 +6,11 @@ body {
     font-family: Arial, sans-serif;
     font-size: 20px;
 }
+
+img {
+    max-width: 100%;   /* ensures images never overflow container */
+    height: auto;      /* keeps aspect ratio */
+    display: block;    /* optional: removes inline gaps */
+    margin: 10px auto; /* centers the image with margins */
+}
+

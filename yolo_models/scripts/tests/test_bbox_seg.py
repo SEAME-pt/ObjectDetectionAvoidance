@@ -32,3 +32,4 @@ def test_convert_bbox_to_segmentation(tmp_path):
     # Check that all coords are in range [0.0, 1.0]
     coords = list(map(float, parts[1:]))
     assert all(0.0 <= c <= 1.0 for c in coords), "Coords not in [0.0, 1.0]"
+
