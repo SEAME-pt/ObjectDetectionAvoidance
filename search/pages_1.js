@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['detection_20and_20avoidance_0',['Object Detection and Avoidance',['../index.html',1,'']]],
-  ['documentation_20raspberry_20pi_1',['📑 Services Documentation - Raspberry Pi',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2services__raspberryPi_2README.html',1,'']]]
+  ['best_5f202507181755_20pt_0',['Migration to New YOLO Model - best_202507181755.pt',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2do92b6b0ecbf00d55d82e017834694ab79.html',1,'']]]
 ];

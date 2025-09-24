@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pidapply_0',['PIDapply',['../namespacejetracer_1_1pid.html#a973e29f32c66a5f0bf1070a8aefb7b2c',1,'jetracer::pid']]],
-  ['pidexecute_1',['PIDexecute',['../namespacejetracer_1_1pid.html#a96ea796d4820bae5ed990b4254fa0e00',1,'jetracer::pid']]]
+  ['on_5fconnect_0',['on_connect',['../emergency__stop_2apps_2main_8cpp.html#a53577058bc92708c14f3831315b3e31d',1,'main.cpp']]],
+  ['on_5fdisconnect_1',['on_disconnect',['../emergency__stop_2apps_2main_8cpp.html#a7c7b46857484360c6f474eab70ad361f',1,'main.cpp']]]
 ];

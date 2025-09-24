@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['bbox_5fseg_0',['bbox_seg',['../namespacebbox__seg.html',1,'']]],
-  ['bbox_5fseg_2epy_1',['bbox_seg.py',['../bbox__seg_8py.html',1,'']]],
-  ['benchmark_20results_2',['Benchmark Results',['../index.html#autotoc_md65',1,'']]],
-  ['benchmarks_3',['YOLO Inference on Jetson Nano – Performance Improvements and Benchmarks',['../index.html#autotoc_md58',1,'']]],
-  ['boxf1_5fcurve_2epng_4',['boxf1_curve.png',['../512_2BoxF1__curve_8png.html',1,'(Global Namespace)'],['../seame__training__512_2BoxF1__curve_8png.html',1,'(Global Namespace)'],['../new__dataset3_2BoxF1__curve_8png.html',1,'(Global Namespace)'],['../objects_2BoxF1__curve_8png.html',1,'(Global Namespace)'],['../seame__n_2BoxF1__curve_8png.html',1,'(Global Namespace)']]],
-  ['boxp_5fcurve_2epng_5',['boxp_curve.png',['../512_2BoxP__curve_8png.html',1,'(Global Namespace)'],['../seame__training__512_2BoxP__curve_8png.html',1,'(Global Namespace)'],['../seame__n_2BoxP__curve_8png.html',1,'(Global Namespace)'],['../objects_2BoxP__curve_8png.html',1,'(Global Namespace)'],['../new__dataset3_2BoxP__curve_8png.html',1,'(Global Namespace)']]],
-  ['boxpr_5fcurve_2epng_6',['boxpr_curve.png',['../512_2BoxPR__curve_8png.html',1,'(Global Namespace)'],['../new__dataset3_2BoxPR__curve_8png.html',1,'(Global Namespace)'],['../objects_2BoxPR__curve_8png.html',1,'(Global Namespace)'],['../seame__n_2BoxPR__curve_8png.html',1,'(Global Namespace)'],['../seame__training__512_2BoxPR__curve_8png.html',1,'(Global Namespace)']]],
-  ['boxr_5fcurve_2epng_7',['boxr_curve.png',['../512_2BoxR__curve_8png.html',1,'(Global Namespace)'],['../new__dataset3_2BoxR__curve_8png.html',1,'(Global Namespace)'],['../objects_2BoxR__curve_8png.html',1,'(Global Namespace)'],['../seame__n_2BoxR__curve_8png.html',1,'(Global Namespace)'],['../seame__training__512_2BoxR__curve_8png.html',1,'(Global Namespace)']]]
+  ['action_20buttons_0',['Action Buttons',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2docs_2buttons__references.html#autotoc_md8',1,'']]],
+  ['additional_20classes_20strong_1',['&lt;strong&gt;3. Additional Classes&lt;/strong&gt;',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2do92b6b0ecbf00d55d82e017834694ab79.html#autotoc_md42',1,'']]],
+  ['analog_20axes_20mapping_2',['Analog Axes Mapping',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2docs_2buttons__references.html#autotoc_md2',1,'']]],
+  ['and_20avoidance_3',['Object Detection and Avoidance',['../index.html',1,'']]],
+  ['and_20benchmarks_4',['YOLO Inference on Jetson Nano – Performance Improvements and Benchmarks',['../index.html#autotoc_md106',1,'']]],
+  ['and_20testing_5',['Training and Testing',['../index.html#autotoc_md104',1,'']]],
+  ['and_20verification_6',['Testing and Verification',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2docs_2buttons__references.html#autotoc_md12',1,'']]],
+  ['args_7',['args',['../namespaceextract__info__yolo__model.html#a4971718ca47d275cc3db563c72936ae0',1,'extract_info_yolo_model']]],
+  ['available_20classes_20strong_8',['&lt;strong&gt;Available Classes&lt;/strong&gt;',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2do92b6b0ecbf00d55d82e017834694ab79.html#autotoc_md24',1,'']]],
+  ['avoidance_9',['Object Detection and Avoidance',['../index.html',1,'']]],
+  ['axes_20mapping_10',['Analog Axes Mapping',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2docs_2buttons__references.html#autotoc_md2',1,'']]]
 ];

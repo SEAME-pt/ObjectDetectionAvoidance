@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['set_5fspeed_0',['set_speed',['../classjetracer_1_1control_1_1JetRacer.html#a13981ba5fd64876ed15b118a1cd4a8d5',1,'jetracer::control::JetRacer']]],
-  ['set_5fsteering_1',['set_steering',['../classjetracer_1_1control_1_1JetRacer.html#ad29f55ddd8653fe0c4939d5a07de32d3',1,'jetracer::control::JetRacer']]],
-  ['signal_5fhandler_2',['signal_handler',['../main_8cpp.html#a8804db44b6d4c5752e6de5593562df06',1,'main.cpp']]],
-  ['smooth_5fsteering_3',['smooth_steering',['../classjetracer_1_1control_1_1JetRacer.html#ac6fb2f9e0b092853daa16277e7d0c8d9',1,'jetracer::control::JetRacer']]],
-  ['start_4',['start',['../classjetracer_1_1control_1_1JetRacer.html#aeb4aadc9d1bada092565e2470f489620',1,'jetracer::control::JetRacer']]],
-  ['stop_5',['stop',['../classjetracer_1_1control_1_1JetRacer.html#a88cb19674aec900ba5e2ed388f85eeda',1,'jetracer::control::JetRacer']]]
+  ['read_5fbyte_0',['read_byte',['../classjetracer_1_1hardware_1_1I2CDevice.html#ab0a5b829fa2ee7d7e2908382d09230dc',1,'jetracer::hardware::I2CDevice::read_byte(uint8_t reg)'],['../classjetracer_1_1hardware_1_1I2CDevice.html#ab0a5b829fa2ee7d7e2908382d09230dc',1,'jetracer::hardware::I2CDevice::read_byte(uint8_t reg)']]],
+  ['reconnectmqtt_1',['reconnectMQTT',['../emergency__stop_2apps_2main_8cpp.html#a64e98c5ece482f3db17ec5754f0e1cd8',1,'main.cpp']]],
+  ['release_5fmotor_5flock_2',['release_motor_lock',['../classjetracer_1_1control_1_1JetRacer.html#a7475b74223f60cfb68791b5430363117',1,'jetracer::control::JetRacer']]],
+  ['rename_5fimages_5flabels_3',['rename_images_labels',['../namespacerename__files.html#a6bf9bcfeb061f0aeddc971f3242b991f',1,'rename_files']]]
 ];

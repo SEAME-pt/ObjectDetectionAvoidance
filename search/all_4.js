@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['and_20avoidance_0',['Object Detection and Avoidance',['../index.html',1,'']]],
-  ['and_20benchmarks_1',['YOLO Inference on Jetson Nano – Performance Improvements and Benchmarks',['../index.html#autotoc_md58',1,'']]],
-  ['and_20testing_2',['Training and Testing',['../index.html#autotoc_md56',1,'']]],
-  ['avoidance_3',['Object Detection and Avoidance',['../index.html',1,'']]]
+  ['4_20visual_20indicators_20in_20stream_0',['4. Visual Indicators in Stream',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2emergency__stop_2docs_2emergency__stop__system.html#autotoc_md81',1,'']]]
 ];

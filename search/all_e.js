@@ -1,8 +1,28 @@
 var searchData=
 [
-  ['kd_0',['Kd',['../namespacejetracer_1_1pid.html#afa5e2be86c4c898adce1fb9bca5f1aba',1,'jetracer::pid']]],
-  ['key_20improvements_1',['Key Improvements',['../index.html#autotoc_md60',1,'']]],
-  ['keybd_5fclosed_5fcb_5fce680311_2epng_2',['keybd_closed_cb_ce680311.png',['../keybd__closed__cb__ce680311_8png.html',1,'']]],
-  ['ki_3',['Ki',['../namespacejetracer_1_1pid.html#a3ea6c6018edeacc28db6b20299dba593',1,'jetracer::pid']]],
-  ['kp_4',['Kp',['../namespacejetracer_1_1pid.html#a2d2243c0fdf679e8de75a5adb5a7c328',1,'jetracer::pid']]]
+  ['jetracer_0',['jetracer',['../namespacejetracer.html',1,'jetracer'],['../classjetracer_1_1control_1_1JetRacer.html#aef62e104f076a3452bb1f9a532a983db',1,'jetracer::control::JetRacer::JetRacer(int servo_addr, int motor_addr)'],['../classjetracer_1_1control_1_1JetRacer.html#aef62e104f076a3452bb1f9a532a983db',1,'jetracer::control::JetRacer::JetRacer(int servo_addr, int motor_addr)'],['../classjetracer_1_1control_1_1JetRacer.html',1,'jetracer::control::JetRacer']]],
+  ['jetracer_20joystick_20controls_20reference_1',['JetRacer Joystick Controls Reference',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2docs_2buttons__references.html',1,'']]],
+  ['jetracer_20system_2',['Usage in JetRacer System',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2docs_2buttons__references.html#autotoc_md9',1,'']]],
+  ['jetracer_20vision_3',['jetracer vision',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2emergency__stop_2README.html',1,'PID Control + JetRacer Vision'],['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2README.html',1,'PID Control + JetRacer Vision']]],
+  ['jetracer_2ecpp_4',['jetracer.cpp',['../emergency__stop_2sources_2jetracer_8cpp.html',1,'(Global Namespace)'],['../complete__route_2sources_2jetracer_8cpp.html',1,'(Global Namespace)']]],
+  ['jetracer_2ehpp_5',['jetracer.hpp',['../complete__route_2includes_2jetracer_2jetracer_8hpp.html',1,'(Global Namespace)'],['../emergency__stop_2includes_2jetracer_2jetracer_8hpp.html',1,'(Global Namespace)']]],
+  ['jetracer_3a_3acontrol_6',['control',['../namespacejetracer_1_1control.html',1,'jetracer']]],
+  ['jetracer_3a_3ahardware_7',['hardware',['../namespacejetracer_1_1hardware.html',1,'jetracer']]],
+  ['jetracer_3a_3amotor_5fcontrol_8',['motor_control',['../namespacejetracer_1_1motor__control.html',1,'jetracer']]],
+  ['jetracer_3a_3amotor_5fcontrol_3a_3apower_9',['power',['../namespacejetracer_1_1motor__control_1_1power.html',1,'jetracer::motor_control']]],
+  ['jetracer_3a_3amotor_5fcontrol_3a_3aramps_10',['ramps',['../namespacejetracer_1_1motor__control_1_1ramps.html',1,'jetracer::motor_control']]],
+  ['jetracer_3a_3amotor_5fcontrol_3a_3asafety_11',['safety',['../namespacejetracer_1_1motor__control_1_1safety.html',1,'jetracer::motor_control']]],
+  ['jetracer_3a_3amotor_5fcontrol_3a_3athresholds_12',['thresholds',['../namespacejetracer_1_1motor__control_1_1thresholds.html',1,'jetracer::motor_control']]],
+  ['jetracer_3a_3apid_13',['pid',['../namespacejetracer_1_1pid.html',1,'jetracer']]],
+  ['jetracer_3a_3apwm_14',['pwm',['../namespacejetracer_1_1pwm.html',1,'jetracer']]],
+  ['jetracer_3a_3apwm_3a_3afrequency_15',['frequency',['../namespacejetracer_1_1pwm_1_1frequency.html',1,'jetracer::pwm']]],
+  ['jetracer_3a_3apwm_3a_3asafety_16',['safety',['../namespacejetracer_1_1pwm_1_1safety.html',1,'jetracer::pwm']]],
+  ['jetracer_3a_3apwm_3a_3asmoothing_17',['smoothing',['../namespacejetracer_1_1pwm_1_1smoothing.html',1,'jetracer::pwm']]],
+  ['jetracer_3a_3apwm_3a_3atiming_18',['timing',['../namespacejetracer_1_1pwm_1_1timing.html',1,'jetracer::pwm']]],
+  ['jetracer_3a_3avision_19',['vision',['../namespacejetracer_1_1vision.html',1,'jetracer']]],
+  ['jetracer_5fptr_20',['jetracer_ptr',['../complete__route_2apps_2main_8cpp.html#ade99107bf2bd5a6447dbcaa7df713257',1,'jetracer_ptr:&#160;main.cpp'],['../emergency__stop_2apps_2main_8cpp.html#ade99107bf2bd5a6447dbcaa7df713257',1,'jetracer_ptr:&#160;main.cpp']]],
+  ['jetson_20nano_21',['Jetson Nano',['../index.html#autotoc_md105',1,'']]],
+  ['jetson_20nano_20–_20performance_20improvements_20and_20benchmarks_22',['YOLO Inference on Jetson Nano – Performance Improvements and Benchmarks',['../index.html#autotoc_md106',1,'']]],
+  ['joystick_20controls_20reference_23',['JetRacer Joystick Controls Reference',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2docs_2buttons__references.html',1,'']]],
+  ['joystick_20shared‑memory_20mask_24',['&lt;tt&gt;sources/main.cpp&lt;/tt&gt; – PID control with joystick &amp; shared‑memory mask',['../md__2home_2runner_2work_2ObjectDetectionAvoidance_2ObjectDetectionAvoidance_2complete__route_2docs_2docs__main.html',1,'']]]
 ];

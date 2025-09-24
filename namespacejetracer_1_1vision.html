@@ -91,6 +91,22 @@ Functions</h2></td></tr>
 <tr class="separator:a51e735807ed967fa0aa16ba980315f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2f38dfa4dbc7f61b032aa27f310cdd2" id="r_af2f38dfa4dbc7f61b032aa27f310cdd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejetracer_1_1vision.html#af2f38dfa4dbc7f61b032aa27f310cdd2">draw_overlay</a> (cv::Mat &amp;frame, float erro, float pid, const std::string &amp;file_name, const std::string &amp;txt_lane, float image_center, float center_track, float y_ref)</td></tr>
 <tr class="separator:af2f38dfa4dbc7f61b032aa27f310cdd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc5393c88c0763fcd755e515de57ff04" id="r_adc5393c88c0763fcd755e515de57ff04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejetracer_1_1vision.html#adc5393c88c0763fcd755e515de57ff04">sampleLaneEdgesByRow</a> (const cv::Mat &amp;mask, int y_start, int y_end, int step, float image_center, std::vector&lt; cv::Point &gt; &amp;left_curve, std::vector&lt; cv::Point &gt; &amp;right_curve, int min_run=3)</td></tr>
+<tr class="separator:adc5393c88c0763fcd755e515de57ff04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654bad992d81a86f9d37cbc2421b7567" id="r_a654bad992d81a86f9d37cbc2421b7567"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejetracer_1_1vision.html#a654bad992d81a86f9d37cbc2421b7567">drawDangerZoneCurved</a> (cv::Mat &amp;frame, const std::vector&lt; cv::Point &gt; &amp;left_curve, const std::vector&lt; cv::Point &gt; &amp;right_curve, float displacement_cm, float scale)</td></tr>
+<tr class="separator:a654bad992d81a86f9d37cbc2421b7567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2104c42cfaffaba63b50e1c106dd0346" id="r_a2104c42cfaffaba63b50e1c106dd0346"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejetracer_1_1vision.html#a2104c42cfaffaba63b50e1c106dd0346">calculateDangerZoneOccupancy</a> (const cv::Mat &amp;mask, const std::vector&lt; cv::Point &gt; &amp;left_curve, const std::vector&lt; cv::Point &gt; &amp;right_curve, float displacement_cm, float scale)</td></tr>
+<tr class="separator:a2104c42cfaffaba63b50e1c106dd0346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c455a76dfd29f4e2b1db7d9cc0ec53" id="r_af1c455a76dfd29f4e2b1db7d9cc0ec53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejetracer_1_1vision.html#af1c455a76dfd29f4e2b1db7d9cc0ec53">createDangerZoneMask</a> (const cv::Mat &amp;original_mask, const std::vector&lt; cv::Point &gt; &amp;left_curve, const std::vector&lt; cv::Point &gt; &amp;right_curve, float displacement_cm, float scale, cv::Mat &amp;danger_zone_mask)</td></tr>
+<tr class="separator:af1c455a76dfd29f4e2b1db7d9cc0ec53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a503e82e774a39c5134efddf4936d0b01" id="r_a503e82e774a39c5134efddf4936d0b01"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejetracer_1_1vision.html#a503e82e774a39c5134efddf4936d0b01">calculateDangerZoneOccupancyFromMask</a> (const cv::Mat &amp;original_mask, const cv::Mat &amp;danger_zone_mask)</td></tr>
+<tr class="separator:a503e82e774a39c5134efddf4936d0b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3249b562e3790b3f426c8f68aeea51a" id="r_ad3249b562e3790b3f426c8f68aeea51a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejetracer_1_1vision.html#ad3249b562e3790b3f426c8f68aeea51a">createDrivableDangerZoneMask</a> (const cv::Mat &amp;drivable_mask, float displacement_cm, float scale, cv::Mat &amp;drivable_danger_zone_mask)</td></tr>
+<tr class="separator:ad3249b562e3790b3f426c8f68aeea51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1434bcd0330edc005cdb63036efd54b1" id="r_a1434bcd0330edc005cdb63036efd54b1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejetracer_1_1vision.html#a1434bcd0330edc005cdb63036efd54b1">calculateDrivableDangerZoneOccupancy</a> (const cv::Mat &amp;drivable_mask, const cv::Mat &amp;drivable_danger_zone_mask)</td></tr>
+<tr class="separator:a1434bcd0330edc005cdb63036efd54b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d90e5c2584772155a4c71dc89f085d" id="r_a98d90e5c2584772155a4c71dc89f085d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejetracer_1_1vision.html#a98d90e5c2584772155a4c71dc89f085d">drawDrivableDangerZone</a> (cv::Mat &amp;frame, const cv::Mat &amp;drivable_danger_zone_mask)</td></tr>
+<tr class="separator:a98d90e5c2584772155a4c71dc89f085d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -104,6 +120,108 @@ Variables</h2></td></tr>
 <tr class="separator:ac3c2ffae7e674b070624135a7c0d84e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a2104c42cfaffaba63b50e1c106dd0346" name="a2104c42cfaffaba63b50e1c106dd0346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2104c42cfaffaba63b50e1c106dd0346">&#9670;&#160;</a></span>calculateDangerZoneOccupancy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float jetracer::vision::calculateDangerZoneOccupancy </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; cv::Point &gt; &amp;&#160;</td>
+          <td class="paramname"><em>left_curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; cv::Point &gt; &amp;&#160;</td>
+          <td class="paramname"><em>right_curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>displacement_cm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a503e82e774a39c5134efddf4936d0b01" name="a503e82e774a39c5134efddf4936d0b01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a503e82e774a39c5134efddf4936d0b01">&#9670;&#160;</a></span>calculateDangerZoneOccupancyFromMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float jetracer::vision::calculateDangerZoneOccupancyFromMask </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>original_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>danger_zone_mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1434bcd0330edc005cdb63036efd54b1" name="a1434bcd0330edc005cdb63036efd54b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1434bcd0330edc005cdb63036efd54b1">&#9670;&#160;</a></span>calculateDrivableDangerZoneOccupancy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float jetracer::vision::calculateDrivableDangerZoneOccupancy </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>drivable_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>drivable_danger_zone_mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a51e735807ed967fa0aa16ba980315f53" name="a51e735807ed967fa0aa16ba980315f53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51e735807ed967fa0aa16ba980315f53">&#9670;&#160;</a></span>calculateTrackCenter()</h2>
 
@@ -145,6 +263,98 @@ Variables</h2></td></tr>
           <td></td>
           <td class="paramtype">cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af1c455a76dfd29f4e2b1db7d9cc0ec53" name="af1c455a76dfd29f4e2b1db7d9cc0ec53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c455a76dfd29f4e2b1db7d9cc0ec53">&#9670;&#160;</a></span>createDangerZoneMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jetracer::vision::createDangerZoneMask </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>original_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; cv::Point &gt; &amp;&#160;</td>
+          <td class="paramname"><em>left_curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; cv::Point &gt; &amp;&#160;</td>
+          <td class="paramname"><em>right_curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>displacement_cm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>danger_zone_mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3249b562e3790b3f426c8f68aeea51a" name="ad3249b562e3790b3f426c8f68aeea51a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3249b562e3790b3f426c8f68aeea51a">&#9670;&#160;</a></span>createDrivableDangerZoneMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jetracer::vision::createDrivableDangerZoneMask </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>drivable_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>displacement_cm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>drivable_danger_zone_mask</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -209,6 +419,80 @@ Variables</h2></td></tr>
           <td></td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>y_ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a654bad992d81a86f9d37cbc2421b7567" name="a654bad992d81a86f9d37cbc2421b7567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654bad992d81a86f9d37cbc2421b7567">&#9670;&#160;</a></span>drawDangerZoneCurved()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jetracer::vision::drawDangerZoneCurved </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; cv::Point &gt; &amp;&#160;</td>
+          <td class="paramname"><em>left_curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; cv::Point &gt; &amp;&#160;</td>
+          <td class="paramname"><em>right_curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>displacement_cm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98d90e5c2584772155a4c71dc89f085d" name="a98d90e5c2584772155a4c71dc89f085d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98d90e5c2584772155a4c71dc89f085d">&#9670;&#160;</a></span>drawDrivableDangerZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jetracer::vision::drawDrivableDangerZone </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>drivable_danger_zone_mask</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -301,6 +585,70 @@ Variables</h2></td></tr>
           <td></td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>vy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc5393c88c0763fcd755e515de57ff04" name="adc5393c88c0763fcd755e515de57ff04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc5393c88c0763fcd755e515de57ff04">&#9670;&#160;</a></span>sampleLaneEdgesByRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool jetracer::vision::sampleLaneEdgesByRow </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y_end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>image_center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; cv::Point &gt; &amp;&#160;</td>
+          <td class="paramname"><em>left_curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; cv::Point &gt; &amp;&#160;</td>
+          <td class="paramname"><em>right_curve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min_run</em> = <code>3</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

@@ -1,0 +1,15 @@
+<map id="/home/runner/work/ObjectDetectionAvoidance/ObjectDetectionAvoidance/emergency_stop/sources/i2c_device.cpp" name="/home/runner/work/ObjectDetectionAvoidance/ObjectDetectionAvoidance/emergency_stop/sources/i2c_device.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="249,5,511,75"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,123,179,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="277,77,141,121,140,116,275,72"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="203,123,266,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="329,77,266,117,263,113,326,73"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="291,123,365,148"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="364,76,344,112,339,109,359,73"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="389,123,477,148"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="402,73,422,109,417,112,397,76"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="501,123,619,148"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="446,72,526,114,524,118,444,77"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="643,123,730,148"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="491,72,636,116,635,121,490,77"/>
+</map>
